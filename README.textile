@@ -18,7 +18,12 @@ h3. Technical Reports
 
 The content for the book is being developed as a series of technical reports. The book is the final outcome for the project, and all technical reports should be considered preliminary. 
 
-* Coming Soon
+h4. Overview
+
+* Jason Brownlee. "Clever Algorithms: Machine Learning Project Overview". Technical Report CA-TR-20110107-1, The Clever Algorithms Project http://www.CleverAlgorithms.com, February 2011.
+* ... (machine learning)
+* ... (algorithm selection)
+
 
 h2. Contribute
 
