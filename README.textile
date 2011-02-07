@@ -20,8 +20,8 @@ The content for the book is being developed as a series of technical reports. Th
 
 h4. Overview
 
-* Jason Brownlee. "Clever Algorithms: Machine Learning Project Overview". Technical Report CA-TR-20110107-1, The Clever Algorithms Project http://www.CleverAlgorithms.com, February 2011.
-* ... (machine learning)
+* Jason Brownlee. "Clever Algorithms: Machine Learning Project Overview". Technical Report CA-TR-20110207-1, The Clever Algorithms Project http://www.CleverAlgorithms.com, February 2011.
+* Jason Brownlee. "Clever Algorithms: A Gentle Introduction to Machine Learning". Technical Report CA-TR-20110208-1, The Clever Algorithms Project http://www.CleverAlgorithms.com, February 2011.
 * ... (algorithm selection)
 
 
