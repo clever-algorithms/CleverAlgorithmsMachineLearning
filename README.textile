@@ -1,14 +1,24 @@
-h1. Clever Algorithms: Machine Learning
+h1. Clever Algorithms: Machine Learning Programming Recipes 
 
 h2. Overview
 
-The Clever Algorithms: Machine Learning project is an effort to describe a large number of algorithmic techniques from the the field of Machie Learning in a complete, consistent, and centralized manner such that they are accessible, usable, and understandable. 
+The Clever Algorithms: Machine Learning project is an effort to describe a large number of algorithmic techniques from the the field of Machine Learning in a complete, consistent, and centralized manner such that they are accessible, usable, and understandable. 
 
 The Clever Algorithms project is currently hosted online at "http://www.CleverAlgorithms.com":http://www.CleverAlgorithms.com 
 
 This is a repository for the Clever Algorithms: Machine Learning project for hosting, versioning, and collaboration, used during the development of the content for deliverables (website and book), as well as for the ongoing maintenance of the outcomes from the project.
 
+h2. Outcomes
 
+h3. Book (Coming Soon)
+
+Jason Brownlee, *Clever Algorithms: Machine Learning Programming Recipes*, Lulu, (Coming Soon)
+
+h3. Technical Reports
+
+The content for the book is being developed as a series of technical reports. The book is the final outcome for the project, and all technical reports should be considered preliminary. 
+
+* Coming Soon
 
 h2. Contribute
 
