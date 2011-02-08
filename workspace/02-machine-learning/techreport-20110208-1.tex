@@ -34,9 +34,9 @@
 % write a summary sentence for each major section
 \section*{Abstract} 
 % project
-
+The Clever Algorithms: Machine Learning project intends to describe a large number of methods from the field of Machine Learning in a complete, consistent, and centralized way, such that the descriptions are usable, accessible, and understandable.
 % this report
-
+This report provides a gentle introduction into the field of Machine Learning, providing a summary of standard taxonomies of methods, and highlighting important sub-disciplines. 
 
 \begin{description}
 	\item[Keywords:] {\small\texttt{Clever Algorithms, Machine Learning, Introduction}}
@@ -46,23 +46,134 @@
 \section{Introduction}
 \label{sec:introduction}
 % project
-
+The Clever Algorithms: Machine Learning project intends to describe a large number of methods from the field of Machine Learning in a complete, consistent, and centralized way, such that the descriptions are usable, accessible, and understandable \cite{Brownlee2011a}.
 % this report
 
 % specific sections
 
 \section{Machine Learning}
 \label{sec:machine_learning}
-what is it all about
+% my def
+Machine learning is a subfield of Artificial Intelligence and Computer Science concerned with methods that process empirical data to construct models that contain the salient or underlying probability distribution in the data. Such models may then be applied to address problems or make decisions regarding new data or data unseen by the system.
 
-what are some official definitions?
+This section... 
 
-what are some classical taxonomies?
+% official definitions
+\subsection{Definitions}
+This section visits standard definitions and descriptions of the field from some of the classical texts on statistical pattern recognition and machine learning. 
 
-\section{Sub-Fields}
-\label{sec:sub_fields}
+Fukunaga's classic text on statistical pattern recognition describes the field as ``... pattern recognition, or decision-making in a broader sense, may be considered as a problem of estimating density functions in a high-dimensional space and dividing the space into the regions of categories or classes. Because of this view, mathematical statistics forms the foundation of the subject.'' (page 2--3) \cite{Fukunaga1990}
 
-What are some core subfields?
+Hastie et~al.\ classic text on statistical learning describes itself ``This book is about learning from data.'' (page 1 \cite{Hastie2009}). They describe a typical scenario thus ``we have an outcome measurement, usually quantitative ... or categorical ..., that we wish to predict based on a set of features ... We have a training set of data, in which we observe the outcome and feature measurements for a set of objects ... Using this data we build a prediction model, or learner, which will enable us to predict the outcome for new unseen objects. A good learner is one that accurately predicts such an outcome.'' (pages 1--2 \cite{Hastie2009}).
+
+Mitchell's classic text Machine Learning suggests ``The field of machine learning is concerned with the question of how to construct computer programs that automatically improve with their experience.''  (page xv \cite{Mitchell1997}). Mitchell provides a precise definition as ``A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measure by P, improves with experience E.'' (page 2 \cite{Mitchell1997}).
+
+Mitchell suggests that the field of Machine Learning seeks to answer the question: ``How can we build computer systems that automatically improve with experience, and what are the fundamental laws that govern all learning processes?'' \cite{Mitchell2006}.
+
+Bishop's classical Machine Learning text \cite{Bishop2006}.
+
+
+% related fields - subsections?
+Artificial Intelligence
+Computational Learning theory - the analysis of machine learning algorithms.
+Data Mining - application of machine learning algorithms to practical domains with the addition of data management concerns (databases)
+Statistics  - 
+Statistical Pattern Recognition
+
+related theory: probability theory, decision theory, information theory. 
+
+high-level applications
+data mining, information retrieval, information filtering, recommendation systems, etc
+
+
+% taxonomy by learning
+\section{Types of Learning}
+\label{sec:learning}
+There are different styles of learning that may be adopted by a machine learning method, such as:
+
+\begin{itemize}
+	\item \textbf{Supervised Learning}: asdf
+	\item \textbf{Unsupervised Learning}: asdf
+	\item \textbf{Reinforcement Learning}: asdf
+\end{itemize}
+
+% taxonomy by problem
+\section{Types of Problems}
+\label{sec:problems}
+There are many subtly different classes of problem's that may be addressed via machine learning methods, all generally stemming from the abstract problem of Function Approximation. Function Approximation is the problem of finding a function ($f$) that approximates a target function ($g$), where typically the approximated function is selected based on a sample of observations ($x$, also referred to as the training set) taken from the unknown target function.
+
+% ML - todo tear this up some
+In Machine Learning, the function approximation formalism is used to describe general problem types commonly referred to as pattern recognition, such as classification, clustering, and curve fitting (called a decision or discrimination function). Such general problem types are described in terms of approximating an unknown Probability Density Function (PDF), which underlies the relationships in the problem space, and is represented in the sample data. This perspective of such problems is commonly referred to as statistical machine learning and/or density estimation \cite{Fukunaga1990, Bishop1995}.
+
+% general process
+The general process focuses on 1) the collection and preparation of the observations from the target function, 2) the selection and/or preparation of a model of the target function, and 3) the application and ongoing refinement of the prepared model. 
+% optimization
+The field of Function Optimization is related to Function Approximation, as many-sub-problems of Function Approximation may be defined as optimization problems. Many of the technique paradigms used for function approximation are differentiated based on the representation and the optimization process used to minimize error or maximize effectiveness on a given approximation problem. 
+% problems
+The difficulty of Function Approximation problems center around 1) the nature of the unknown relationships between attributes and features, 2) the number (dimensionality) of attributes and features, and 3) general concerns of noise in such relationships and the dynamic availability of samples from the target function.
+% other problems
+Additional difficulties include the incorporation of prior knowledge (such as imbalance in samples, incomplete information and the variable reliability of data), and problems of invariant features (such as transformation, translation, rotation, scaling, and skewing of features).
+
+The following describes some of the general sub-problems of Function Approximation addressed via Machine Learning methods:
+
+\begin{itemize}
+	\item \emph{Feature Selection} where a feature is considered an aggregation of one-or-more attributes, where only those features that have meaning in the context of the target function are necessary to the modeling function \cite{Kudo2000, Guyon2003}.
+	\item \emph{Classification} where observations are inherently organized into labeled groups (classes) and a supervised process models an underlying discrimination function to classify unobserved samples.
+	\item \emph{Clustering} where observations may be organized into groups based on underlying common features, although the groups are unlabeled requiring a process to model an underlying discrimination function without corrective feedback.
+	\item \emph{Curve or Surface Fitting} where a model is prepared that provides a `best-fit' (called a regression) for a set of observations that may be used for interpolation over known observations and extrapolation for observations outside what has been modeled.
+	
+	\item \emph{Association rule learning}: asdf
+	\item \emph{Regression}: asdf
+
+	
+\end{itemize}
+
+other
+Regularization, Smoothing, Model Selection
+
+
+
+% taxonomy by technique
+\section{Types of Methods}
+\label{sec:methods}
+There are many different approaches to devising learning methods, such as:
+
+The list may not be mutually exclusive - expect overlap
+
+\begin{itemize}
+	\item \textbf{Decision Tree}: asdf
+	\item \textbf{Neural Networks}: asdf
+	\item \textbf{Automatic Programming}: asdf
+	\item \textbf{Kernel Based Methods}: asdf
+	\item \textbf{Bayesian Methods}: asdf
+	\item \textbf{Graphical Methods}: frameworks for probabilistic methods (trees could fit in here)
+	
+	\item \textbf{Instance-Based Learning}: asdf
+	\item \textbf{Competitive Learning}: asdf
+	
+\end{itemize}
+
+
+% taxonomy of reasoning
+\section{Reasoning}
+\label{sec:reasoning}
+
+general methods
+
+\begin{itemize}
+	\item \textbf{Inductive Learning}: asdf
+	\item \textbf{Transductive Learning}: asdf
+	\item \textbf{Deductive Learning}: asdf
+\end{itemize}
+
+
+Most methods work through a process of induction. The main types of induction include:
+Learning types...
+
+\begin{itemize}
+	\item \textbf{Online Learning}: asdf
+	\item \textbf{Offline Learning}: asdf
+\end{itemize}
 
 
 
@@ -70,7 +181,23 @@ What are some core subfields?
 % summarise the document message and areas for future consideration
 \section{Conclusions}
 \label{sec:conclusions}
-This is the conclusion. Consider summarizing the message of the document once again, and highlighting areas for future consideration.
+what have we discussed
+
+
+what are some areas of further discussion
+
+\begin{itemize}
+	\item \textbf{Ensemble Learning}: etc
+	\item \textbf{PAC Learning}: etc
+	\item \textbf{Optimal Learning}: best learning possible given space and/or time constraints
+	\item \textbf{Generalization}:
+	\item \textbf{Error Tolerance}:
+	\item \textbf{Performance Measures}:
+	\item \textbf{Over-fitting}:
+	\item \textbf{Methodology}: KDD, CRISP
+\end{itemize}
+
+
 
 % 
 % Contribute
