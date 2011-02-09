@@ -51,43 +51,47 @@ The Clever Algorithms: Machine Learning project intends to describe a large numb
 
 % specific sections
 
+
+%
+% Machine Learning
+%
 \section{Machine Learning}
 \label{sec:machine_learning}
 % my def
 Machine learning is concerned with methods that process empirical data to construct models that contain the salient or underlying probability distribution in the data. Such models may then be applied to address problems or make decisions regarding new data or data unseen by the system.
-
-This section... 
+% this section
+This section provides some standard definitions of machine learning (Section~\ref{subsec:definitions}) and goes on to summarizes some of the over arching and related sub-fields (Section~\ref{subsec:related_fields}).
 
 % official definitions
 \subsection{Definitions}
 \label{subsec:definitions}
 This section visits standard definitions and descriptions of the field from some of the classical texts on statistical pattern recognition and machine learning. 
 
-Fukunaga's classic text on statistical pattern recognition describes the field as (page 2--3, \cite{Fukunaga1990})
+Fukunaga's classic text \emph{Introduction to Statistical Pattern Recognition} summarizes the field (page 2--3, \cite{Fukunaga1990}):
 
 \begin{quotation}
 ... pattern recognition, or decision-making in a broader sense, may be considered as a problem of estimating density functions in a high-dimensional space and dividing the space into the regions of categories or classes. Because of this view, mathematical statistics forms the foundation of the subject.
 \end{quotation} 
 
-Hastie et~al.\ classic text on statistical learning describes itself ``\emph{This book is about learning from data.}'' (page 1, \cite{Hastie2009}). They describe a typical scenario (pages 1--2, \cite{Hastie2009})
+Hastie et~al.\ seminal text \emph{The Elements of Statistical Learning: Data Mining, Inference, and Prediction} describes a typical scenario (pages 1--2, \cite{Hastie2009}):
 
 \begin{quotation}
 ... we have an outcome measurement, usually quantitative ... or categorical ..., that we wish to predict based on a set of features ... We have a training set of data, in which we observe the outcome and feature measurements for a set of objects ... Using this data we build a prediction model, or learner, which will enable us to predict the outcome for new unseen objects. A good learner is one that accurately predicts such an outcome.
 \end{quotation} 
 
-Duda et~al.\ classic text on pattern classification suggests (page 16, \cite{Duda2001})
+Duda et~al.\ classic text \emph{Pattern Classification} suggests (page 16, \cite{Duda2001}):
 
 \begin{quotation}
 In the broadest sense, any method that incorporates information from training samples in the design of a classifier employs learning. ... Learning refers to some form of algorithm for reducing the error on a set of training data.
 \end{quotation}
 
-Mitchell's classic text Machine Learning suggests (page xv, \cite{Mitchell1997})
+Mitchell's classic text \emph{Machine Learning} suggests (page xv, \cite{Mitchell1997}):
 
 \begin{quotation}
 The field of machine learning is concerned with the question of how to construct computer programs that automatically improve with their experience.
 \end{quotation}
 
-Mitchell provides a precise definition which will be used in this project (page 2, \cite{Mitchell1997})
+Mitchell provides a precise definition which will be used in this project (page 2, \cite{Mitchell1997}):
 
 \begin{quotation}
 A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measure by P, improves with experience E.
@@ -133,28 +137,44 @@ This section describes those fields from which Machine Learning draws upon.
 
 \begin{description}
 	\item[Statistics]: The field of statistics is a branch of mathematics concerned the collection, organization, and interpretation of quantitative data. A statistical understanding of data provides a basis for machine learning methods that generalize from quantitative data, commonly characterizing the probabilistic features that underlie the observations.
+	
 	\item[Computational Learning Theory]: The field of Computational Learning Theory broadly involves the analysis of machine learning systems. The field provides the theoretical basis for types of learning and their limitations. Machine Learning methods can be developed to investigate a theoretical finding, or be made more efficient through theoretical discoveries. For more information, refer to Kearns and Vazirani's \emph{An introduction to computational learning theory} \cite{Kearns1994}.
+	
 	\item[Probability Theory]: The field of probability theory is a branch of mathematics concerned with the likelihood of random events and characterizing the distribution of occurrences. The findings and methods from probability theory provides a basis to the field of statistics. 
+	
 	\item[Decision Theory]: The field of decision theory is concerned with rational and optimal decision making in the face of uncertainty. The field is also closely related to game theory and probability theory. The findings from decision theory relate to the application of models in machine learning for the decisions made in discrimination and related tasks.
+	
 	\item[Information Theory]	The field of information theory from applied mathematics and computer science is concerned with the quantification of information in data. The field is based on probability theory and statistics, and focuses on the amount or change in information entropy which is the measure of information content associated with a message. Information theory is important in machine learning in compression and generalization that occurs in the preparation of a model from data samples. For more information refer to MacKay's \emph{Information theory, inference, and learning algorithms} \cite{MacKay2003}.
 \end{description}
 
 The application of statistical and machine learning methods to specific domains are typically referred to as a standalone field, such as machine vision, speech recognition, machine translation, and information filtering.
 
-% taxonomy by learning
-\section{Types of Learning}
-\label{sec:learning}
-There are different styles of learning that may be adopted by a machine learning method, such as:
+%
+% Taxonomies
+%
+\section{Taxonomies}
+\label{sec:taxonomies}
+Machine Learning is a large and complex multidisciplinary field. As such there are many perspectives or ways of breaking up the methods and algorithms it contains. This section considers a number of common perspectives or taxonomies of methods in the field of Machine Learning.
 
-\begin{itemize}
-	\item \textbf{Supervised Learning}: asdf
-	\item \textbf{Unsupervised Learning}: asdf
-	\item \textbf{Reinforcement Learning}: asdf
-\end{itemize}
+% taxonomy by learning
+\subsection{Learning}
+\label{subsec:learning}
+This section considers a partitioning of the field by the type of learning performed by an algorithm used to prepare a model. Learning is performed from examples provided in the form of observations or samples from the domain that may available or may have to be collected by a software agent, data referred to as the `training set'. The type of learning performed by an approach can be defined in terms of the feedback provided by the environment based on the decisions or actions taken by a model prepared from collected data.
+
+\begin{description}
+	\item[Unsupervised Learning]: No feedback is provided from the environment. Methods are left to deduce structure and patterns. The most common models used in unsupervised learning include clustering algorithms that suggest natural groupings within the data.
+	
+	\item[Supervised Learning]: Input data is associated with an output value or values, a relationship which can be learned and frequently assessed. This assessment may result in a performance or error measure that may be used to further refine the model. A common example of problems for supervised learning include classification where an ordinal or categorical output is associated with a collection of input data attributes. A model is prepared with a training dataset, then assessed with the same or a different test dataset, the results of which are fed back to the model for correction.
+	
+	\item[Semi-supervised Learning]: Input data may be associated with an output value or values, although only some labeled examples are provided, and/or examples may be mislabeled. This provides an intermediate that must exploit the capabilities of unsupervised learning where natural clusters are sought in the data, and supervised learning where known relationships are demonstrated between input and output data attributes. 
+	
+	\item[Reinforcement Learning]: A model or agent learns in an environment through (likely sporadic and infrequent) reinforcements, such as rewards and/or punishments. A popular analogy is that the environment provides a critic (rather than a teacher) which makes suggestions of correctness or incorrectness without indication of why or what the correct answer might be.
+\end{description}
+
 
 % taxonomy by problem
-\section{Types of Problems}
-\label{sec:problems}
+\subsection{Problems}
+\label{subsec:problems}
 There are many subtly different classes of problem's that may be addressed via machine learning methods, all generally stemming from the abstract problem of Function Approximation. Function Approximation is the problem of finding a function ($f$) that approximates a target function ($g$), where typically the approximated function is selected based on a sample of observations ($x$, also referred to as the training set) taken from the unknown target function.
 
 % ML - todo tear this up some
@@ -179,7 +199,7 @@ The following describes some of the general sub-problems of Function Approximati
 	
 	\item \emph{Association rule learning}: asdf
 	\item \emph{Regression}: asdf
-
+	\item \emph{Dimensionality Reduction}: asdf
 	
 \end{itemize}
 
@@ -189,8 +209,8 @@ Regularization, Smoothing, Model Selection
 
 
 % taxonomy by technique
-\section{Types of Methods}
-\label{sec:methods}
+\subsection{Representation}
+\label{subsec:representation}
 There are many different approaches to devising learning methods, such as:
 
 The list may not be mutually exclusive - expect overlap
@@ -210,8 +230,8 @@ The list may not be mutually exclusive - expect overlap
 
 
 % taxonomy of reasoning
-\section{Reasoning}
-\label{sec:reasoning}
+\subsection{Reasoning}
+\label{subsec:reasoning}
 
 general methods
 
