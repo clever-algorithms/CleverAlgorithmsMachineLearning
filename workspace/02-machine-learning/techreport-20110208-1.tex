@@ -144,7 +144,7 @@ This section describes those fields from which Machine Learning draws upon.
 	
 	\item[Decision Theory]: The field of decision theory is concerned with rational and optimal decision making in the face of uncertainty. The field is also closely related to game theory and probability theory. The findings from decision theory relate to the application of models in machine learning for the decisions made in discrimination and related tasks.
 	
-	\item[Information Theory]	The field of information theory from applied mathematics and computer science is concerned with the quantification of information in data. The field is based on probability theory and statistics, and focuses on the amount or change in information entropy which is the measure of information content associated with a message. Information theory is important in machine learning in compression and generalization that occurs in the preparation of a model from data samples. For more information refer to MacKay's \emph{Information theory, inference, and learning algorithms} \cite{MacKay2003}.
+	\item[Information Theory]:	The field of information theory from applied mathematics and computer science is concerned with the quantification of information in data. The field is based on probability theory and statistics, and focuses on the amount or change in information entropy which is the measure of information content associated with a message. Information theory is important in machine learning in compression and generalization that occurs in the preparation of a model from data samples. For more information refer to MacKay's \emph{Information theory, inference, and learning algorithms} \cite{MacKay2003}.
 \end{description}
 
 The application of statistical and machine learning methods to specific domains are typically referred to as a standalone field, such as machine vision, speech recognition, machine translation, and information filtering.
@@ -171,12 +171,33 @@ This section considers a partitioning of the field by the type of learning perfo
 	\item[Reinforcement Learning]: A model or agent learns in an environment through (likely sporadic and infrequent) reinforcements, such as rewards and/or punishments. A popular analogy is that the environment provides a critic (rather than a teacher) which makes suggestions of correctness or incorrectness without indication of why or what the correct answer might be.
 \end{description}
 
+An important distinction between machine learning methods is the relationship between the data and the nature of the model prepared from the data.
+
+\begin{description}
+	\item[Inductive Learning]: The most common form of learning where specific examples in the form of observations from the domain are used as the basis for making generalizations to solve problems, such as natural groups or class discrimination boundaries. Generalization is based on statistics applied to the empirical observations and typically requires a large number of examples that are representative of the underlying structure (mass or density functions) in the data.
+	
+	\item[Analytical Learning]: A form of learning where prior knowledge and deductive reasoning is used in conjunction with available data. Prior knowledge is used as an explanation for the features in training data, allowing generalization through logical rather than statistical reasoning. An example of analytical learning is Explanation-based Learning used in domains such as scheduling.
+	
+\end{description}
+
+The process of model construction and generalization depends on the availability of data. Observations from the domain may be collected and used to prepare a model or a model may be updated as observations become available. The following summarizes the relationship between model learning and data availability.
+
+\begin{description}
+	\item[Online Learning}: asdf
+	
+	\item[Offline Learning]: asdf
+	
+	\item[Ongoing Learning]: asdf
+	
+\end{description}
+
+
 
 % taxonomy by problem
 \subsection{Problems}
 \label{subsec:problems}
 There are many subtly different classes of problem's that may be addressed via machine learning methods, all generally stemming from the abstract problem of Function Approximation. Function approximation is the problem of finding a function ($f$) that approximates a target function ($g$), where typically the approximated function is selected based on a sample of observations ($x$, also referred to as the training set) taken from the unknown target function.
-In Machine Learning, the function approximation formalism is used to describe general problem types commonly referred to as pattern recognition, such as classification, clustering, and curve fitting (called a decision or discrimination function). Such general problem types are described in terms of approximating an unknown Probability Density Function (PDF), which underlies the relationships in the problem space, and is represented in the sample data. This perspective of such problems is commonly referred to as statistical machine learning and/or density estimation.
+In Machine Learning, the function approximation formalism is used to describe general problem types commonly referred to as pattern recognition, such as classification, clustering, and curve fitting (called a decision or discrimination function). Such general problem types are described in terms of approximating an unknown Probability Density Function, which underlies the relationships in the problem space, and is represented in the sample data. This perspective of such problems is commonly referred to as statistical machine learning and/or density estimation.
 
 % general process
 The general process focuses on 1) the collection and preparation of the observations from the target function, 2) the selection and/or preparation of a model of the target function, and 3) the application and ongoing refinement of the prepared model. 
@@ -190,17 +211,18 @@ Additional difficulties include the incorporation of prior knowledge (such as im
 The following describes some of the general sub-problems of function approximation addressed via Machine Learning methods:
 
 \begin{description}
-	\item[Feature Selection] A feature is considered an aggregation of one-or-more attributes, where only those features that have meaning in the context of the target function are necessary to the modeling function. Feature selection methods may be used to reduce the dimensionality of a dataset, before addressing a follow-up problem such as classification. It is common to assess the information content of attributes in feature selection methods, or more crudely to determine the effect on models with and without specific attributes to determine their utility.
+	\item[Feature Selection]: A feature is considered an aggregation of one-or-more attributes, where only those features that have meaning in the context of the target function are necessary to the modeling function. Feature selection methods may be used to reduce the dimensionality of a dataset, before addressing a follow-up problem such as classification. It is common to assess the information content of attributes in feature selection methods, or more crudely to determine the effect on models with and without specific attributes to determine their utility.
 	
-	\item[Classification] Observations are inherently organized into labeled groups (classes) and a supervised process models an underlying discrimination function to classify unobserved samples. A system must deduce the boundaries between classes and be able to discriminate based on the class boundaries. Classification problems are addressed through a supervised learning method given labeled data from the domain is available to teach the model the class boundaries. 
+	\item[Classification]: Observations are inherently organized into labeled groups (classes) and a supervised process models an underlying discrimination function to classify unobserved samples. A system must deduce the boundaries between classes and be able to discriminate based on the class boundaries. Classification problems are addressed through a supervised learning method given labeled data from the domain is available to teach the model the class boundaries. 
 	
-	\item[Clustering] Observations may be organized into natural groups based on underlying structure or features in the data. The groups are unlabeled requiring a process to model an underlying discrimination function without corrective feedback. As such, unsupervised methods are commonly used for clustering problems. Resulting data clusters may be labeled after the fact and used as the basis for follow-on classification problems.
+	\item[Clustering]: Observations may be organized into natural groups based on underlying structure or features in the data. The groups are unlabeled requiring a process to model an underlying discrimination function without corrective feedback. As such, unsupervised methods are commonly used for clustering problems. Resulting data clusters may be labeled after the fact and used as the basis for follow-on classification problems.
 	
-	\item[Regression] A model is prepared that provides a `best-fit' for a set of observations that may be used for interpolation over known observations and extrapolation for observations outside what has been modeled. The best-fit may be two-dimensional (line-fitting) or higher-dimensionality (surface fitting). It is common for regression problems to have a time axis.
+	\item[Regression]: A model is prepared that provides a `best-fit' for a set of observations that may be used for interpolation over known observations and extrapolation for observations outside what has been modeled. The best-fit may be two-dimensional (line-fitting) or higher-dimensionality (surface fitting). It is common for regression problems to have a time axis.
 	
-	\item[Association]: Rules may be deduced between attributes in the data and may discover interesting and useful statistical patterns. Such rules may or may not be related to the preditived attributes, such as the class in a classification problem, and may useful for identifying "important" attributes such as in feature selection.
+	\item[Association]: Rules may be deduced between attributes in the data and may discover interesting and useful statistical patterns. Such rules may or may not be related to the predicted attributes, such as the class in a classification problem, and may useful for identifying "important" attributes such as in feature selection.
 		
 \end{description}
+
 
 % taxonomy by technique
 \subsection{Representation}
@@ -210,7 +232,7 @@ There are many different approaches to devising learning methods, such as:
 The list may not be mutually exclusive - expect overlap
 
 \begin{itemize}
-	\item \textbf{Decision Tree}: asdf
+	\item \textbf{Decision Trees}: asdf
 	\item \textbf{Neural Networks}: asdf
 	\item \textbf{Automatic Programming}: asdf
 	\item \textbf{Kernel Based Methods}: asdf
@@ -223,27 +245,7 @@ The list may not be mutually exclusive - expect overlap
 \end{itemize}
 
 
-% taxonomy of reasoning
-\subsection{Reasoning}
-\label{subsec:reasoning}
 
-general methods
-
-\begin{itemize}
-	\item \textbf{Inductive Learning}: asdf
-	\item \textbf{Transductive Learning}: asdf
-	\item \textbf{Deductive Learning}: asdf
-	\item \textbf{Analytical Learning}: asdf (prolog etc, Machine Learning book...)
-\end{itemize}
-
-
-Most methods work through a process of induction. The main types of induction include:
-Learning types...
-
-\begin{itemize}
-	\item \textbf{Online Learning}: asdf
-	\item \textbf{Offline Learning}: asdf
-\end{itemize}
 
 
 
