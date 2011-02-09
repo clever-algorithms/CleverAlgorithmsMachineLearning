@@ -54,37 +54,92 @@ The Clever Algorithms: Machine Learning project intends to describe a large numb
 \section{Machine Learning}
 \label{sec:machine_learning}
 % my def
-Machine learning is a subfield of Artificial Intelligence and Computer Science concerned with methods that process empirical data to construct models that contain the salient or underlying probability distribution in the data. Such models may then be applied to address problems or make decisions regarding new data or data unseen by the system.
+Machine learning is concerned with methods that process empirical data to construct models that contain the salient or underlying probability distribution in the data. Such models may then be applied to address problems or make decisions regarding new data or data unseen by the system.
 
 This section... 
 
 % official definitions
 \subsection{Definitions}
+\label{subsec:definitions}
 This section visits standard definitions and descriptions of the field from some of the classical texts on statistical pattern recognition and machine learning. 
 
-Fukunaga's classic text on statistical pattern recognition describes the field as ``... pattern recognition, or decision-making in a broader sense, may be considered as a problem of estimating density functions in a high-dimensional space and dividing the space into the regions of categories or classes. Because of this view, mathematical statistics forms the foundation of the subject.'' (page 2--3) \cite{Fukunaga1990}
+Fukunaga's classic text on statistical pattern recognition describes the field as (page 2--3, \cite{Fukunaga1990})
 
-Hastie et~al.\ classic text on statistical learning describes itself ``This book is about learning from data.'' (page 1 \cite{Hastie2009}). They describe a typical scenario thus ``we have an outcome measurement, usually quantitative ... or categorical ..., that we wish to predict based on a set of features ... We have a training set of data, in which we observe the outcome and feature measurements for a set of objects ... Using this data we build a prediction model, or learner, which will enable us to predict the outcome for new unseen objects. A good learner is one that accurately predicts such an outcome.'' (pages 1--2 \cite{Hastie2009}).
+\begin{quotation}
+... pattern recognition, or decision-making in a broader sense, may be considered as a problem of estimating density functions in a high-dimensional space and dividing the space into the regions of categories or classes. Because of this view, mathematical statistics forms the foundation of the subject.
+\end{quotation} 
 
-Mitchell's classic text Machine Learning suggests ``The field of machine learning is concerned with the question of how to construct computer programs that automatically improve with their experience.''  (page xv \cite{Mitchell1997}). Mitchell provides a precise definition as ``A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measure by P, improves with experience E.'' (page 2 \cite{Mitchell1997}).
+Hastie et~al.\ classic text on statistical learning describes itself ``\emph{This book is about learning from data.}'' (page 1, \cite{Hastie2009}). They describe a typical scenario (pages 1--2, \cite{Hastie2009})
 
-Mitchell suggests that the field of Machine Learning seeks to answer the question: ``How can we build computer systems that automatically improve with experience, and what are the fundamental laws that govern all learning processes?'' \cite{Mitchell2006}.
+\begin{quotation}
+... we have an outcome measurement, usually quantitative ... or categorical ..., that we wish to predict based on a set of features ... We have a training set of data, in which we observe the outcome and feature measurements for a set of objects ... Using this data we build a prediction model, or learner, which will enable us to predict the outcome for new unseen objects. A good learner is one that accurately predicts such an outcome.
+\end{quotation} 
 
-Bishop's classical Machine Learning text \cite{Bishop2006}.
+Duda et~al.\ classic text on pattern classification suggests (page 16, \cite{Duda2001})
 
+\begin{quotation}
+In the broadest sense, any method that incorporates information from training samples in the design of a classifier employs learning. ... Learning refers to some form of algorithm for reducing the error on a set of training data.
+\end{quotation}
 
-% related fields - subsections?
-Artificial Intelligence
-Computational Learning theory - the analysis of machine learning algorithms.
-Data Mining - application of machine learning algorithms to practical domains with the addition of data management concerns (databases)
-Statistics  - 
-Statistical Pattern Recognition
+Mitchell's classic text Machine Learning suggests (page xv, \cite{Mitchell1997})
 
-related theory: probability theory, decision theory, information theory. 
+\begin{quotation}
+The field of machine learning is concerned with the question of how to construct computer programs that automatically improve with their experience.
+\end{quotation}
 
-high-level applications
-data mining, information retrieval, information filtering, recommendation systems, etc
+Mitchell provides a precise definition which will be used in this project (page 2, \cite{Mitchell1997})
 
+\begin{quotation}
+A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measure by P, improves with experience E.
+\end{quotation}
+
+Mitchell suggests that the field of Machine Learning seeks to answer the question (\cite{Mitchell2006})
+
+\begin{quotation}
+How can we build computer systems that automatically improve with experience, and what are the fundamental laws that govern all learning processes?
+\end{quotation}
+
+Some additional excellent resources include Bishop's classical Neural Network text \emph{Neural Networks for Pattern Recognition} \cite{Bishop1995}, and his Machine Learning text \emph{Pattern Recognition and Machine Learning} \cite{Bishop2006}.
+
+% Related fields
+\subsection{Related Fields}
+\label{subsec:related_fields}
+Machine Learning is a cross-disciplinary field that draws upon many related and overarching fields. This section describes some of those fields related to the study of Machine Learning in order to provide context.
+
+% Artificial Intelligence
+\subsubsection{Artificial Intelligence}
+The field of Artificial Intelligence (AI) coalesced in the 1950s drawing on an understanding of the brain from neuroscience, the new mathematics of information theory, control theory referred to as cybernetics, and the dawn of the digital computer. AI is a cross-disciplinary field of research that is generally concerned with developing and investigating systems that operate or act intelligently. It is considered a discipline in the field of computer science given the strong focus on computation. The study of artificial intelligence is concerned with investigating mechanisms that underlie intelligence and intelligence behavior.
+
+Russell and Norvig provide a perspective that defines artificial intelligence in four categories: 1) systems that think like humans, 2) systems that act like humans, 3) systems that think rationally, 4) systems that act rationally \cite{Russell2009}. In their definition, acting like a human suggests that a system can do some specific things humans can do, this includes fields such as the Turing test, natural language processing, automated reasoning, knowledge representation, machine learning, computer vision, and robotics. Thinking like a human suggests systems that model the cognitive information processing properties of humans, for example a general problem solver and systems that build internal models of their world. Thinking rationally suggests laws of rationalism and structured thought, such as syllogisms and formal logic. Finally, acting rationally suggests systems that do rational things such as expected utility maximization and rational agents. 
+
+Machine Learning is concerned with developing systems that learn from experience -- feature that may be considered a signature of intelligence. As such, machine learning may be considered a sub-field of artificial intelligence.
+
+% Data Mining
+\subsubsection{Data Mining}
+Broadly, the field of Data Mining may be considered the practical application of statistical and machine learning methods to real-world problem domains. 
+Witten and Frank provide a clear definition of the field (page 5, \cite{Witten2000})
+
+\begin{quotation}
+Data mining is about solving problems by analyzing data already present in databases. ... Data mining is defined as the process of discovering patterns in data. The process must be automatic or (more usually) semiautomatic. the patterns discovered must be meaningful in that they lead to some advantage usually an economic advantage. The data is invariably present in substantial quantities.
+\end{quotation}
+
+The field traditionally uses the phrase `Knowledge Discovery in Databases' (KDD) to describe itself, focusing on the process of applying a suite of machine learning methods to solve a problem \cite{Frawley1992}. An early definition of this process proposed the following elements: Selection, Preprocessing, Transformation, Data Mining, Interpretation and Evaluation, where Data Mining is a single step in the procedure \cite{Fayyad1996a}.
+% relation
+This suggests Machine Learning methods as the tools that may be used in a KDD process and/or during Data Mining.
+
+% Other
+\subsubsection{Other}
+This section describes those fields from which Machine Learning draws upon. 
+
+\begin{description}
+	\item[Statistics]: The field of statistics is a branch of mathematics concerned the collection, organization, and interpretation of quantitative data. A statistical understanding of data provides a basis for machine learning methods that generalize from quantitative data, commonly characterizing the probabilistic features that underlie the observations.
+	\item[Computational Learning Theory]: The field of Computational Learning Theory broadly involves the analysis of machine learning systems. The field provides the theoretical basis for types of learning and their limitations. Machine Learning methods can be developed to investigate a theoretical finding, or be made more efficient through theoretical discoveries. For more information, refer to Kearns and Vazirani's \emph{An introduction to computational learning theory} \cite{Kearns1994}.
+	\item[Probability Theory]: The field of probability theory is a branch of mathematics concerned with the likelihood of random events and characterizing the distribution of occurrences. The findings and methods from probability theory provides a basis to the field of statistics. 
+	\item[Decision Theory]: The field of decision theory is concerned with rational and optimal decision making in the face of uncertainty. The field is also closely related to game theory and probability theory. The findings from decision theory relate to the application of models in machine learning for the decisions made in discrimination and related tasks.
+	\item[Information Theory]	The field of information theory from applied mathematics and computer science is concerned with the quantification of information in data. The field is based on probability theory and statistics, and focuses on the amount or change in information entropy which is the measure of information content associated with a message. Information theory is important in machine learning in compression and generalization that occurs in the preparation of a model from data samples. For more information refer to MacKay's \emph{Information theory, inference, and learning algorithms} \cite{MacKay2003}.
+\end{description}
+
+The application of statistical and machine learning methods to specific domains are typically referred to as a standalone field, such as machine vision, speech recognition, machine translation, and information filtering.
 
 % taxonomy by learning
 \section{Types of Learning}
