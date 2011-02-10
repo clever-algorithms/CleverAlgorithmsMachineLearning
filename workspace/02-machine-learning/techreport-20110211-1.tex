@@ -19,7 +19,7 @@
 \newcommand{\myreportemail}{jasonb@CleverAlgorithms.com}
 \newcommand{\myreportwebsite}{http://www.CleverAlgorithms.com}
 \newcommand{\myreportproject}{The Clever Algorithms Project\\\url{\myreportwebsite}}
-\newcommand{\myreportdate}{20110208}
+\newcommand{\myreportdate}{20110211}
 \newcommand{\myreportfulldate}{\today}
 \newcommand{\myreportversion}{1}
 \newcommand{\myreportlicense}{\copyright\ Copyright 2011 Jason Brownlee. Some Rights Reserved. This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.}
@@ -48,9 +48,11 @@ This report provides a gentle introduction into the field of Machine Learning, p
 % project
 The Clever Algorithms: Machine Learning project intends to describe a large number of methods from the field of Machine Learning in a complete, consistent, and centralized way, such that the descriptions are usable, accessible, and understandable \cite{Brownlee2011a}.
 % this report
+This report provides a brief summary of the field of Machine Learning by introducing common definitions and taxonomies.
 
 % specific sections
-
+Section~\ref{sec:machine_learning} defines the field of machine learning by collecting common and standard definitions from seminal texts in the field. The section goes on to clarify the relationship of machine learning to artificial intelligence and data mining as well as other theoretical sub-fields
+Section~\ref{sec:taxonomies} summarizes the field using firstly from the perspective of learning and the different forms of learning methods in the field employ, and secondly from the perspective of the types of problems machine learning methods are typically applied.
 
 %
 % Machine Learning
@@ -183,14 +185,11 @@ An important distinction between machine learning methods is the relationship be
 The process of model construction and generalization depends on the availability of data. Observations from the domain may be collected and used to prepare a model or a model may be updated as observations become available. The following summarizes the relationship between model learning and data availability.
 
 \begin{description}
-	\item[Online Learning}: asdf
+	\item[Online Learning}: A system makes predictions on an instance-by-instance basis, where the actual outcome or result for the instance is provided directly or soon after the prediction is made. Once the actual outcome is known, the system can make any adjustments necessary to improve its predictive ability. The ongoing learning of an online system provides a capability to adapt to changes in data over extended periods of time.
 	
-	\item[Offline Learning]: asdf
-	
-	\item[Ongoing Learning]: asdf
-	
-\end{description}
+	\item[Offline Learning]: A sample of observations are collected beforehand from which the system may process for as long as needed. This sample or training dataset may be evaluated in order to derive holistic generalizations. A system maybe trained on the whole dataset or on selected sub-samples of the dataset in batch, giving the alternative name of batch learning. After the training phase has occurred, the approximation prepared by the system typically does not change for the life of the system.
 
+\end{description}
 
 
 % taxonomy by problem
@@ -224,40 +223,24 @@ The following describes some of the general sub-problems of function approximati
 \end{description}
 
 
-% taxonomy by technique
-\subsection{Representation}
-\label{subsec:representation}
-There are many different approaches to devising learning methods, such as:
+% going forward
+\section{Outcomes}
+\label{sec:conclusions}
+This report has provided a gentle introduction to the field of Machine Learning. A core open question is that of which algorithms to describe in the project, and the taxonomy that should be used to organize them. A follow-up report is proposed to address this question that will:
 
-The list may not be mutually exclusive - expect overlap
+\begin{enumerate}
+	\item Review taxonomies used in popular books as well as standard software libraries to organize and present machine learning. This comparative analysis will provide the basis for an informed decision on an appropriate taxonomy by which to organize the algorithms in the project.
+	\item Collate a large list of so-called machine learning algorithm names, organized by a chosen taxonomy and evaluate the commonality and popularity of each. This will provide the basis for making informed decisions as to appropriate algorithms or method types to describe in the project.
+\end{enumerate}
+
+There are many interesting areas of the field that could be covered in introductory or advanced topics. The following provides a listing of possible topics that may require a deeper investigation in or as a part of a follow-up technical report in this project:
 
 \begin{itemize}
-	\item \textbf{Decision Trees}: asdf
-	\item \textbf{Neural Networks}: asdf
-	\item \textbf{Automatic Programming}: asdf
-	\item \textbf{Kernel Based Methods}: asdf
-	\item \textbf{Bayesian Methods}: asdf
-	\item \textbf{Graphical Methods}: frameworks for probabilistic methods (trees could fit in here)
-	
-	\item \textbf{Instance-Based Learning}: asdf
-	\item \textbf{Competitive Learning}: asdf
-	
+	\item Data Mining - an overview of the field of data mining as the application of machine learning (and other) methods, with a focus on the standardized methodologies that may be adopted for solving problems and building systems.
+	\item Regularization - an overview of the methods that can be used to avoid over-fitting a model to data, with a focus on the popular approaches such as cross-validation.
+	\item Visualization - an overview of common visualization methods for data sets, models, and discrimination boundaries. This would most likely involve examples using a common visualization toolkit such as R or GnuPlot.
+	\item Evaluation - an overview of problem and technique performance and evaluation measures and how they may be interpreted. 
 \end{itemize}
-
-
-
-
-
-
-
-% summarise the document message and areas for future consideration
-\section{Conclusions}
-\label{sec:conclusions}
-what have we discussed
-
-
-
-
 
 
 % 
@@ -265,8 +248,6 @@ what have we discussed
 % 
 \section{Contribute}
 \label{sec:contribute}
-% simple
-Found a typo in the content or a bug in the source code? 
 % advanced 
 Are you an expert in this field and know some facts that could improve the algorithm description for all?
 % incentive
