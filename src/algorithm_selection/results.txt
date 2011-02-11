@@ -1,0 +1,115 @@
+Radial basis functions,Function,28700,597,28700,0,24959
+Gaussian process regression,Function,2960,187,1630,0,3140
+Mean Shift,Clustering,33000,598,24000,0,17165
+Support Vector Regression,Regression,17400,591,13800,0,10011
+Gaussian mixture models,Clustering,15900,598,14800,0,13333
+Elastic Net,Regression,6360,600,3690,0,4161
+GMDH,Function,7780,457,4520,0,2755
+Rotation Forrest,Meta,4,4,4,0,5
+frequent pattern growth,Associate,684,62,520,0,235
+X-means algorithm,clustering,187,54,191,0,94
+Conjunctive Rule Learner,Rules,58,9,44,0,29
+Artificial neural network,class of method,140000,599,204000,0,88846
+Quadratic classifier,Function,1260,485,1480,0,1041
+M5,Rules,1540000,600,223000,0,345219
+ensemble of nested dichotomies,Meta,25,2,10,0,12
+LASSO method,Regression,968,137,780,0,689
+RIPPER,Rules,6830000,505,30800,0,59001
+random tree,Tree,8900,600,7090,0,6906
+linear discriminant analysis,Regression,37500,600,33500,0,28925
+Support vector machine,Function,176000,600,111000,0,73714
+R-Propagation,Function,831,600,1990,0,1680
+CLOPE,clustering,79800,600,2180,0,21939
+Group method of data handling,Function,1710,600,2180,0,1336
+Dagging,Meta,2380,600,253,0,347
+Q-learning,Reinforcement Learning,22600,600,16000,0,15811
+Ada Boost,Meta,1020,136,904,0,631
+Fisher's linear discriminant,classical,4460,599,2230,0,3773
+learning vector quantization,Function,10200,594,9530,0,6503
+sequential information bottleneck,clustering,151,10,74,0,117
+Logistic Regression,Function,335000,551,589000,0,561829
+k-nearest neighbor algorithm,Instance,3110,600,3770,0,2397
+Random Classifier,Function,1070,184,1320,0,951
+Ordinal Class Classifier,Meta,16,3,11,0,5
+best first decision tree,Tree,82,3,53,0,17
+Bayesian Regression,class of method,4470,599,3990,0,5682
+Singular value decomposition,classical,95900,600,135000,0,91431
+Levenberg–Marquardt algorithm,classical,11000,600,20800,0,12336
+J48,Tree,22600,600,11300,0,9821
+backpropagation,Function,92600,598,66300,0,53831
+FP-tree,Associate,5300,364,3750,0,1518
+FP-growth algorithm,Associate,1380,149,1240,0,433
+FarthestFirst,clustering,195,6,76,0,87
+Repeated Incremental Pruning to Produce Error Reduction,Rules,169,48,275,0,161
+Inductive logic programming,class of method,17100,166,11800,0,18277
+alternating decision tree,Tree,720,69,427,0,499
+Ripple-down rules,Rules,1360,270,911,0,907
+perceptron,Function,104000,600,73400,0,66145
+State-Action-Reward-State-Action,Reinforcement Learning,147,14,166,0,118
+Naive Bayes,Bayes,38000,599,27500,0,32230
+logistic model trees,Tree,413,40,314,0,319
+Generalized Sequential Patterns,associate,381,63,269,0,171
+ID3,Tree,1090000,599,34400,0,52065
+Bayesian Ridge Regression,Regression,77,9,37,0,32
+Kriging,Function,58900,600,46300,0,42214
+K Star,Instance,64800,600,8000,0,4557
+k-means,clustering,311000,600,148000,0,101633
+Affinity propagation,Clustering,3220,66,1070,0,1302
+zero-attribute-rule,Rules,10,0,1,0,2
+Least Angle Regression,classical,2630,156,2070,0,2151
+Bootstrap aggregation,Meta,923,194,917,0,960
+one-attribute-rule,Rules,54,15,35,0,40
+Hidden Markov model,Function,82300,600,84400,0,76185
+Decision Table,Rules,23100,600,23200,0,17036
+Classit,clustering,1950,600,807,0,518
+linear regression,class of method,2280000,599,2110000,0,803568
+Decision Tree,class of method,410000,597,200000,0,153354
+Spectral clustering,Clustering,13800,519,8160,0,12242
+Independent component analysis,Reduction,50900,468,40100,0,42149
+Case-based reasoning,class of method,56100,242,51400,0,54236
+functional trees,Tree,425,147,295,0,267
+Random Forrest,Tree,222,7,58,0,50
+Expectation-maximization,clustering,65100,599,56200,0,57980
+boosting,Meta,1880000,600,260000,0,496354
+decision stump,Tree,1200,208,1200,0,1099
+ZeroR,Rules,10200,600,1090,0,1046
+Bagging,Meta,3330000,600,47900,0,70438
+Self-organizing map,Function,35000,599,32300,0,28877
+Apriori algorithm,Associate,10200,600,9410,0,4352
+Principal component analysis,Reduction,1190000,599,631000,0,194734
+C4.5,Tree,86900,598,49800,0,48108
+least squares regression,classical,102000,600,222000,0,99169
+Nearest Neighbor Algorithm,Instance,9680,600,11200,0,8676
+Averaged One-Dependence Estimators,Bayes,226,26,113,0,163
+Temporal difference learning,Reinforcement Learning,5360,600,4580,0,5891
+AODE,Bayes,18900,600,2750,0,4729
+OneR,Rules,427000,598,65900,0,34810
+naive bayes tree,Tree,264,47,242,0,148
+Ordinary Least Squares,Regression,105000,600,218000,0,99056
+Logit Boost,Meta,215,24,154,0,100
+Automatic Relevance Determination,Regression,1720,244,1500,0,1771
+Winnow,Function,39600,600,18300,0,14079
+Generative topographic map,Function,246,24,139,0,136
+Model Selection,class of method,139000,599,260000,0,143301
+Stacking,Meta,1580000,596,795000,0,667085
+Random Subspace,Meta,3030,410,2310,0,2180
+hopfield network,Function,8160,599,9620,0,6498
+Information bottleneck method,clustering,1560,196,1030,0,1439
+Instance-based learning,class of method,8500,600,7590,0,8430
+Ensembles of classifiers,class of method,1870,264,1440,0,1134
+Hierarchical clustering,clustering,88200,600,128000,0,73868
+Stochastic Gradient Descent,classical,4660,600,4530,0,3696
+Probably approximately correct learning,class of method,696,281,635,0,589
+sammons mapping,Reduction,55,9,32,0,22
+Bayesian network,Bayes,57700,598,44200,0,60104
+Locally Weighted Learning,Instance,1540,254,1460,0,1422
+Reinforcement Learning,class of method,92900,600,74300,0,94462
+Univariate Feature Selection,Feature Selection,231,19,138,0,163
+PRISM,Rules,1910000,473,976000,0,980176
+least absolute shrinkage and selection operator,Regression,780,90,907,0,819
+Ordering Points To Identify the Clustering Structure,clustering,832,159,871,0,687
+Cobweb,clustering,1940000,595,26000,0,21344
+ridge regression,Regression,15300,598,15600,0,13445
+Lazy learning,class of method,5280,598,4310,0,3829
+Tertius-type algorithm,associate,17,0,3,0,15
+Levenberg-Marquardt algorithm,classical, 11000,600,20800,0,12336
