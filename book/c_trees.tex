@@ -16,6 +16,19 @@
 This chapter describes Decision Trees.
 
 
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
+
+\begin{itemize}
+	\item Trees are fast to train and execute.
+	\item Trees can explain why they make their decisions, the tree model can be understood by subject matter experts.
+	\item Trees cannot addres curved decision surfaces at all or very well.
+	\item Trees generally have hard or blocky decision surfaces.
+	\item Trees generally perform poorly across a range of problems.
+\end{itemize}
 
 
 \putbib
@@ -23,3 +36,4 @@ This chapter describes Decision Trees.
 
 
 \newpage\begin{bibunit}\input{a_trees/cart}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{a_trees/c4.5}\putbib\end{bibunit}
