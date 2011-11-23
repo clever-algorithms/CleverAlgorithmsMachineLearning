@@ -1,2 +1,0 @@
-
-The content for the book Clever Algorithms: Machine Learning Programming Recipes.

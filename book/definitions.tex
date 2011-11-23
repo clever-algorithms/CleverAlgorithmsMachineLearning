@@ -1,0 +1,123 @@
+% The Clever Algorithms Project: http://www.CleverAlgorithms.com
+% (c) Copyright 2010 Jason Brownlee. Some Rights Reserved. 
+% This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
+
+
+% 
+% Definitions
+% 
+
+% The main title of the book
+\newcommand{\mybooktitle}{Clever Algorithms}
+% The sub title of the book
+\newcommand{\mybooksubtitle}{Machine Learning Algorithm Catalog}
+% title
+\newcommand{\mybookauthor}{Jason Brownlee}
+% date
+\newcommand{\mybookdate}{2012}
+
+
+% new macro for starting a new page and changing the style to empty
+% \newpage == ends the current page. 
+% \thispagestyle == works in the same manner as the \pagestyle, except that it changes the style for the current page only. 
+% empty == Produces empty heads and feet - no page numbers
+\newcommand{\blanknonumber}{\newpage\thispagestyle{empty}}
+
+
+% 
+% Packages
+% 
+
+
+% a replacement for fancyheadings
+% http://www.ctan.org/tex-archive/macros/latex/contrib/fancyhdr/
+\usepackage{fancyhdr}
+\fancyhead[LO]{\slshape\nouppercase{\leftmark}}
+\fancyhead[RE]{\slshape\nouppercase{\rightmark}}
+\fancyhead[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+
+
+% add an index
+% http://ctan.unsw.edu.au/macros/latex/contrib/index/index.pdf
+\usepackage{index} 
+
+% Flexible and easy interface to page dimensions
+% http://www.ctan.org/tex-archive/macros/latex/contrib/geometry/
+% also, bigger pages by default
+\usepackage[pdftex]{geometry}
+
+% Supports the Text Companion fonts which provide many text symbols (such as baht, bullet, copyright, musicalnote, onequarter, section, and yen) in the TS1 encoding.
+% http://www.ctan.org/tex-archive/help/Catalogue/entries/textcomp.html
+% needed for listings
+\usepackage{textcomp}
+
+% http://www.maths.adelaide.edu.au/anthony.roberts/LaTeX/ltxusecol.html
+% needed for listings - lots of pretty colors
+\usepackage[usenames,dvipsnames]{color}
+
+% bold in ttfamily
+\usepackage{bold-extra}
+
+% better spacing
+% http://ctan.unsw.edu.au/macros/latex/contrib/microtype/microtype.pdf
+\usepackage{microtype}
+
+% code listings (lots of languages)
+% http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/listings/
+\usepackage{listings} 
+% http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/listings/
+\lstset{language=ruby, 
+	basicstyle=\footnotesize\ttfamily, 
+  numbers=left, 
+  numberstyle=\tiny, 
+	keywordstyle=\bfseries\ttfamily,
+  frame=single, 
+  columns=flexible, 
+  upquote=true, 
+  showstringspaces=false, 
+  tabsize=2, 
+  captionpos=b,
+  breaklines=true,
+  breakatwhitespace=true}
+
+% for ebooks, turn cross references into links
+% http://www.tug.org/applications/hyperref/manual.html
+\usepackage[pdftex,
+	breaklinks=true,
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=blue,
+	citecolor=blue]{hyperref}
+
+% modifies the widths of certain columns, rather than the inter column space, to set a table with the requested total width
+% http://www.cs.brown.edu/system/software/latex/doc/tabularx.pdf
+\usepackage{tabularx}
+
+% This package provide some additional commands to enhance the quality of tables in LaTeX.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/
+\usepackage{booktabs}
+
+% a form of verbatim command that allows linebreaks at certain characters or combinations of characters
+% http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/url.html
+% works well with hyperref
+\usepackage{url}
+
+% Algorithm2e is an environment for writing algorithms in LaTeX2e
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithm2e/
+\usepackage[algoruled, linesnumbered, algosection]{styles/algorithm2e}
+
+% for adding in bib for each section or chapter
+% http://merkel.zoneo.net/Latex/natbib.php
+\usepackage[numbers, sort&compress]{natbib}
+\usepackage{styles/bibunits}
+
+% maths
+\usepackage{amsmath}
+\usepackage{latexsym}
+
+% graphics
+\usepackage{graphicx}
+
