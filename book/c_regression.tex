@@ -7,13 +7,12 @@
 \renewcommand{\bibsection}{\subsection{\bibname}}
 \begin{bibunit}
 
-\chapter{Decision Trees}
-\label{ch:trees}
-\index{Decision Trees}
-\index{Trees}
+\chapter{Regression}
+\label{ch:regression}
+\index{Regression}
 
 \section{Overview}
-This chapter describes Decision Trees.
+This chapter describes Regression.
 
 
 % Strategy: Problem solving plan
@@ -22,18 +21,7 @@ This chapter describes Decision Trees.
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
-grow a tree from data
-
-prune a tree using cost-complexity graph, (alpha is a meta parameter that controls the degree of stabilization.)
-
-handle huge data sets - divide conquer 
-handle mixed features
-ignore redundant variables
-small are easy to under stand
-large are hard to understand
-prediction performance is very poor
-
-use cost complexity pruning
+stats?
 
 
 % Heuristics: Usage guidelines
@@ -43,24 +31,7 @@ use cost complexity pruning
 % What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item Trees are fast to train (simple growing algorithm).
-	\item Trees can handle missing values (treat missing as a value, surrogate splits)
-	\item Few tunable parameters
-	\item Trees can explain why they make their decisions, the tree model can be understood by subject matter experts.
-	\item Trees cannot addres curved decision surfaces at all or very well.
-	\item Trees generally have hard or blocky decision surfaces.
-	\item Trees generally perform poorly across a range of problems.
-
-
-	% limitations
-	\item Need a lot of data to have a lot of splits
-	\item Can run out of data after only a few splits in high-dimensions
-	\item Each split reduces the data available for subsequent splits (data fragmentation)
-	\item Performs poorly if the target function has many dependent variables 
-	\item high variance - small changes in training data result in very different trees
-	\item errors / decisions made early propagate through the rest of the tree
-	\item pruning is important
-
+	\item 
 \end{itemize}
 
 
@@ -84,5 +55,4 @@ use cost complexity pruning
 \end{bibunit}
 
 
-\newpage\begin{bibunit}\input{a_trees/cart}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{a_trees/c4.5}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{a_regression/logistic}\putbib\end{bibunit}

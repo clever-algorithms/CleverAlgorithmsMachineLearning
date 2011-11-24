@@ -27,11 +27,17 @@ Bagging is a special case of Stagewise Additive Modeling - General Forward Stage
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
-% What is a techniques plan of action?
+% What is a techniques plan of action
+
+a variance reduction technique
+ each partition is an iid
 
 partition data into random subsets, with replacement - called bootstrap replicates
 train a model on each partition
+average the results
 
+not suited to all models - not good for svm
+svm variance is not high
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
