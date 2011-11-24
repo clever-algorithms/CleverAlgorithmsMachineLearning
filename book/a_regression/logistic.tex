@@ -7,37 +7,71 @@
 \section{Logistic Regression} 
 \label{sec:logistic}
 \index{Logistic Regression}
+\index{logit}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Logistic Regression}
+\emph{Logistic Regression, Logit, Logit Model, Logistic Model}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-Logistic Regression is a regression method.
+Logistic Regression is a regression method from the field of statistics.
+Logistic Regression has many extensions including Ordered Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependant variables.
+
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
+Logistic Regression fits data to a logistic (sigmoidal) function and makes predictions of the probability of occurrence of an event. 
 % What is a techniques plan of action?
+A logistic function is used because it can take any values (positive or negative) and produce a value between 0 and 1. The logistic function is influenced by a logit function which is commonly a sum of the weighted attributes. The sign of a weight (regression coefficient) may be interpreted as the increase or decrease of an attribute to the resulting probability, and the magnitude represents the influence of the attribute.
 
-estimates the probability of class membership - does not try to directly classify a sample.
+How do you prepare the coefficients?
 
+% sample script in R
+\subsection{Code Listing}
+Listing~\ref{examplelogit} provides a code listing of Logistic Regression in R using the XXX package.
 
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
+What package?
+What test problem?
+Give me some data plots with the decision boundary.
+How can I use this model for predictions?
+
+\begin{lstlisting}[language=r,label=examplelogit,caption={Example of Logistic Regression in R}]
+	todo
+\end{lstlisting}
+
+% help me use this technique
+\subsection{Summary}
+
+% what it is good at
+\subsubsection{Benefits}
 
 \begin{itemize}
 	\item 
 \end{itemize}
+
+% what it is not good at
+\subsubsection{Limitations}
+
+\begin{itemize}
+	\item It can only handle real-valued dependant variables.
+	\item Dependent on the size of the sample used to prepare the model, smaller samples (<1000 or <500) can result in a model that overfits the training data.
+\end{itemize}
+
+% rules of thumb when using it
+\subsubsection{Heuristics}
+
+\begin{itemize}
+	\item More data can result in a better fit of the model.
+	\item Training data with a minimum of 10 events per independent variable is recommended \cite{Peduzzi1996}.
+\end{itemize}
+
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -53,6 +87,8 @@ estimates the probability of class membership - does not try to directly classif
 % more info
 \subsubsection{More Information}
 
+There are many excellent books dedicated to Logistic Regression, some examples include 
+``Logistic Regression: A Primer'' by Pampel that provides a practical introduction to the method \cite{Pampel2000}, ``Applied logistic regression'' by Hosmer and Lemeshow that provides a wealth of references \cite{Hosmer2000}, and ``Logistic Regression: A Self-Learning Text'' by Kleinbaum, Klein, and Pryor that is also an excellent self-paced introductory text \cite{Kleinbaum2010}.
 
 
 % END
