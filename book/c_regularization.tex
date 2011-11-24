@@ -7,13 +7,12 @@
 \renewcommand{\bibsection}{\subsection{\bibname}}
 \begin{bibunit}
 
-\chapter{Decision Trees}
-\label{ch:trees}
-\index{Decision Trees}
-\index{Trees}
+\chapter{Regularization}
+\label{ch:regularization}
+\index{Regularization}
 
 \section{Overview}
-This chapter describes Decision Trees.
+This chapter describes Regularization.
 
 
 % Strategy: Problem solving plan
@@ -22,7 +21,6 @@ This chapter describes Decision Trees.
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
-grow a tree from data
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -31,24 +29,7 @@ grow a tree from data
 % What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item Trees are fast to train (simple growing algorithm).
-	\item Trees can handle missing values (treat missing as a value, surrogate splits)
-	\item Few tunable parameters
-	\item Trees can explain why they make their decisions, the tree model can be understood by subject matter experts.
-	\item Trees cannot addres curved decision surfaces at all or very well.
-	\item Trees generally have hard or blocky decision surfaces.
-	\item Trees generally perform poorly across a range of problems.
-
-
-	% limitations
-	\item Need a lot of data to have a lot of splits
-	\item Can run out of data after only a few splits in high-dimensions
-	\item Each split reduces the data available for subsequent splits (data fragmentation)
-	\item Performs poorly if the target function has many dependent variables 
-	\item high variance - small changes in training data result in very different trees
-	\item errors / decisions made early propagate through the rest of the tree
-	\item pruning is important
-
+	\item 
 \end{itemize}
 
 
@@ -72,5 +53,7 @@ grow a tree from data
 \end{bibunit}
 
 
-\newpage\begin{bibunit}\input{a_trees/cart}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{a_trees/c4.5}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{a_regularization/ridge}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{a_regularization/lasso}\putbib\end{bibunit}
+
+
