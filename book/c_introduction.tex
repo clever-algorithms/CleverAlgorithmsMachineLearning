@@ -14,6 +14,43 @@
 Not written yet.
 
 
+
+
+\section{Considerations}
+
+
+\subsection{The bias-variance tradeoff}
+
+bias - approximation is too crude
+variance - overfitting training data
+
+typically when the bias is low, variance is high, and vice-versa
+
+each problem has a sweet-spot in this trade-off
+i.e. prediction error on the training set goes down, but prediction error on the test set goes down then back up, you want the bottom of that inflection point.
+
+this has to do with model selection - which model to use
+
+cross validation addresses this problem - average fit over each fold gives a better idea of performance.
+
+voting an ensemble methods can reduce variance
+
+discussion of bias and variance in the context of ensembles \cite{Dietterich1995}
+- bias as the assumptions made by a method
+- absolute bias - (what area in the space of possible models) assumption that target function comes from a class
+- relative bias - (what preferences in the area) target function is more likely to come from one set of functions than another
+must adopt a bias to generalize beyond the training data
+
+statistical meaning of bias is the error is expected to make in a dataset. - systematic error
+
+variance is squared difference between a model and the averaged model (variance in the model between source datasets?)
+
+minimize statistical bias and variance = reduce error
+
+
+kind of related, but also about bagging \cite{Tibshirani1996a}
+
+
 \renewcommand{\bibsection}{\section{\bibname}}
 \putbib
 \end{bibunit}
