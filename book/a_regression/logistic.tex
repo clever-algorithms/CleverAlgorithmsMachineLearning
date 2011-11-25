@@ -12,16 +12,18 @@
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Logistic Regression, Logit, Logit Model, Logistic Model}
+\emph{Logistic Regression, Logit, Logit Model, Logistic Model, Binomial Logistic Regression, Binary Logistic Regression}
 
 % Taxonomy: Lineage and locality
-% The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-Logistic Regression is a regression method from the field of statistics.
+Logistic Regression is a regression method from the field of statistics. 
+The most common form is Binomial Logistic Regression where the dependent variable is binary.
+Logistic Regression may be considered a special case of Generalized Linear Regression.
 Logistic Regression has many extensions including Ordered Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependant variables.
 
+Weighted Logistic Regression?
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -29,9 +31,11 @@ Logistic Regression has many extensions including Ordered Logistic Regression th
 % What is the information processing objective of a technique?
 Logistic Regression fits data to a logistic (sigmoidal) function and makes predictions of the probability of occurrence of an event. 
 % What is a techniques plan of action?
-A logistic function is used because it can take any values (positive or negative) and produce a value between 0 and 1. The logistic function is influenced by a logit function which is commonly a sum of the weighted attributes. The sign of a weight (regression coefficient) may be interpreted as the increase or decrease of an attribute to the resulting probability, and the magnitude represents the influence of the attribute.
+A logistic function is used because it can take any values (positive or negative) and produce a value between 0 and 1. The logistic function is influenced by a logit function which take a variable derived from a sum of the weighted attributes. The logit function is the natural logarithm of the odds of the dependant variable equalling one.
 
-How do you prepare the coefficients?
+The sign of a regression coefficient may be interpreted as the increase or decrease of an attribute to the resulting probability, and the magnitude represents the influence of the attribute.
+The regression coefficients (weights) are fit by minimising the maximum likelihood loss function. The problem as a system of linear equations use the Conjugate Gradient Method to solve the coefficients. Much research into the method is focused on more efficient algorithms for fitting the model.
+
 
 % sample script in R
 \subsection{Code Listing}
@@ -47,31 +51,39 @@ How can I use this model for predictions?
 \end{lstlisting}
 
 % help me use this technique
-\subsection{Summary}
+\subsection{Overview}
 
 % what it is good at
-\subsubsection{Benefits}
+\subsubsection{Features}
 
 \begin{itemize}
-	\item 
+	\item Simple and easy to understand and explain.
+	\item Generally fast to create.
+	\item Generally not parametrized, so there are no parameters to configure. 
+	\item Does not assume a linear relationship between the independent variables and the dependant variable. 
+	\item Does not require normally distributed variables.
+	\item The result is a probability of the occurrence of an event that may be interpreted as such and/or in turn be discretized to a binary classification prediction.
+	\item More data can result in a better fit of the model.
+	\item Training data with a minimum of 10 events per independent variable is recommended \cite{Peduzzi1996}.
+	\item Features should be selected prior to fitting.
 \end{itemize}
 
 % what it is not good at
 \subsubsection{Limitations}
 
 \begin{itemize}
+	\item The dependant variable must be binary (otherwise one must use another form of the method).
+	\item The use of a logistic function means that input attributes can take any value, the bounds do not need to be known prior to building the model.
 	\item It can only handle real-valued dependant variables.
 	\item Dependent on the size of the sample used to prepare the model, smaller samples (<1000 or <500) can result in a model that overfits the training data.
+	\item Solving the coefficients for large models can be very computationally expensive and remains an open area for research.
+	\item Missing values must be handled explicitly or those records removed.
+	\item Requires that the independent variable be related to the logit by a linear relationship.
 \end{itemize}
 
-% rules of thumb when using it
-\subsubsection{Heuristics}
-
-\begin{itemize}
-	\item More data can result in a better fit of the model.
-	\item Training data with a minimum of 10 events per independent variable is recommended \cite{Peduzzi1996}.
-\end{itemize}
-
+logit regression?
+logit? lp? probit?
+risk analysis?
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -86,6 +98,7 @@ How can I use this model for predictions?
 
 % more info
 \subsubsection{More Information}
+Komarek and Moore provide promote the use of the method in modern data mining, suggesting modifications to the fit procedure to decrease computational complexity \cite{Komarek2005}.
 
 There are many excellent books dedicated to Logistic Regression, some examples include 
 ``Logistic Regression: A Primer'' by Pampel that provides a practical introduction to the method \cite{Pampel2000}, ``Applied logistic regression'' by Hosmer and Lemeshow that provides a wealth of references \cite{Hosmer2000}, and ``Logistic Regression: A Self-Learning Text'' by Kleinbaum, Klein, and Pryor that is also an excellent self-paced introductory text \cite{Kleinbaum2010}.
