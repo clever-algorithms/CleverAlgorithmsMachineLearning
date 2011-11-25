@@ -23,7 +23,8 @@ The most common form is Binomial Logistic Regression where the dependent variabl
 Logistic Regression may be considered a special case of Generalized Linear Regression.
 Logistic Regression has many extensions including Ordered Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependant variables.
 
-Weighted Logistic Regression?
+What is Weighted Logistic Regression?
+What is Stepwise Logistic Regression?
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -37,19 +38,6 @@ The sign of a regression coefficient may be interpreted as the increase or decre
 The regression coefficients (weights) are fit by minimising the maximum likelihood loss function. The problem as a system of linear equations use the Conjugate Gradient Method to solve the coefficients. Much research into the method is focused on more efficient algorithms for fitting the model.
 
 
-% sample script in R
-\subsection{Code Listing}
-Listing~\ref{examplelogit} provides a code listing of Logistic Regression in R using the XXX package.
-
-What package?
-What test problem?
-Give me some data plots with the decision boundary.
-How can I use this model for predictions?
-
-\begin{lstlisting}[language=r,label=examplelogit,caption={Example of Logistic Regression in R}]
-	todo
-\end{lstlisting}
-
 % help me use this technique
 \subsection{Overview}
 
@@ -57,8 +45,7 @@ How can I use this model for predictions?
 \subsubsection{Features}
 
 \begin{itemize}
-	\item Simple and easy to understand and explain.
-	\item Generally fast to create.
+	\item Generally fast to create and results in an explainable model.
 	\item Generally not parametrized, so there are no parameters to configure. 
 	\item Does not assume a linear relationship between the independent variables and the dependant variable. 
 	\item Does not require normally distributed variables.
@@ -66,6 +53,7 @@ How can I use this model for predictions?
 	\item More data can result in a better fit of the model.
 	\item Training data with a minimum of 10 events per independent variable is recommended \cite{Peduzzi1996}.
 	\item Features should be selected prior to fitting.
+	\item Provides statistical test significance on a fitted model including: Wald Z-statistic, Likelihood-Ratio Test, and the Hosmer-Lemshow Goodness of Fit Test.
 \end{itemize}
 
 % what it is not good at
@@ -75,15 +63,35 @@ How can I use this model for predictions?
 	\item The dependant variable must be binary (otherwise one must use another form of the method).
 	\item The use of a logistic function means that input attributes can take any value, the bounds do not need to be known prior to building the model.
 	\item It can only handle real-valued dependant variables.
-	\item Dependent on the size of the sample used to prepare the model, smaller samples (<1000 or <500) can result in a model that overfits the training data.
+	\item Dependent on the size of the sample used to prepare the model, smaller samples ($<1000$ or $<500$) can result in a model that overfits the training data.
 	\item Solving the coefficients for large models can be very computationally expensive and remains an open area for research.
 	\item Missing values must be handled explicitly or those records removed.
 	\item Requires that the independent variable be related to the logit by a linear relationship.
 \end{itemize}
 
-logit regression?
-logit? lp? probit?
-risk analysis?
+
+% sample script in R
+\subsection{Code Listing}
+Listing~\ref{examplelogit} provides a code listing of Logistic Regression in R using the glm (generalized linear model) package. The test problem is a contrived one dimensional problem where given a health statistic ($h$) determine whether a patient will survive or not $s\in\{0,1\}$.
+
+\begin{lstlisting}[language=r,label=examplelogit,caption={Example of Logistic Regression in R}]
+	# generate random health score values
+	health=sort(rnorm(20, 0, 50))
+	# <0 not likely to survive
+	survive=c(0,0,0,0,0,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1)
+	# two column data
+	mydata=as.data.frame(cbind(health,survive))
+	# create fit
+	model=glm(survive~health, family=binomial(logit), mydata)
+	# display summary of the fit
+	summary(model)
+	# plot the points
+	plot(health, survive, xlab="Health Statistic",ylab="P(survival)")
+	# draw the prediction curve on the plot
+	curve(predict(model,data.frame(health=x),type="resp"),add=TRUE)
+	# draw the prediction points (P(survival) for each health)
+	points(health, fitted(model), pch=20)
+\end{lstlisting}
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -94,7 +102,7 @@ risk analysis?
 % primary sources
 \subsubsection{Primary Sources}
 
-
+What are some primary sources for this method?
 
 % more info
 \subsubsection{More Information}
