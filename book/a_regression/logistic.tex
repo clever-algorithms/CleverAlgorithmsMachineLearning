@@ -72,7 +72,12 @@ The regression coefficients (weights) are fit by minimising the maximum likeliho
 
 % sample script in R
 \subsection{Code Listing}
-Listing~\ref{examplelogit} provides a code listing of Logistic Regression in R using the glm (generalized linear model) package. The test problem is a contrived one dimensional problem where given a health statistic ($h$) determine whether a patient will survive or not $s\in\{0,1\}$.
+Listing~\ref{examplelogit} provides a code listing of Logistic Regression in R using the \texttt{gml} (generalized linear model) function. 
+% problem
+The test problem is a contrived one dimensional problem where given a health statistic ($h$) determine whether a patient will survive or not $s\in\{0,1\}$.
+The \texttt{gml} is distributed in core R and provides a number of functions besides the logistic function. By default, the method uses the Iteratively Re-weighted Least Squares (IWLS) method to fit.
+
+% TODO make 2D problem and show the decision boundary + data points
 
 \begin{lstlisting}[language=r,label=examplelogit,caption={Example of Logistic Regression in R}]
 	# generate random health score values
@@ -106,7 +111,7 @@ What are some primary sources for this method?
 
 % more info
 \subsubsection{More Information}
-Komarek and Moore provide promote the use of the method in modern data mining, suggesting modifications to the fit procedure to decrease computational complexity \cite{Komarek2005}.
+%Komarek and Moore provide promote the use of the method in modern data mining, suggesting modifications to the fit procedure to decrease computational complexity \cite{Komarek2005}.
 
 There are many excellent books dedicated to Logistic Regression, some examples include 
 ``Logistic Regression: A Primer'' by Pampel that provides a practical introduction to the method \cite{Pampel2000}, ``Applied logistic regression'' by Hosmer and Lemeshow that provides a wealth of references \cite{Hosmer2000}, and ``Logistic Regression: A Self-Learning Text'' by Kleinbaum, Klein, and Pryor that is also an excellent self-paced introductory text \cite{Kleinbaum2010}.
