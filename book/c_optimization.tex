@@ -23,6 +23,7 @@ This chapter describes Optimization methods.
 
 classical optimization methods used in machine learning algorithms
 
+numerical methods for optimization convex functions
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -33,6 +34,12 @@ classical optimization methods used in machine learning algorithms
 \begin{itemize}
 	\item 
 \end{itemize}
+
+
+advanced numerical methods
+simple ones require a learning rate
+more advanced methods use a line search to find a good alpha each iteration
+beyond gradient descent are a lot more complex
 
 
 
@@ -54,7 +61,9 @@ classical optimization methods used in machine learning algorithms
 \putbib
 \end{bibunit}
 
-
+\newpage\begin{bibunit}\input{a_optimization/gradient_descent}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_optimization/conjugate_gradient}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{a_optimization/bfgs}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{a_optimization/lbfgs}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_optimization/irls}\putbib\end{bibunit}
 

@@ -18,13 +18,14 @@
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-Logistic Regression is a regression method from the field of statistics. 
+Logistic Regression is a regression method from the field of statistics, although us better understood as a classification method.
 The most common form is Binomial Logistic Regression where the dependent variable is binary.
 Logistic Regression may be considered a special case of Generalized Linear Regression.
 Logistic Regression has many extensions including Ordered Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependant variables.
 
 What is Weighted Logistic Regression?
 What is Stepwise Logistic Regression?
+Where does Regularized Logistic Regression fit in?
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -46,7 +47,8 @@ The regression coefficients (weights) are fit by minimising the maximum likeliho
 
 \begin{itemize}
 	\item Generally fast to create and results in an explainable model.
-	\item Generally not parametrized, so there are no parameters to configure. 
+	\item Generally not parametrized, so there are no parameters to configure.
+	\item Produces values always between zero and one. 
 	\item Does not assume a linear relationship between the independent variables and the dependant variable. 
 	\item Does not require normally distributed variables.
 	\item The result is a probability of the occurrence of an event that may be interpreted as such and/or in turn be discretized to a binary classification prediction.
@@ -78,6 +80,8 @@ The test problem is a contrived one dimensional problem where given a health sta
 The \texttt{gml} is distributed in core R and provides a number of functions besides the logistic function. By default, the method uses the Iteratively Re-weighted Least Squares (IWLS) method to fit.
 
 % TODO make 2D problem and show the decision boundary + data points
+% show stats?
+% show convergence of gradient descent?
 
 \begin{lstlisting}[language=r,label=examplelogit,caption={Example of Logistic Regression in R}]
 	# generate random health score values
