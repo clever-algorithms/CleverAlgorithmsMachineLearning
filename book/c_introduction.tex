@@ -50,6 +50,74 @@ minimize statistical bias and variance = reduce error
 
 kind of related, but also about bagging \cite{Tibshirani1996a}
 
+model status
+- underfit - bias - too general
+- fit
+- overfit - high-bias - too specific
+
+Are you underfit or overfit? 
+- bias: train and validation set have high error
+- variance - train is low error, validation is high
+
+diagnosis (learning curves)
+- large variance - get more data
+- large gap between training error and validation error - get more data
+- high error and small gap between train and validation error - high bias
+
+
+% advanced?
+\section{Advanced}
+
+\subsection{Improving You Model}
+
+Andrew Ng from Stanford
+- getting more training examples (fix high variance)
+- feature selection - train on less features (fix high variance, high bias - fewer features not helpful)
+- collect additional features (fix high bias)
+- adding derived features (polynomial features) (fix high bias)
+- modifying parameters of algorithm (model or regularized model, say lambda) (fix high bias, fix high variance)
+
+
+\subsection{Model Selection}
+
+Methodology: (Andrew Ng)
+prepare model on test set
+select parameters on the validation set
+test on the test set
+
+use learning curves to diagnose bias/variance problems
+
+% code samples?
+\section{Methodology}
+
+\subsection{Applied}
+in the real world - Usama Fayyad thesis
+
+- where is the data - business
+- mining in business and their constraints
+- domain knowledge
+- lifecycle maintenance - not just one ofs
+- metrics
+
+Approach (andrew ng)
+- Brainstorm and generate lots of approaches to the problem - sample each to get an idea of where to spend time...
+- try simple algorithms first - something quick and dirty
+- plot learning curves
+	- avoid premature optimization (use evidence to guide project)
+- perform error analysis
+	- manually examine errors
+	- look for systematic patterns in mis-classified instances
+
+use precision and recall
+- tune threshold to trade-off precision and recall
+	- higher threshold = higher precision, lower recall
+	- lower threshold = lower precision, higher recall
+- use f score
+
+some algorithm work better with more data
+- complex model - train error will be small (low bias) and lots of data and unlikely to over fit - train and test error will be similar (low variance)
+- can human experts do it - we should have enough to make predictions
+
 
 % code samples?
 \section{Code Examples}
