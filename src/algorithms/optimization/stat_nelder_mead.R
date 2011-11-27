@@ -9,23 +9,23 @@ rosenbrock <- function(v) {
 	(1 - v[1])^2 + 100 * (v[2] - v[1]*v[1])^2
 }
 
-# what is ci?
-
-# solve using constrOptim with the Nelder-Mead method
-start <- c(2,2)
+# prepare a random starting position in the domain
+start <- c(runif(1, -3, 3), runif(1, -3, 3))
+start # display the starting position
+# solve using optim with the Nelder-Mead method
 rs = optim(start, rosenbrock, NULL, method="Nelder-Mead")
 
 # summarise results
 rs$par # best coordinate
 rs$value # best value
 rs$counts # function calls
-rs$convergence # final status of convergence, 0 is ok, 10 is failure
 
-# plot the function
+# dispaly the function as a contour plot
 x <- seq(-2.048, 2.048, length.out=100)
 y <- seq(-2.048, 2.048, length.out=100)
 z <- rosenbrock(expand.grid(x, y))
 contour(x, y, matrix(log10(z), length(x)))
-# plot the optima
+# draw the optima as a point
 points(rs$par[1], rs$par[2], col="black", pch=19)
-rect(rs$par[1]-0.2, rs$par[2]-0.2, rs$par[1]+0.2, rs$par[2]+0.2, border="black", lwd=2)
+# draw a square around the optima to highlight it
+rect(rs$par[1]-0.2, rs$par[2]-0.2, rs$par[1]+0.2, rs$par[2]+0.2, lwd=2)
