@@ -20,7 +20,7 @@
 % What are the closely related approaches to a technique?
 Nelder-Mead Method is an optimization method.
 
-Direct Search...
+Direct Search method.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -49,9 +49,12 @@ Direct Search...
 
 % sample script in R
 \subsection{Code Listing}
+Listing~\ref{stat_nelder_mead} provides a code listing of the Nelder-Mead method in R using the \texttt{constrOptim()} function in the \texttt{stats} core package. 
 
-See the \texttt{constrOptim()} function in the \texttt{stats} core package.
+% problem
+The test problem is the Rosenbrock function in two-dimensions where $x_i\in[-2.048,2.048]$ and the optimum is at $x_i=1$.
 
+\lstinputlisting[firstline=7,language=r,caption={Example of Nelder-Mead in R using the \texttt{constrOptim()} function in the \texttt{stats} core packag.}, label=stat_nelder_mead]{../src/algorithms/optimization/stat_nelder_mead.R}
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -62,6 +65,7 @@ See the \texttt{constrOptim()} function in the \texttt{stats} core package.
 % primary sources
 \subsubsection{Primary Sources}
 
+seminal \cite{Nelder1965}
 
 % more info
 \subsubsection{More Information}
