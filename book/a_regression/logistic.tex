@@ -21,7 +21,7 @@
 Logistic Regression is a regression method from the field of statistics, although us better understood as a classification method.
 The most common form is Binomial Logistic Regression where the dependent variable is binary.
 Logistic Regression may be considered a special case of Generalized Linear Regression.
-Logistic Regression has many extensions including Ordered Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependant variables.
+Logistic Regression has many extensions including Ordered Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependent variables.
 
 What is Weighted Logistic Regression?
 What is Stepwise Logistic Regression?
@@ -33,10 +33,10 @@ Where does Regularized Logistic Regression fit in?
 % What is the information processing objective of a technique?
 Logistic Regression fits data to a logistic (sigmoidal) function and makes predictions of the probability of occurrence of an event. 
 % What is a techniques plan of action?
-A logistic function is used because it can take any values (positive or negative) and produce a value between 0 and 1. The logistic function is influenced by a logit function which take a variable derived from a sum of the weighted attributes. The logit function is the natural logarithm of the odds of the dependant variable equalling one.
+A logistic function is used because it can take any values (positive or negative) and produce a value between 0 and 1. The logistic function is influenced by a logit function which take a variable derived from a sum of the weighted attributes. The logit function is the natural logarithm of the odds of the dependent variable equalling one.
 
 The sign of a regression coefficient may be interpreted as the increase or decrease of an attribute to the resulting probability, and the magnitude represents the influence of the attribute.
-The regression coefficients (weights) are fit by minimising the maximum likelihood loss function. The problem as a system of linear equations use the Conjugate Gradient Method to solve the coefficients. Much research into the method is focused on more efficient algorithms for fitting the model.
+The regression coefficients (weights) are fit by minimizing the maximum likelihood loss function. The problem as a system of linear equations use the Conjugate Gradient Method to solve the coefficients. Much research into the method is focused on more efficient algorithms for fitting the model.
 
 
 % help me use this technique
@@ -49,7 +49,7 @@ The regression coefficients (weights) are fit by minimising the maximum likeliho
 	\item Generally fast to create and results in an explainable model.
 	\item Generally not parametrized, so there are no parameters to configure.
 	\item Produces values always between zero and one. 
-	\item Does not assume a linear relationship between the independent variables and the dependant variable. 
+	\item Does not assume a linear relationship between the independent variables and the dependent variable. 
 	\item Does not require normally distributed variables.
 	\item The result is a probability of the occurrence of an event that may be interpreted as such and/or in turn be discretized to a binary classification prediction.
 	\item More data can result in a better fit of the model.
@@ -62,9 +62,9 @@ The regression coefficients (weights) are fit by minimising the maximum likeliho
 \subsubsection{Limitations}
 
 \begin{itemize}
-	\item The dependant variable must be binary (otherwise one must use another form of the method).
+	\item The dependent variable must be binary (otherwise one must use another form of the method).
 	\item The use of a logistic function means that input attributes can take any value, the bounds do not need to be known prior to building the model.
-	\item It can only handle real-valued dependant variables.
+	\item It can only handle real-valued dependent variables.
 	\item Dependent on the size of the sample used to prepare the model, smaller samples ($<1000$ or $<500$) can result in a model that overfits the training data.
 	\item Solving the coefficients for large models can be very computationally expensive and remains an open area for research.
 	\item Missing values must be handled explicitly or those records removed.
@@ -74,7 +74,7 @@ The regression coefficients (weights) are fit by minimising the maximum likeliho
 
 % sample script in R
 \subsection{Code Listing}
-Listing~\ref{examplelogit} provides a code listing of Logistic Regression in R using the \texttt{gml} (generalized linear model) function. 
+Listing~\ref{glm_logistic} provides a code listing of Logistic Regression in R using the \texttt{glm} (generalized linear model) function. 
 % problem
 The test problem is a contrived one dimensional problem where given a health statistic ($h$) determine whether a patient will survive or not $s\in\{0,1\}$.
 The \texttt{gml} is distributed in core R and provides a number of functions besides the logistic function. By default, the method uses the Iteratively Re-weighted Least Squares (IWLS) method to fit.
@@ -83,24 +83,7 @@ The \texttt{gml} is distributed in core R and provides a number of functions bes
 % show stats?
 % show convergence of gradient descent?
 
-\begin{lstlisting}[language=r,label=examplelogit,caption={Example of Logistic Regression in R}]
-	# generate random health score values
-	health=sort(rnorm(20, 0, 50))
-	# <0 not likely to survive
-	survive=c(0,0,0,0,0,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1)
-	# two column data
-	mydata=as.data.frame(cbind(health,survive))
-	# create fit
-	model=glm(survive~health, family=binomial(logit), mydata)
-	# display summary of the fit
-	summary(model)
-	# plot the points
-	plot(health, survive, xlab="Health Statistic",ylab="P(survival)")
-	# draw the prediction curve on the plot
-	curve(predict(model,data.frame(health=x),type="resp"),add=TRUE)
-	# draw the prediction points (P(survival) for each health)
-	points(health, fitted(model), pch=20)
-\end{lstlisting}
+\lstinputlisting[firstline=7,language=r,caption={Example of Logistic Regression in R using the \texttt{glm} package.}, label=glm_logistic]{../src/algorithms/regression/glm_logistic_regression.R}
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
