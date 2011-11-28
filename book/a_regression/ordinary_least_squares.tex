@@ -4,21 +4,24 @@
 
 % Name
 % The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used in terms of the heading and sub-headings of an algorithm description.
-\section{Ordinary Linear Regression} 
+\section{Ordinary Least Squares Regression} 
 \label{sec:ordinary}
+\index{Ordinary Least Squares Regression}
 \index{Ordinary Linear Regression}
+\index{Simple Linear Regression}
+\index{Linear Least Squares}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Ordinary Linear Regression}
+\emph{Ordinary Least Squares Regression, Ordinary Linear Regression, Simple Linear Regression, Linear Least Squares}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-Ordinary Linear Regression is a regression method.
+Ordinary Least Squares is a regression method.
 
 
 % Strategy: Problem solving plan
@@ -30,15 +33,38 @@ Ordinary Linear Regression is a regression method.
 Fit a straight line to a set of data points
 Assumes attributes are drawn from a normal distribution and a straight line can be drawn through the mean.
 
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
+minimize sum of squared residuals
+
+
+% help me use this technique
+\subsection{Overview}
+
+% what it is good at
+\subsubsection{Features}
 
 \begin{itemize}
-	\item 
+	\item Simple method for feature selection.
 \end{itemize}
+
+% what it is not good at
+\subsubsection{Limitations}
+
+\begin{itemize}
+	\item Stepwise models are a deprecated method as they have a high chance of selecting the wrong attributes and being optimistic of the model they prepare.
+\end{itemize}
+
+% sample script in R
+\subsection{Code Listing}
+% listing
+Listing~\ref{stats_ordinary_least_squares} provides a code listing Ordinary Least Squares method in R to find a line of best fit for a two-dimensional data set.
+% algorithm and package
+The example uses the {lm()} function in the \texttt{stats} core package which is responsible for fitting linear models.
+% problem
+The test problem is a two-dimensional dataset of 50 samples, where the x-values are drawn from a uniformly random distribution $x \in [0,10]$ and y values are the x value plus a value drawn from a normally random distribution with a mean of 0 and a standard deviation of 1.
+
+\lstinputlisting[firstline=7,language=r,caption={Example of Ordinary Least Squares in R using the \texttt{lm()} function in the \texttt{stats} core package.}, label=stats_ordinary_least_squares]{../src/algorithms/regression/stats_ordinary_least_squares.R}
+
+% other packages ?
 
 
 % References: Deeper understanding
@@ -55,8 +81,9 @@ Assumes attributes are drawn from a normal distribution and a straight line can 
 % more info
 \subsubsection{More Information}
 
-
-
-
+see \url{http://en.wikipedia.org/wiki/Ordinary_least_squares}
+see \url{http://en.wikibooks.org/wiki/R_Programming/Linear_Models}
+see \url{http://www.mayin.org/ajayshah/KB/R/html/o1.html}
+see \url{http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf}
 
 % END

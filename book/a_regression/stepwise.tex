@@ -18,7 +18,7 @@
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-Stepwise Regression is a regression method.
+Stepwise Regression is a regression method for selecting features.
 
 
 % Strategy: Problem solving plan
@@ -32,18 +32,34 @@ greedy algorithm - adds the best feature or removes the worst feature each itera
 have to decide when to stop the algorithm - stopping condition - typically done by cross validation
 some criteria can be optimized
 
+see \url{http://www.stata.com/support/faqs/stat/stepwise.html}
+good example \url{http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf}
 
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
+% help me use this technique
+\subsection{Overview}
+
+% what it is good at
+\subsubsection{Features}
 
 \begin{itemize}
-	\item 
+	\item Simple method for feature selection.
 \end{itemize}
 
-see http://www.stata.com/support/faqs/stat/stepwise.html
+% what it is not good at
+\subsubsection{Limitations}
+
+\begin{itemize}
+	\item Stepwise models are a deprecated method as they have a high chance of selecting the wrong attributes and being optimistic of the model they prepare.
+\end{itemize}
+
+
+
+% sample script in R
+\subsection{Code Listing}
+
+% use the step function to do stepwise model selection, use lm to build a linear model
+
+
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -59,6 +75,9 @@ see http://www.stata.com/support/faqs/stat/stepwise.html
 % more info
 \subsubsection{More Information}
 
+arguments against it in modern analysis
+Overview of why using stepwise regression is a bad idea \cite{Whittingham2006}.
+\cite{Mundry2009}
 
 Great early overview of the approaches (forward and backward selection) \cite{Hocking1976}.
 
