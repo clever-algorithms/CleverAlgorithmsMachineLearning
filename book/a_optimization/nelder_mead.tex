@@ -7,7 +7,8 @@
 \section{Nelder-Mead Method} 
 \label{sec:neldermead}
 \index{Nelder-Mead Method}
-\index{Simplex Method}
+\index{Simplex Algorithm}
+\index{Amoeba Algorithm}
 
 % other names
 % What is the canonical name and common aliases for a technique?
@@ -18,16 +19,15 @@
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-Nelder-Mead Method is an optimization method.
-
-Direct Search method.
+Nelder-Mead Method is an optimization method for multidimensional nonlinear unconstrained functions.
+It is a direct search method that does require a differentiable function for a gradient, instead it infers the gradient from sampling.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
+Nelder-Mead optimizes a function by overlaying a simplex (geometrical pattern) in the domain and iteratively increasing and/or reducing its size until an optimal value is found.
 % What is a techniques plan of action?
-
 
 % help me use this technique
 \subsection{Overview}
@@ -36,25 +36,27 @@ Direct Search method.
 \subsubsection{Features}
 
 \begin{itemize}
-	\item Suitable for convex response surfaces.
+	\item It is relatively simple to implement and fast to compute.
+	\item It can handle a discontinuous, noisy and/or non-smooth response surface given that it does not rely on an explicit derivative.
 \end{itemize}
 
 % what it is not good at
 \subsubsection{Limitations}
 
 \begin{itemize}
-	\item An optimal value for the $\alpha$ parameter can be difficult to find.
+	\item It is dependent on the starting position and call be caught by local optima in multimodal functions.
 \end{itemize}
-
 
 % sample script in R
 \subsection{Code Listing}
-Listing~\ref{stat_nelder_mead} provides a code listing of the Nelder-Mead method in R using the \texttt{constrOptim()} function in the \texttt{stats} core package. 
-
+% listing
+Listing~\ref{stat_nelder_mead} provides a code listing Nelder-Mead method in R solving a two-dimensional nonlinear unconstrained optimization function.
+% algorithm and package
+The example uses the {optim()} function in the \texttt{stats} core package configured to use the ``Nelder-Mead'' method. 
 % problem
-The test problem is the Rosenbrock function in two-dimensions where $x_i\in[-2.048,2.048]$ and the optimum is at $x_i=1$.
+The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1, y=1$. The starting position for the algorithm is taken as a random point $x,y\in\[-3,3\]$.
 
-\lstinputlisting[firstline=7,language=r,caption={Example of Nelder-Mead in R using the \texttt{constrOptim()} function in the \texttt{stats} core packag.}, label=stat_nelder_mead]{../src/algorithms/optimization/stat_nelder_mead.R}
+\lstinputlisting[firstline=7,language=r,caption={Example of Nelder-Mead in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stat_nelder_mead]{../src/algorithms/optimization/stat_nelder_mead.R}
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -64,13 +66,14 @@ The test problem is the Rosenbrock function in two-dimensions where $x_i\in[-2.0
 
 % primary sources
 \subsubsection{Primary Sources}
-
-seminal \cite{Nelder1965}
+% seminal
+The Nelder-Mead method was propose by Nelder and Mead in 1965 \cite{Nelder1965} as an extension of Spendley, et al. direct search method \cite{Spendley1962}.
 
 % more info
 \subsubsection{More Information}
-
-
-
+% study
+Lagarias, et al provide a investigation of the convergence properties of the Nelder-Mead method on convex one- and two-dimensional problems \cite{Lagarias1998}.
+% book
+Walters provides a book that focuses on the method which he refers to as Sequential Simplex Optimization \cite{Walters1991}.
 
 % END
