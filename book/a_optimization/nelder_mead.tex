@@ -50,13 +50,16 @@ Nelder-Mead optimizes a function by overlaying a simplex (geometrical pattern) i
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{stat_nelder_mead} provides a code listing Nelder-Mead method in R solving a two-dimensional nonlinear unconstrained optimization function.
+Listing~\ref{stats_nelder_mead} provides a code listing Nelder-Mead method in R solving a two-dimensional nonlinear unconstrained optimization function.
 % algorithm and package
 The example uses the {optim()} function in the \texttt{stats} core package configured to use the ``Nelder-Mead'' method. 
 % problem
-The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1, y=1$. The starting position for the algorithm is taken as a random point $x,y\in\[-3,3\]$.
+The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1, y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$.
 
-\lstinputlisting[firstline=7,language=r,caption={Example of Nelder-Mead in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stat_nelder_mead]{../src/algorithms/optimization/stat_nelder_mead.R}
+\lstinputlisting[firstline=7,language=r,caption={Example of Nelder-Mead in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stats_nelder_mead]{../src/algorithms/optimization/stats_nelder_mead.R}
+
+% other packages
+Some other packages that provide an implementation of the Nelder-Mead algorithm include \texttt{gsl} and \texttt{neldermead}.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
