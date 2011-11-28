@@ -60,7 +60,11 @@ Listing~\ref{stats_ordinary_least_squares} provides a code listing Ordinary Leas
 % algorithm and package
 The example uses the {lm()} function in the \texttt{stats} core package which is responsible for fitting linear models.
 % problem
-The test problem is a two-dimensional dataset of 50 samples, where the x-values are drawn from a uniformly random distribution $x \in [0,10]$ and y values are the x value plus a value drawn from a normally random distribution with a mean of 0 and a standard deviation of 1.
+The test problem is a two-dimensional dataset of 50 samples, where the x-values are drawn from a uniformly random distribution $x \in [0,10]$ and y values are the x value plus a value drawn from a normally random 
+distribution with a mean of 0 and a standard deviation of 1.
+
+% what solving method does lm use?
+% classification example?
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Ordinary Least Squares in R using the \texttt{lm()} function in the \texttt{stats} core package.}, label=stats_ordinary_least_squares]{../src/algorithms/regression/stats_ordinary_least_squares.R}
 
