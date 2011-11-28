@@ -19,6 +19,7 @@
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
 Gradient Descent is an optimization method for unconstrained nonlinear optimization.
+Stochastic Gradient Descent (Online Gradient Descent) is an extension commonly used to train a classification or regression model where the gradient is a cost or loss function and the next step is recomputed with each new observation or defined set of observations.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -34,14 +35,14 @@ Gradient Descent is an optimization method for unconstrained nonlinear optimizat
 \subsubsection{Features}
 
 \begin{itemize}
-	\item todo
+	\item It is relatively simple to understand and implement.
 \end{itemize}
 
 % what it is not good at
 \subsubsection{Limitations}
 
 \begin{itemize}
-	\item todo
+	\item It is consider slow relative to modern methods.
 \end{itemize}
 
 % sample script in R
@@ -49,14 +50,17 @@ Gradient Descent is an optimization method for unconstrained nonlinear optimizat
 % listing
 Listing~\ref{stats_gradient_descent} provides a code listing Gradient Descent method in R solving a one-dimensional nonlinear unconstrained optimization function.
 % algorithm and package
-The example uses the {optimize()} function in the \texttt{stats} core package which is limited to one-dimensional function. 
+The example uses the {optimize()} function in the \texttt{stats} core package which is limited to one-dimensional function. It is not a true simple gradient descent, it in fact uses a Golden Section Search with successive parabolic interpolation. As such, it is generally more efficient, although the effect is the same. The initial starting point is computed as a domain-specific point using the golden ratio.
 % problem
 The test problem is the basin function in one-dimension where the optimum is at $f(0)=0$ and the domain is defined as $x \in [-5,5]$. 
 
-% what is the starting position?
-% what is the method implemented in this function exactly?
+% TODO implement gradient descent manually
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Gradient Descent in R using the \texttt{optimize()} function in the \texttt{stats} core package.}, label=stats_gradient_descent]{../src/algorithms/optimization/stats_gradient_descent.R}
+
+% other packages
+Some other packages that provide an implementation of Gradient Descent include \textt{animation}.
+
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.

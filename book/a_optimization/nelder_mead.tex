@@ -36,14 +36,15 @@ Nelder-Mead optimizes a function by overlaying a simplex (geometrical pattern) i
 \subsubsection{Features}
 
 \begin{itemize}
-	\item It is relatively simple to implement and fast to compute.
-	\item It can handle a discontinuous, noisy and/or non-smooth response surface given that it does not rely on an explicit derivative.
+	\item It is relatively simple to understand and implement.
+	\item Works well non-differentiable functions, discontinuous functions, non-smooth functions, and noisy functions.
 \end{itemize}
 
 % what it is not good at
 \subsubsection{Limitations}
 
 \begin{itemize}
+	\item It is consider slow relative to modern methods.
 	\item It is dependent on the starting position and call be caught by local optima in multimodal functions.
 \end{itemize}
 
