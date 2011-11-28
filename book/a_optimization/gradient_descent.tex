@@ -17,8 +17,9 @@
 % Taxonomy: Lineage and locality
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
-% What are the closely related approaches to a technique?
 Gradient Descent is an optimization method for unconstrained nonlinear optimization.
+It is a direct search method that does require a differentiable function for a gradient, instead it infers the gradient from sampling.
+% What are the closely related approaches to a technique? 
 Stochastic Gradient Descent (Online Gradient Descent) is an extension commonly used to train a classification or regression model where the gradient is a cost or loss function and the next step is recomputed with each new observation or defined set of observations.
 
 % Strategy: Problem solving plan
@@ -36,6 +37,7 @@ Stochastic Gradient Descent (Online Gradient Descent) is an extension commonly u
 
 \begin{itemize}
 	\item It is relatively simple to understand and implement.
+	\item Works well non-differentiable functions, discontinuous functions, non-smooth functions, and noisy functions.
 \end{itemize}
 
 % what it is not good at
