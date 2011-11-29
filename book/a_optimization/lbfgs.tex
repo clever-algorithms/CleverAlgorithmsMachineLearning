@@ -8,17 +8,19 @@
 \label{sec:lbfgs}
 \index{Limited Memory Broyden-Fletcher-Goldfarb-Shanno}
 \index{L-BFGS}
+\index{L-BFGS-B}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Limited Memory Broyden-Fletcher-Goldfarb-Shanno, LBFGS.}
+\emph{Limited Memory Broyden-Fletcher-Goldfarb-Shanno, L-BFGS, LM-BFGS.}
 
 % Taxonomy: Lineage and locality
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-L-BFGS is an optimization method.
+L-BFGS is an optimization method for multidimensional nonlinear unconstrained functions.
+L-BFGS-B is an extension of L-BFGS that adds a box-constraint (function bounds).
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -35,23 +37,33 @@ Don't need to select a learning rate.
 \subsubsection{Features}
 
 \begin{itemize}
-	\item Suitable for convex response surfaces.
+	\item Uses less memory than BFGS.
+	\item Intended for problems where the Hessian matrix is hard to obtain.
+	\item Intended for large dense problems.
 \end{itemize}
 
 % what it is not good at
 \subsubsection{Limitations}
 
 \begin{itemize}
-	\item An optimal value for the $\alpha$ parameter can be difficult to find.
+	\item 
 \end{itemize}
 
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{stats_lbfgs} provides a code listing of the L-BFGS-B method in R solving a two-dimensional nonlinear unconstrained optimization function.
+% algorithm and package
+The example uses the {optim()} function in the \texttt{stats} core package configured to use the L-BFGS-B method. The algorithm implementation is well described by Zhu, et al. \cite{Zhu1997}. For more information on the function, type \texttt{?optim}.
+% problem
+The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1, y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$. The gradient for this function is specified and is used by the optimization method.
 
-See the \texttt{optim()} function in the \texttt{stats} core package
+% TODO consider capturing algorithm progression (using par)
 
+\lstinputlisting[firstline=7,language=r,caption={Example of L-BFGS-B in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stats_lbfgs]{../src/algorithms/optimization/stats_lbfgs.R}
 
+% other packages ???
 
 
 % References: Deeper understanding
