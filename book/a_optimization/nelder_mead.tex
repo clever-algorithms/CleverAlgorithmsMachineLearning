@@ -51,11 +51,14 @@ Nelder-Mead optimizes a function by overlaying a simplex (geometrical pattern) i
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{stats_nelder_mead} provides a code listing Nelder-Mead method in R solving a two-dimensional nonlinear unconstrained optimization function.
+Listing~\ref{stats_nelder_mead} provides a code listing of the Nelder-Mead method in R solving a two-dimensional nonlinear unconstrained optimization function.
 % algorithm and package
-The example uses the {optim()} function in the \texttt{stats} core package configured to use the ``Nelder-Mead'' method. 
+The example uses the {optim()} function in the \texttt{stats} core package configured to use the ``Nelder-Mead'' method. For more information on the function, type \texttt{?optim}.
 % problem
 The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1, y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$.
+
+% TODO consider explicitly specifying alpha, beta, and gamma as control vars
+% TODO consider capturing algorithm progression (using par)
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Nelder-Mead in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stats_nelder_mead]{../src/algorithms/optimization/stats_nelder_mead.R}
 

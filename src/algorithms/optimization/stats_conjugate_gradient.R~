@@ -1,4 +1,4 @@
-# stat_nelder_mead.R
+# stat_conjugate_gradient.R
 # 
 # The Clever Algorithms Project: http://www.CleverAlgorithms.com
 # (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
@@ -9,11 +9,20 @@ rosenbrock <- function(v) {
 	(1 - v[1])^2 + 100 * (v[2] - v[1]*v[1])^2
 }
 
+# 2d gradient for Rosenbrock function
+gradient <- function(v) {
+	c(-400 * v[1] * (v[2] - v[1]*v[1]) - 2 * (1 - v[1]), 
+	  200 * (v[2] - v[1]*v[1]))
+}
+
+
 # prepare a random starting position in the domain
 start <- c(runif(1, -3, 3), runif(1, -3, 3))
 start # display the starting position
-# solve using optim with the Nelder-Mead method
-rs = optim(start, rosenbrock, NULL, method="Nelder-Mead")
+# set the Conjugate_Gradient update method to 2 (Polak-Ribiere)
+ctrl <- list(type=2)
+# solve using optim with the Conjugate_Gradient method 
+rs <- optim(start, rosenbrock, gradient, method="CG", control=ctrl)
 
 # summarise results
 rs$par # best coordinate
