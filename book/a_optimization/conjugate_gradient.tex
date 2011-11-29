@@ -28,7 +28,6 @@ Conjugate Gradient Method is an optimization method for multidimensional nonline
 Uses conjugate directions rather than local gradients to move downhill towards the function minima. 
 
 % Does it use a line search for alpha?
-% What is the starting position?
 
 % help me use this technique
 \subsection{Overview}
@@ -53,9 +52,9 @@ Uses conjugate directions rather than local gradients to move downhill towards t
 % listing
 Listing~\ref{stats_conjugate_gradient} provides a code listing of the Conjugate Gradient method in R solving a two-dimensional nonlinear unconstrained optimization function.
 % algorithm and package
-The example uses the {optim()} function in the \texttt{stats} core package configured to use the Conjugate Gradient method as ``CG'' method. The method supports three update methods: Fletcher-Reeves update (default), Polak-Ribiere update, and Beale-Sorenson update. For more information on the function, type \texttt{?optim}.
+The example uses the {optim()} function in the \texttt{stats} core package configured to use the Conjugate Gradient method as ``CG''. The method supports three update methods: Fletcher-Reeves update (default), Polak-Ribiere update, and Beale-Sorenson update. For more information on the function, type \texttt{?optim}.
 % problem
-The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1, y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$.
+The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1, y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$.  The gradient for this function is specified and is used by the optimization method.
 
 % TODO consider capturing algorithm progression (using par)
 
