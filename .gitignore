@@ -1,5 +1,6 @@
 **/*~
 **/*/*~
+src/algorithms/**/*~
 .DS_Store
 book/*.idx
 book/*.ilg
