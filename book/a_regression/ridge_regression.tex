@@ -8,11 +8,15 @@
 \label{sec:ridge}
 \index{Ridge Regression}
 \index{Tikhonov Regularization}
+\index{Tikhonov-Miller Method}
+\index{Phillips-Twomey Method}
+\index{Constrained Linear Inversion}
+\index{Linear Regularization}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Ridge Regression, Tikhonov Regularization}
+\emph{Ridge Regression, Tikhonov Regularization, Tikhonov-Miller Method, Phillips-Twomey Method, Constrained Linear Inversion, Linear Regularization}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
@@ -21,6 +25,7 @@
 % What are the closely related approaches to a technique?
 Ridge Regression is a Regression algorithm.
 
+It is a linear regularization method.
 used with least squares regression and logistic regression !?
 
 
@@ -44,6 +49,15 @@ ends up with small coefficeints which is a less complex model
 \begin{itemize}
 	\item todo
 \end{itemize}
+
+% sample script in R
+\subsection{Code Listing}
+
+the lm.ridge function of the MASS package.
+parcor package
+
+
+see \url{http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf}
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
