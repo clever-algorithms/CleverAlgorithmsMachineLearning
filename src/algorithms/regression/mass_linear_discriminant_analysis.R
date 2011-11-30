@@ -10,7 +10,11 @@
 # load the MASS package
 library(MASS)
 
-# define test data
-x <- runif(50, 0, 10)
-y <- x + rnorm(25)
-data <- data.frame(x, y)
+# define test data with classes 0 and 1
+x <- c(runif(25, 0, 5), runif(25, 6, 10))
+y <- c(x+rnorm(25))
+z <- c(rep(0, 25), rep(1, 25))
+data <- data.frame(x, y, z)
+
+# plot the data
+plot(data)
