@@ -7,20 +7,32 @@
 \section{Linear Discriminant Analysis} 
 \label{sec:lda}
 \index{Linear Discriminant Analysis}
+\index{Linear Discriminant Function}
 \index{Discriminant Analysis}
 \index{LDA}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Linear Discriminant Analysis, Discriminant Analysis, Discriminant Function Analysis, LDA.}
+\emph{Linear Discriminant Analysis, Discriminant Analysis, Discriminant Function Analysis, Linear Discriminant Function, LDA.}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-Linear Discriminant Analysis is a XXX method.
+Linear Discriminant Analysis is a classification method.
+
+Used for classification and for dimensionality reduction.
+
+What is Fisher Linear Discriminant Analysis?
+
+How is it related to Quadratic Discriminant Analysis?
+Factor Analysis?
+PCA
+
+Related to linear regression which provides a linear model for a numeric rather than categorical.
+
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -30,17 +42,26 @@ Linear Discriminant Analysis is a XXX method.
 
 used for classification and dimensionality reduction
 kind of like regression
+linear model for a nominal (categorical) dependent variable.
 
 
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
+% help me use this technique
+\subsection{Overview}
+
+% what it is good at
+\subsubsection{Features}
+
+\begin{itemize}
+	\item Used for prediction of a nominal (categorical) dependent variable, cannot be used for regression.
+\end{itemize}
+
+% what it is not good at
+\subsubsection{Limitations}
 
 \begin{itemize}
 	\item 
 \end{itemize}
+
 
 % sample script in R
 \subsection{Code Listing}

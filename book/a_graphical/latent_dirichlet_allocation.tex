@@ -1,19 +1,25 @@
 % The Clever Algorithms Project: http://www.CleverAlgorithms.com
-% (c) Copyright 2010 Jason Brownlee. Some Rights Reserved. 
+% (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
 % This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
-% This is a chapter
+% Name
+% The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used in terms of the heading and sub-headings of an algorithm description.
+\section{Latent Dirichlet allocation} 
+\label{sec:dirichlet}
+\index{Latent Dirichlet allocation}
+\index{LDA}
 
-\renewcommand{\bibsection}{\subsection{\bibname}}
-\begin{bibunit}
+% other names
+% What is the canonical name and common aliases for a technique?
+% What are the common abbreviations and acronyms for a technique?
+\emph{Latent Dirichlet allocation, LDA.}
 
-\chapter{Regression}
-\label{ch:regression}
-\index{Regression}
-
-\section{Overview}
-This chapter describes Regression.
-
+% Taxonomy: Lineage and locality
+% The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
+\subsection{Taxonomy}
+% To what fields of study does a technique belong?
+% What are the closely related approaches to a technique?
+Latent Dirichlet allocation is a graphical model.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -21,27 +27,31 @@ This chapter describes Regression.
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
-stats?
 
-here we take a machine learning / data mining perspective. 
 
-earth r package?
+% help me use this technique
+\subsection{Overview}
 
-types:
-Linear Regression
-Non-Linear Regression
-Generalized Linear Regression
-
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
+% what it is good at
+\subsubsection{Features}
 
 \begin{itemize}
 	\item 
 \end{itemize}
 
+% what it is not good at
+\subsubsection{Limitations}
+
+\begin{itemize}
+	\item 
+\end{itemize}
+
+
+% sample script in R
+\subsection{Code Listing}
+
+LDA is in the lda package
+see \url{http://cran.r-project.org/web/packages/lda/lda.pdf}
 
 
 % References: Deeper understanding
@@ -54,20 +64,12 @@ Generalized Linear Regression
 \subsubsection{Primary Sources}
 
 
+
 % more info
 \subsubsection{More Information}
 
 
 
 
-\putbib
-\end{bibunit}
 
-\newpage\begin{bibunit}\input{a_regression/ordinary_least_squares_regression}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{a_regression/logistic_regression}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{a_regression/ridge_regression}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{a_regression/stepwise_linear_regression}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{a_regression/mars}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{a_regression/linear_discriminant_analysis}\putbib\end{bibunit}
-
-
+% END
