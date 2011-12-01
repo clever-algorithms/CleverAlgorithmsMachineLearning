@@ -67,16 +67,23 @@ linear model for a nominal (categorical) dependent variable.
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{mass_linear_discriminant_analysis} provides a code listing Linear Discriminant Analysis method in R.
+% algorithm and package
+The example uses the {lda()} function in the \texttt{MASS} package.
+% problem
+The test problem is a two-dimensional dataset of 50 samples.
 
-MASS package has LDA
+\lstinputlisting[firstline=7,language=r,caption={Example of Linear Discriminant Analysis in R using the \texttt{lda()} function in the \texttt{MASS} package.}, label=mass_linear_discriminant_analysis]{../src/algorithms/regression/mass_linear_discriminant_analysis.R}
 
-see \url{http://www.statmethods.net/advstats/discriminant.html}
-see \url{http://www.r-bloggers.com/an-example-of-linear-discriminant-analysis/}
-see \url{http://little-book-of-r-for-multivariate-analysis.readthedocs.org/en/latest/src/multivariateanalysis.html#linear-discriminant-analysis}
+% other packages
+Other packages that provide an implementation of Linear Discriminant Analysis include the \texttt{sparseLDA} which provide sparse LDA, and \texttt{nncRda} which provides regularized LDA.
 
-sparseLDA package does sparse LDA
-nncRda package provides regularized DA
 
+
+%see \url{http://www.statmethods.net/advstats/discriminant.html}
+%see \url{http://www.r-bloggers.com/an-example-of-linear-discriminant-analysis/}
+%see \url{http://little-book-of-r-for-multivariate-analysis.readthedocs.org/en/latest/src/multivariateanalysis.html#linear-discriminant-analysis}
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
