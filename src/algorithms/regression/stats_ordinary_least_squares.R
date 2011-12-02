@@ -6,7 +6,7 @@
 
 # define test data
 x <- runif(50, 0, 10)
-y <- x + rnorm(25)
+y <- x + rnorm(50)
 data <- data.frame(x, y)
 
 # linear model using ordinary least squares

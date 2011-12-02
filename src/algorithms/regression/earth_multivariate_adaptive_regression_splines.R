@@ -11,7 +11,21 @@
 library(earth)
 
 # define the data
+x <- runif(50, 0, 10)
+y <- x^2 + rnorm(50)
+data <- data.frame(x, y)
 
 # create the Multivariate Adaptive Regression Splines model
+model <-earth(y~x, data=data)
+# summarize the model
+summary(model)
+# summarize the importance of input variables
+evimp(model)
 
-# plot
+# plot the data
+plot(data)
+# plot the model fit
+curve(predict(model, x, type="resp"), add=TRUE)
+
+# plot diagnostics of the model
+plot(model)
