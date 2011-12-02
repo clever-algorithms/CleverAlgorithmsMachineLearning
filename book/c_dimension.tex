@@ -1,25 +1,19 @@
 % The Clever Algorithms Project: http://www.CleverAlgorithms.com
-% (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
+% (c) Copyright 2010 Jason Brownlee. Some Rights Reserved. 
 % This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
-% Name
-% The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used in terms of the heading and sub-headings of an algorithm description.
-\section{Support Vector Machine} 
-\label{sec:svm}
-\index{SVM}
-\index{Support Vector Machine}
+% This is a chapter
 
-% other names
-% What is the canonical name and common aliases for a technique?
-% What are the common abbreviations and acronyms for a technique?
-\emph{Support Vector Machine, SVM}
+\renewcommand{\bibsection}{\subsection{\bibname}}
+\begin{bibunit}
 
-% Taxonomy: Lineage and locality
-% The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
-\subsection{Taxonomy}
-% To what fields of study does a technique belong?
-% What are the closely related approaches to a technique?
-Support Vector Machine is a kernel method.
+\chapter{Dimensionality Reduction}
+\label{ch:dimension}
+\index{Dimensionality Reduction}
+
+\section{Overview}
+This chapter describes Dimensionality Reduction.
+
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -27,25 +21,7 @@ Support Vector Machine is a kernel method.
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
-try to create a classifier directly, not a probability of a class like logit
-find hyper plane that maximizes the margin
-only works if the training data is separable
-it is a linear classifier
-support points... boundary of the margin
-
-use soft margin if the data is not linearly separable - budget of max overlap allowed
-budget - a regularization parameter
-
-basis transformations - increase dimensions using polynominals
-- use both soft margin and more dimensions
-
-radial basis svm...
-gamma is like the steepness of the kernel
-
-use crossvalidation to refine the parameter - b
-algorithm for finding best for all values of b
-regularization
-
+Dimensionality Reduction
 
 
 % Heuristics: Usage guidelines
@@ -58,7 +34,6 @@ regularization
 	\item 
 \end{itemize}
 
-e1071 package provides svm interface to libsvm
 
 
 % References: Deeper understanding
@@ -71,10 +46,15 @@ e1071 package provides svm interface to libsvm
 \subsubsection{Primary Sources}
 
 
-
 % more info
 \subsubsection{More Information}
 
 
 
-% END
+\putbib
+\end{bibunit}
+
+
+\newpage\begin{bibunit}\input{a_dimension/principle_component_analysis}\putbib\end{bibunit}
+
+
