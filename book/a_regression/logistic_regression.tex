@@ -74,7 +74,7 @@ The regression coefficients (weights) are fit by minimizing the maximum likeliho
 
 % sample script in R
 \subsection{Code Listing}
-Listing~\ref{glm_logistic} provides a code listing of Logistic Regression in R using the \texttt{glm} (generalized linear model) function of the \texttt{stats} core package. 
+Listing~\ref{stats_logistic_regression} provides a code listing of Logistic Regression in R using the \texttt{glm} (generalized linear model) function of the \texttt{stats} core package. 
 % problem
 The test problem is a contrived one dimensional problem where given a health statistic ($h$) determine whether a patient will survive or not $s\in\{0,1\}$.
 The \texttt{gml} is distributed in core R and provides a number of functions besides the logistic function. By default, the method uses the Iteratively Re-weighted Least Squares (IWLS) method to fit.
@@ -83,7 +83,7 @@ The \texttt{gml} is distributed in core R and provides a number of functions bes
 % show stats?
 % show convergence of gradient descent?
 
-\lstinputlisting[firstline=7,language=r,caption={Example of Logistic Regression in R using the \texttt{glm} function of the \texttt{stats} core package.}, label=stats_logistic]{../src/algorithms/regression/stats_logistic_regression.R}
+\lstinputlisting[firstline=7,language=r,caption={Example of Logistic Regression in R using the \texttt{glm} function of the \texttt{stats} core package.}, label=stats_logistic_regression]{../src/algorithms/regression/stats_logistic_regression.R}
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
