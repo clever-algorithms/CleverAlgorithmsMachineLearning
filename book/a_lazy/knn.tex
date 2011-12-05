@@ -29,7 +29,6 @@ K-Nearest Neighbor is a lazy learning algorithm.
 % What is a techniques plan of action?
 
 
-
 % help me use this technique
 \subsection{Overview}
 
@@ -50,8 +49,23 @@ K-Nearest Neighbor is a lazy learning algorithm.
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{class_knn} provides a code listing $k$-Nearest Neighbor method in R to classify examples from a three-dimensional dataset.
+% algorithm and package
+The example uses the {knn()} function in the \texttt{class} package. The function can return probabilities for selected classes and provides controls for the voting mechanism and the handling of ties.
+% problem
+The test problem is a three-dimensional classification problem, where the $x$ and $y$ attributes are numerical and drawn from normal distributions around 0 and 4. A class value of 0 or 1 is assigned to each coordinate such that the two classes can be separated by a straight line. The dataset is split into a training set to make the model comprised of 67\% of the samples, and a test set for assessing the model comprised of 33\% of the samples.
 
-class package, knn function
+% make the problem non-linear
+% summarize the algorithms performance as a confusion matrix or something
+
+% code listing
+\lstinputlisting[firstline=7,language=r,caption={Example of $k$-Nearest Neighbor in R using the \texttt{knn()} function of the \texttt{class} package.}, label=class_knn]{../src/algorithms/lazy/class_knn.R}
+
+% other code examples
+For more information on the \texttt{knn()} function type \texttt{?knn}.
+% other packages
+Other packages provide implementations of the $k$-NN algorithm, including the \texttt{kknn} package and function for weighted $k$-NN, the \texttt{knnflex} package which appears orphaned, the \texttt{knncat} package optimized for categorical classification.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
