@@ -4,22 +4,22 @@
 
 % Name
 % The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used in terms of the heading and sub-headings of an algorithm description.
-\section{Support Vector Machine} 
+\section{Support Vector Machines} 
 \label{sec:svm}
 \index{SVM}
-\index{Support Vector Machine}
+\index{Support Vector Machines}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Support Vector Machine, SVM}
+\emph{Support Vector Machines, SVM}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
-Support Vector Machine is a kernel method.
+Support Vector Machines are a kernel method.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -71,7 +71,9 @@ regularization
 % listing
 Listing~\ref{e1071_support_vector_machines} provides a code listing of the Support Vector Machines algorithm in R to classify examples from a three-dimensional dataset.
 % algorithm and package
-The example uses the \texttt{svm()} function in the \texttt{e1071} package.
+The example uses the \texttt{svm()} function in the \texttt{e1071} package \cite{Meyer2011}.
+% TODO more about the package and libsvm
+
 % problem
 The test problem is a three-dimensional classification problem, where the $x$ and $y$ attributes are numerical and drawn from normal distributions around 0 and 4. A class value of 0 or 1 is assigned to each coordinate such that the two classes can be separated by a straight line. The dataset is split into a training set to make the model comprised of 67\% of the samples, and a test set for assessing the model comprised of 33\% of the samples.
 
@@ -79,6 +81,7 @@ The test problem is a three-dimensional classification problem, where the $x$ an
 \lstinputlisting[firstline=7,language=r,caption={Example of Support Vector Machines in R using the \texttt{svm()} function of the \texttt{e1071} package.}, label=e1071_support_vector_machines]{../src/algorithms/kernel/e1071_support_vector_machines.R}
 
 % other packages
+Karatzoglou, Meyer, and Hornik provide a comprehensive overview of the R packages that provide SVM implementations, providing a summary of the capabilities and script examplse of each \cite{Karatzoglou2006}.
 
 
 % References: Deeper understanding

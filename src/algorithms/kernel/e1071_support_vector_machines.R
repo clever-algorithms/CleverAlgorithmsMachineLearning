@@ -26,7 +26,7 @@ train <- data[training_set,]
 test <- data[(1:100)[-training_set],]
 
 # construct a model using SVM
-model <- svm(z~., data=train, method="C-classification", kernel="radial")
+model <- svm(z~., data=train, method="C", kernel="radial")
 # summarize the model
 summary(model)
 
