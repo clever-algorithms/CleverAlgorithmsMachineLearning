@@ -28,20 +28,48 @@ The Classification And Regression Tree or CART is a Decision Tree algorithm. CAR
 % What is a techniques plan of action?
 A textual description of the information processing strategy.
 
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
+
+
+% help me use this technique
+\subsection{Overview}
+
+% what it is good at
+\subsubsection{Features}
 
 \begin{itemize}
 	\item The algorithm is non-parametric.
 	\item The algorithms can be used to create classification and regression trees.
 \end{itemize}
 
+% what it is not good at
+\subsubsection{Limitations}
 
-rpart package provides tree algorithms from the CART book
-tree package provides tree algorithms from the CART book
+\begin{itemize}
+	\item 
+\end{itemize}
+
+
+
+
+% sample script in R
+\subsection{Code Listing}
+% listing
+Listing~\ref{rpart_cart} provides a code listing of the CART method in R to classify examples from a three-dimensional dataset.
+% algorithm and package
+The example uses the \texttt{rpart()} function (recursive partitioning) in the \texttt{rpart} package \cite{Meyer2011}.
+% TODO more about the package and the functions capabilities
+
+% problem
+The test problem is a three-dimensional classification problem, where the $x$ and $y$ attributes are numerical and drawn from normal distributions around 0 and 4. A class value of 0 or 1 is assigned to each coordinate such that the two classes can be separated by a straight line. The dataset is split into a training set to make the model comprised of 67\% of the samples, and a test set for assessing the model comprised of 33\% of the samples.
+
+% TODO provide prediction example
+
+% code listing
+\lstinputlisting[firstline=7,language=r,caption={Example of CART in R using the \texttt{rpart()} function of the \texttt{rpart} package.}, label=rpart_cart]{../src/algorithms/trees/rpart_cart.R}
+
+% other packages
+Other packages provide implementations of the CART method, such as the \texttt{tree} package.
+
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
