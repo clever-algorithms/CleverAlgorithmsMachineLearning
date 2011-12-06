@@ -14,7 +14,7 @@ library(e1071)
 classification <- function() {   
 	x <- c(rnorm(50, mean=0), rnorm(50, mean=4))
 	y <- c(rnorm(50, mean=4), rnorm(50, mean=0))
-	z <- c(rep(1, 50), rep(0, 50))
+	z <- c(rep("1", 50), rep("0", 50))
 	data <- data.frame(x, y, z)
 }
 
@@ -26,12 +26,14 @@ train <- data[training_set,]
 test <- data[(1:100)[-training_set],]
 
 # construct a model using SVM
-model <- svm(z~., data=train)
+model <- svm(z~., data=train, method="C-classification", kernel="radial")
 # summarize the model
 summary(model)
 
+# plot the model and the decision boundary
+plot(model, train, x~y, slice=list(x=3,y=4))
+
 # make predictions
-pred <- predict(model, test)
+pred <- predict(model, test, decision.values=TRUE)
 # summarize the predictions
 table(pred)
-
