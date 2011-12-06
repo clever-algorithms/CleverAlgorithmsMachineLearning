@@ -49,8 +49,21 @@ K-means is a clustering algorithm.
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{stats_kmeans} provides a code listing of the K-Means clustering method in R to identify cluster centres in a two-dimensional dataset.
+% algorithm and package
+The example uses the \texttt{kmeans()} function in the \texttt{stats} core package.
+% TODO more about the package and the functions capabilities
 
-stats package, kmeans function
+% problem
+The test problem is a two-dimensional dataset, where the $x$ and $y$ attributes are numerical and drawn from normal distributions around 0 and 4. 
+
+% code listing
+\lstinputlisting[firstline=7,language=r,caption={Example of K-Means clustering in R using the \texttt{kmeans()} function of the \texttt{stats} core package.}, label=stats_kmeans]{../src/algorithms/clustering/stats_kmeans.R}
+
+% other packages
+
+
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
