@@ -49,7 +49,19 @@ Naive Bayes is a Bayesian algorithm.
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{e1071_naive_bayes} provides a code listing of the Naive Bayes algorithm in R to classify examples from a three-dimensional dataset.
+% algorithm and package
+The example uses the \texttt{naiveBayes()} function in the \texttt{e1071} package.
+% TODO more about the package and libsvm
 
+% problem
+The test problem is a three-dimensional classification problem, where the $x$ and $y$ attributes are numerical and drawn from normal distributions around 0 and 4. A class value of 0 or 1 is assigned to each coordinate such that the two classes can be separated by a straight line. The dataset is split into a training set to make the model comprised of 67\% of the samples, and a test set for assessing the model comprised of 33\% of the samples.
+
+% code listing
+\lstinputlisting[firstline=7,language=r,caption={Example of Naive Bayes in R using the \texttt{naiveBayes()} function of the \texttt{e1071} package.}, label=e1071_naive_bayes]{../src/algorithms/bayes/e1071_naive_bayes.R}
+
+Other packages that provide an implementation of Naive Bayes include the \texttt{predbayescor} package.
 
 
 % References: Deeper understanding
