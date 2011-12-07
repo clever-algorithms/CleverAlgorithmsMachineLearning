@@ -50,10 +50,22 @@ Principle Component Analysis is a dimensionality reduction method.
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{stats_principal_component_analysis} provides a code listing of the Principle Component Analysis method in R.
+% algorithm and package
+The example uses the \texttt{prcomp()} function in the \texttt{stats} core package.
+% TODO more about the package and the functions capabilities
 
-stats package, princomp function
+% problem
+The test problem is a three-dimensional dataset, where the $x$, $y$ and $z$ attributes are numerical and drawn from normal distributions with different means. 
 
-look at \url{http://en.wikibooks.org/wiki/Data_Mining_Algorithms_In_R/Dimensionality_Reduction/Principal_Component_Analysis}
+% TODO use a sample problem with textual labels
+
+% code listing
+\lstinputlisting[firstline=7,language=r,caption={Example of Principle Component Analysis in R using the \texttt{prcomp()} function of the \texttt{stats} core package.}, label=stats_principal_component_analysis]{../src/algorithms/dimension/stats_principal_component_analysis.R}
+
+% other packages
+The \texttt{stats} package also provides the \texttt{princomp} function for computing a PCA.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
