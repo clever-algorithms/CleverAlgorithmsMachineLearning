@@ -1,4 +1,4 @@
-# e1071_support_vector_machine.R
+# e1071_naive_bayes.R
 # 
 # The Clever Algorithms Project: http://www.CleverAlgorithms.com
 # (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
@@ -25,13 +25,12 @@ training_set = sample(100,67)
 train <- data[training_set,]
 test <- data[(1:100)[-training_set],]
 
-# construct a model using SVM
-model <- svm(z~., data=train, method="C", kernel="radial")
-# summarize the model
-summary(model)
-
-# plot the model and the decision boundary
-plot(model, train, x~y, slice=list(x=3,y=4))
+# construct a model using Naive Bayes
+model <- naiveBayes(z~., data=train)
+# summarize the apriori class distribution
+model$apriori
+# summarize the tables for each attribute
+model$tables
 
 # make predictions
 predictions <- predict(model, test[,1:2])
