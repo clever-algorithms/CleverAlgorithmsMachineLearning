@@ -1,0 +1,96 @@
+% The Clever Algorithms Project: http://www.CleverAlgorithms.com
+% (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
+% This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
+
+% Name
+% The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used in terms of the heading and sub-headings of an algorithm description.
+\section{Random Forest} 
+\label{sec:randomforest}
+\index{Random Forest}
+
+% other names
+% What is the canonical name and common aliases for a technique?
+% What are the common abbreviations and acronyms for a technique?
+\emph{Random Forest, RF}
+
+% Taxonomy: Lineage and locality
+% The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
+\subsection{Taxonomy}
+% To what fields of study does a technique belong?
+% What are the closely related approaches to a technique?
+Random Forest is an Ensemble algorithm. 
+
+Random Forest is a registered trademark of Leo Breiman and Adele Cutler as are many variations.
+
+% Strategy: Problem solving plan
+% The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
+\subsection{Strategy}
+% What is the information processing objective of a technique?
+% What is a techniques plan of action?
+
+fancy version of bagging
+shakes up the data more
+pick a random subset of features and use them as candidates for splitting
+works much better than original bagging
+random subset - de-correlates the trees
+
+
+
+% help me use this technique
+\subsection{Overview}
+
+% what it is good at
+\subsubsection{Features}
+
+\begin{itemize}
+	\item 
+\end{itemize}
+
+% what it is not good at
+\subsubsection{Limitations}
+
+\begin{itemize}
+	\item 
+\end{itemize}
+
+
+% sample script in R
+\subsection{Code Listing}
+% listing
+Listing~\ref{randomforest_random_forest} provides a code listing of the Random Forest algorithm in R.
+% algorithm and package
+The example uses the \texttt{randomForest()} function in the \texttt{randomForest} package.
+% TODO more about the package and the functions capabilities
+Liaw, et al. provide a beginners introduction to \texttt{randomForest} package \cite{Liaw2002}.
+
+% problem
+The test problem is a three-dimensional dataset, where the $x$, $y$ and $z$ attributes are numerical and drawn from normal distributions with different means. 
+
+% TODO use a sample problem with textual labels
+
+% code listing
+\lstinputlisting[firstline=7,language=r,caption={Example of the Random Forest algorithm in R using the \texttt{randomForest()} function of the \texttt{randomForest} package.}, label=randomforest_random_forest]{../src/algorithms/ensemble/randomforest_random_forest.R}
+
+% other packages
+Other packages provide implementations of the Random Forest algorithm, such as the \texttt{party} pacakge. Strobl, et al. provide introduction to \texttt{party} pacakge and heuristics on what Random Forest package to use for given problem \cite{Strobl2009} .
+
+
+% References: Deeper understanding
+% The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
+\subsection{References}
+% What are the primary sources for a technique?
+% What are the suggested reference sources for learning more about a technique?
+
+% primary sources
+\subsubsection{Primary Sources}
+
+Developed by Breiman \cite{Breiman2001}.
+
+Practical usage information in \cite{Breiman2003}
+
+% more info
+\subsubsection{More Information}
+
+
+
+% END
