@@ -36,6 +36,27 @@ compmenent of model selection - combines measures of fit in cross validation
 ensembles combine fitted values (predictions)
 
 
+BOOSTING
+prepare each tree on a weighted sample
+fix the mistakes made before
+more clever version of bagging
+build tree, assign weights based on mistakes, build next tree, so on
+weighted averages of observations when splitting
+
+gradient descent of a loss function... modern understanding - gradient boosting
+
+control the size of the trees - quite small - faster
+
+train beyond perfect train data - test error gets better!
+makes the problem harder and harder - but the error does start increasing again
+
+MODERN:
+building an expanding basis function - stepwise additive modelling - does it iteratively - forward stage wise learning
+like basis pursuit is of the same form - matching pursuit
+
+
+
+
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
 \subsection{Heuristics}
@@ -71,7 +92,6 @@ Early overview that was cited a lot \cite{Dietterich2000}.
 
 
 \newpage\begin{bibunit}\input{a_ensembles/bagging}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{a_ensembles/boosting}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_ensembles/adaboost}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_ensembles/gradientboosting}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_ensembles/random_forest}\putbib\end{bibunit}

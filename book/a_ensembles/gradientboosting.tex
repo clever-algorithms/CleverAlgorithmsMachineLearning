@@ -20,12 +20,29 @@
 % What are the closely related approaches to a technique?
 Gradient Boosting is an Ensemble algorithm.
 
+Gradient Boosted Decision Trees (GBDT)
+Gradient Boosted Regression Trees (GBRT) - application of the method to regression trees
+Stochastic Gradient Boosting
+Gradient Boost
+Gradient Tree Boosting
+TreeBoost
+Generalized Boosting Model
+Functional Gradient Boosting
+Gradient Boosted Models
+Multiple Additive Regression Trees (MART) - commercial
+TreeNet - commercial
+
+
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
-A textual description of the information processing strategy.
+
+
+for regression only?
+
+
 
 % help me use this technique
 \subsection{Overview}
@@ -47,6 +64,16 @@ A textual description of the information processing strategy.
 
 % sample script in R
 \subsection{Code Listing}
+
+the \texttt{gbm} package - provides gentle boost under logistic and exponential loss. also it includes squared error, absolute error, Poisson and Cox type loss functions (not recommended for classification).
+
+theory behind the gbm package \cite{Ridgeway2007} \cite{Ridgeway2007a}
+
+the \texttt{mboost} package - lots of functions, regression based learners
+
+the \texttt{ada} package \cite{Culp2007}
+
+
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.

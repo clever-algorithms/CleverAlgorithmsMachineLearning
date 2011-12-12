@@ -7,11 +7,12 @@
 \section{AdaBoost} 
 \label{sec:adaboost}
 \index{AdaBoost}
+\index{AdaBoost.M1}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{AdaBoost}
+\emph{AdaBoost, AdaBoost.M1}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
@@ -20,11 +21,23 @@
 % What are the closely related approaches to a technique?
 AdaBoost is an Ensemble algorithm.
 
+
+AdaBoost.M1 is the classical algorithm
+AdaBoost.M2
+AdaBoost.R
+AdaBoost.R2
+Fast AdaBoost
+
+
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
+
+
+statistical view: stage-wise gradient descent that minimizing an expoential loss funtion
+
 
 
 % help me use this technique
@@ -34,7 +47,7 @@ AdaBoost is an Ensemble algorithm.
 \subsubsection{Features}
 
 \begin{itemize}
-	\item 
+	\item It is very difficult for AdaBoost to overfit a training dataset. This feature is highlighted as a limitation of the statistical view of the approach given that it cannot explain how this is the case \cite{Mease2008}.
 \end{itemize}
 
 % what it is not good at
@@ -50,10 +63,13 @@ AdaBoost is an Ensemble algorithm.
 
 
 
-the \texttt{adabag} package provides the Adaboost.M1 algorithm
-the \texttt{gbm} package implements extensions to the Adaboost algorithm - uses an exponential loss function, also uses gradient descent to train it 
+the \texttt{adabag} package provides the Adaboost.M1 algorithm \cite{Cortes2011}
 
+the \texttt{gbm} package implements extensions to the Adaboost algorithm - uses an exponential loss function, also uses gradient descent to train it  \cite{Ridgeway2007a}
 
+the \texttt{ada} packge provides Adaboost, Gentle Adaboost, and Real Adaboost. Also regularized versions of these algorithms. based on rpart.
+
+overview of the \texttt{ada} package \cite{Culp2006}
 
 
 % References: Deeper understanding
