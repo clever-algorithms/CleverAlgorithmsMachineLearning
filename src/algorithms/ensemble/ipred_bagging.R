@@ -14,15 +14,15 @@ classification <- function() {
 	x <- c(rnorm(50, mean=0), rnorm(50, mean=4))
 	y <- c(rnorm(50, mean=4), rnorm(50, mean=0))
 	z <- c(rep("1", 50), rep("0", 50))
-	data <- data.frame(x, y, z)
+	data.frame(x, y, z)
 }
 
 # get the data 
 data <- classification()
 # split data in to train and test (67%/33%)
-training_set = sample(100,67)
+training_set <- sample(1:100, 67, FALSE)
 train <- data[training_set,]
-test <- data[(1:100)[-training_set],]
+test <- data[-training_set,]
 
 # preapre a model using bagging
 model <- bagging(z~x+y, data=train, nbagg=5, coob=TRUE)

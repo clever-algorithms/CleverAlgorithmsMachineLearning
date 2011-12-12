@@ -66,17 +66,21 @@ adaboost was one of the first boosting algorithms that could adapt its weak lear
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{ada_adaboost} provides a code listing of the AdaBoost algorithm in R.
+% algorithm and package
+The example uses the \texttt{ada()} function in the \texttt{ada} package \cite{Culp2007}. In addition to AdaBoost, the \texttt{ada} package also provides Gentle Adaboost and Real Adaboost.
+% TODO more about the package and the functions capabilities
+Culp, et al. also provide a vignette of the \texttt{ada} package with more examples and references \cite{Culp2006}.
 
+% problem
+The test problem is a three-dimensional dataset, where the $x$, $y$ and $z$ attributes are numerical and drawn from normal distributions with different means. The objective is to predict the categorical dependent $z$ given the independents $x$ and $y$.
 
+% code listing
+\lstinputlisting[firstline=7,language=r,caption={Example of the Adaboost algorithm in R using the \texttt{ada()} function of the \texttt{ada} package.}, label=ada_adaboost]{../src/algorithms/ensemble/ada_adaboost.R}
 
-the \texttt{adabag} package provides the Adaboost.M1 algorithm \cite{Cortes2011}
-
-the \texttt{gbm} package implements extensions to the Adaboost algorithm - uses an exponential loss function, also uses gradient descent to train it  \cite{Ridgeway2007a}
-
-the \texttt{ada} packge provides Adaboost, Gentle Adaboost, and Real Adaboost. Also regularized versions of these algorithms. based on rpart.
-
-overview of the \texttt{ada} package \cite{Culp2006}
-
+% other packages
+Other packages that provide implementations of the AdaBoost algorithm include the \texttt{adabag} package that provides the Adaboost.M1 algorithm \cite{Cortes2011}, and the texttt{gbm} package implements the Adaboost algorithm with an exponential loss function and uses gradient descent during training \cite{Ridgeway2007a}.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -93,5 +97,8 @@ Proposed by Freund and Schapire \cite{Freund1997}.
 \subsubsection{More Information}
 
 
+Introduction to boosting \cite{Freund1999} (maybe in the chapter overview...)
+
+very detailed introduction to boosting \cite{Meir2003}
 
 % END
