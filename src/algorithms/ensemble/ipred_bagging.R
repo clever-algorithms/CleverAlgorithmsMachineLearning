@@ -1,13 +1,13 @@
-# randomforest_random_forest.R
+# gbm_gradient_boosting.R
 # 
 # The Clever Algorithms Project: http://www.CleverAlgorithms.com
 # (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
-# you may have to install the 'randomForest' package before you work with it
-install.packages("randomForest")
-# load the 'randomForest' package
-library(randomForest)
+# you may have to install the 'ipred' package before you work with it
+install.packages("ipred")
+# load the 'ipred' package
+library(ipred)
 
 # define a function that creates a 2d classification problem
 classification <- function() {   
@@ -24,17 +24,12 @@ training_set = sample(100,67)
 train <- data[training_set,]
 test <- data[(1:100)[-training_set],]
 
-# construct a model using Random Forest
-model <- randomForest(z~., data=train)
+# preapre a model using bagging
+model <- bagging(z~x+y, data=train, nbagg=100, coob=TRUE)
 # summarize the model
 print(model)
 
-# plot the model (trees vs error)
-plot(model)
-
-# make predictions
-predictions <- predict(model, test[,1:2])
+# make predictions using the model
+predictions <- predict(model, newdata=test[,1:2])
 # confusion matrix of predictions
 table(predictions, test$z)
-
-

@@ -59,11 +59,21 @@ svm variance is not high
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{ipred_bagging} provides a code listing of the Bagging algorithm in R.
+% algorithm and package
+The example uses the \texttt{bagging()} function in the \texttt{ipred} package \cite{Peters2011} that provides bootstrap aggregation with trees via the \texttt{rpart()} of the \texttt{rpart} package.
+% TODO more about the package and the functions capabilities
+Peters, et al. also provide a vignette of the \texttt{ipred} package with more examples and references \cite{Peters2011a}.
 
+% problem
+The test problem is a three-dimensional dataset, where the $x$, $y$ and $z$ attributes are numerical and drawn from normal distributions with different means. The objective is to predict the categorical dependent $z$ given the independents $x$ and $y$.
 
-the \texttt{adabag} package provides the bagging algorithm \cite{Cortes2011}
+% code listing
+\lstinputlisting[firstline=7,language=r,caption={Example of the Bagging algorithm in R using the \texttt{bagging()} function of the \texttt{ipred} package.}, label=ipred_bagging]{../src/algorithms/ensemble/ipred_bagging.R}
 
-
+% other packages
+Other packages provide an implementation of the bagging algorithm including the \texttt{adabag} package \cite{Cortes2011}, the \texttt{ada} package that only provides binary classification, and the \texttt{caret} package provides a framework for bagging \cite{Kuhn2011}.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
