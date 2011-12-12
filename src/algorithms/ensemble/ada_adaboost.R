@@ -18,14 +18,14 @@ classification <- function() {
 }
 
 # get the data 
-data <- classification()
+dataset <- classification()
 # split data in to train and test (67%/33%)
 training_set <- sample(1:100, 67, FALSE)
-train <- data[training_set,]
-test <- data[-training_set,]
+train <- dataset[training_set,]
+test <- dataset[-training_set,]
 
 # preapre a model using adaboost
-model <- ada(z~., train, iter=20, loss="e", nu=1, type="discrete")
+model <- ada(z~., data=train, iter=20, loss="e", nu=1, type="discrete")
 # summarize the model
 print(model)
 
