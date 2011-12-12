@@ -21,6 +21,7 @@
 % What are the closely related approaches to a technique?
 AdaBoost is an Ensemble algorithm.
 
+boosting is sometimes called leverage - leveraging algorithms
 
 AdaBoost.M1 is the classical algorithm
 AdaBoost.M2
@@ -29,15 +30,20 @@ AdaBoost.R2
 Fast AdaBoost
 
 
+Friends: LPBoost, TotalBoost, BrownBoost, MadaBoost, LogitBoost
+AnyBoost framework
+
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
+all about one learner learning the weaknesses of another learner - continue until a desired level of performance is achieved
 
-statistical view: stage-wise gradient descent that minimizing an expoential loss funtion
+statistical view: stage-wise gradient descent that minimizing an exponetial loss function
 
+adaboost was one of the first boosting algorithms that could adapt its weak learners
 
 
 % help me use this technique
@@ -54,7 +60,7 @@ statistical view: stage-wise gradient descent that minimizing an expoential loss
 \subsubsection{Limitations}
 
 \begin{itemize}
-	\item 
+	\item Cannot handle noisy data? \cite{Long2010}
 \end{itemize}
 
 

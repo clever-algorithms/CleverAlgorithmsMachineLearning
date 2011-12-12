@@ -25,7 +25,7 @@ train <- data[training_set,]
 test <- data[(1:100)[-training_set],]
 
 # preapre a model using bagging
-model <- bagging(z~x+y, data=train, nbagg=100, coob=TRUE)
+model <- bagging(z~x+y, data=train, nbagg=5, coob=TRUE)
 # summarize the model
 print(model)
 
