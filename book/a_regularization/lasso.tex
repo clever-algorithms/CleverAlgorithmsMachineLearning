@@ -19,6 +19,9 @@
 % To what fields of study does a technique belong?
 % What are the closely related approaches to a technique?
 LASSO is a Regularization algorithm.
+model selection technique
+
+Least Angle Regression (LAR) algorithm for solving the Lasso
 
 grouped lasso is an extension?
 Dantzig selector is an extension?
@@ -27,18 +30,23 @@ generalized elastic net is an extension?
 graphical lasso is an extension?
 
 
+
+
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
+penalized least squares
 
 lasso is for linear regression models?
 
+LARS algorithm
 
+uses the L1-penalty, the lasso does both continuous shrinkage and automatic variable selection simultaneously
 
-
+imposes a bound on the absolute sum of the coefficients
 
 \subsection{Overview}
 
@@ -46,24 +54,29 @@ lasso is for linear regression models?
 \subsubsection{Features}
 
 \begin{itemize}
-	\item 
+	\item results in a sparse representation (fewer variables)
 \end{itemize}
 
 % what it is not good at
 \subsubsection{Limitations}
 
+\cite{Zou2005} mentions 3 limitations of LASSO
+
 \begin{itemize}
-	\item 
+	\item not good at p>>n (more attributes than instances)
 \end{itemize}
 
 
 % sample script in R
 \subsection{Code Listing}
 
-realized in GBM?
 
-glmnet provides elastic net - generalized linear models with elastic-net penalties
-
+% other packages
+Other packages provide implementations of the Lasso penalty method.
+The \texttt{lars} package provides the  Least Angle Regression, Lasso, and the Forward Stagewise regularization methods \cite{Hastie2011}.
+The \texttt{glmnet} package provides the Lasso and elastic-net regularization for generalized linear models \cite{Friedman2011}.
+The \texttt{grplasso} package provides an the Group Lasso penalty method for fitting models \cite{Meier2009}.
+The \texttt{grpreg} package provides lasso regularization with grouped covariates \cite{Brehen2011}.
 
 
 % References: Deeper understanding

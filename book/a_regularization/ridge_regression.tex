@@ -29,6 +29,8 @@ It is a linear regularization method.
 used with least squares regression and logistic regression !?
 
 
+Related to Bridge Regression??? 
+
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
@@ -43,6 +45,11 @@ Bayesian understanding of the method
 Restricted Least Squares understanding of the method 
 
 see \url{http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf}
+
+minimizes the residual sum of squares subject to a bound on the L2-norm of the coefﬁcients
+better performance than OLS via a bias–variance trade-off
+
+
 
 % help me use this technique
 \subsection{Overview}
@@ -62,6 +69,7 @@ see \url{http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf}
 
 \begin{itemize}
 	\item The coefficients prepared by Ridge Regression is biased. The cost function is the square of the bias plus the variance. An improvement can be achieved by a large drop in variance at the expense of bias.
+	\item keeps all predictors
 \end{itemize}
 
 
