@@ -78,12 +78,12 @@ better performance than OLS via a bias–variance trade-off
 % listing
 Listing~\ref{mass_ridge_regression} provides a code listing Ridge Regression method in R to find a line of best fit for a two-dimensional data set.
 % algorithm and package
-The example uses the {lm.ridge()} function in the \texttt{MASS} core package which is responsible for fitting linear models using Ridge Regression.
+The example uses the \texttt{lm.ridge()} function in the \texttt{MASS} core package which is responsible for fitting linear models using Ridge Regression.
 % problem
 %The test problem is a two-dimensional dataset of 50 samples, where the x-values are drawn from a uniformly random distribution $x \in [0,10]$ and y values are the x value plus a value drawn from a normally random distribution with a mean of 0 and a standard deviation of 1.
 
-% how do make use of a resulting lambda?
-% how can you make use of a resulting model to make predictions?
+% TODO how do make use of a resulting lambda?
+% TODO how can you make use of a resulting model to make predictions?
 
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Ridge Regression in R using the \texttt{lm.ridge()} function in the \texttt{MASS} package.}, label=mass_ridge_regression]{../src/algorithms/regularization/mass_ridge_regression.R}

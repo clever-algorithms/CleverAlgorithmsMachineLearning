@@ -69,14 +69,24 @@ imposes a bound on the absolute sum of the coefficients
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{lars_lasso_regression} provides a code listing LASSO method in R.
+% algorithm and package
+The example uses the \texttt{lars()} function in the \texttt{lars} core package. The \texttt{lars} package provides the Least Angle Regression, Lasso, and the Forward Stagewise algorithms for regularization \cite{Hastie2011}.
+% problem
 
+
+% TODO provide a better problem with real variable selection
+
+\lstinputlisting[firstline=7,language=r,caption={Example of LASSO in R using the \texttt{lars()} function in the \texttt{lars} package.}, label=lars_lasso_regression]{../src/algorithms/regularization/lars_lasso_regression.R}
 
 % other packages
 Other packages provide implementations of the Lasso penalty method.
-The \texttt{lars} package provides the  Least Angle Regression, Lasso, and the Forward Stagewise regularization methods \cite{Hastie2011}.
 The \texttt{glmnet} package provides the Lasso and elastic-net regularization for generalized linear models \cite{Friedman2011}.
 The \texttt{grplasso} package provides an the Group Lasso penalty method for fitting models \cite{Meier2009}.
 The \texttt{grpreg} package provides lasso regularization with grouped covariates \cite{Brehen2011}.
+
+% lmmlasso package?!?
 
 
 % References: Deeper understanding

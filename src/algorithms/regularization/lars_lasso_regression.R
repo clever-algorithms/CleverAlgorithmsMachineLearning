@@ -25,10 +25,27 @@ training_set <- sample(1:100, 67, FALSE)
 train <- dataset[training_set,]
 test <- dataset[-training_set,]
 
-
-matrix = model.matrix(train[,1:3])
+# create a matrix from the inputs
+matrix = model.matrix(~a+b+x, train)
 # preapre a model using lasso
-model <- lars(matrix, train[,4], type="lasso", trace=TRUE)
+model <- lars(matrix, train$y, type="lasso", trace=TRUE)
+
 # summarize the model
-par(mfrow=c(2,2))
-print(model)
+summary(model)
+# plot the model
+plot(model, breaks=TRUE)
+
+# select a good step
+step <- model$df[which.min(model$RSS)]
+
+# extract the selected coefficients from the fitted model
+coef <- predict(model, matrix, s=step, type="coef")$coefficients
+# print the selected variables
+colnames(matrix)[which(coef!=0)]
+
+# create a matrix from the test data to make predictions
+matrix = model.matrix(~a+b+x, test)
+# make predictions using the model
+predictions <- predict(model, matrix, s=step, type="fit")$fit
+# compute mean squared error
+print(mean((test$y-predictions)^2))
