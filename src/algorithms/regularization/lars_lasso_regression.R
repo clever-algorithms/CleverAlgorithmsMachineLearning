@@ -26,10 +26,9 @@ train <- dataset[training_set,]
 test <- dataset[-training_set,]
 
 # create a matrix from the inputs
-matrix = model.matrix(~a+b+x, train)
+matrix <- model.matrix(~a+b+x, train)
 # preapre a model using lasso
 model <- lars(matrix, train$y, type="lasso", trace=TRUE)
-
 # summarize the model
 summary(model)
 # plot the model
@@ -44,7 +43,7 @@ coef <- predict(model, matrix, s=step, type="coef")$coefficients
 colnames(matrix)[which(coef!=0)]
 
 # create a matrix from the test data to make predictions
-matrix = model.matrix(~a+b+x, test)
+matrix <- model.matrix(~a+b+x, test)
 # make predictions using the model
 predictions <- predict(model, matrix, s=step, type="fit")$fit
 # compute mean squared error

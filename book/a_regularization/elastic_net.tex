@@ -36,6 +36,9 @@ elastic net is a compromise between ridge regression and the lasso
 combine the strengths of L2 regularization and L1 minimization
 The elastic net is especially useful in the "large p small n setting," as is the case for microarray data
 
+lambda is fit by cyclic coordinate descent (same in lasso?)
+
+all about maximizing the appropriate penalized log-likelihood
 
 \subsection{Overview}
 
@@ -56,11 +59,18 @@ The elastic net is especially useful in the "large p small n setting," as is the
 
 % sample script in R
 \subsection{Code Listing}
+% listing
+Listing~\ref{glmnet_elastic_net} provides a code listing Elastic Net method in R.
+% algorithm and package
+The example uses the \texttt{glmnet()} function in the \texttt{glmnet} core package. The demonstration provides an example of a logistic regression with regularization.
+% problem
 
+% TODO provide a better problem with real variable selection
 
-glmnet provides elastic net - generalized linear models with elastic-net penalties
+\lstinputlisting[firstline=7,language=r,caption={Example of Elastic Net in R using the \texttt{glmnet()} function in the \texttt{glmnet} package.}, label=glmnet_elastic_net]{../src/algorithms/regularization/glmnet_elastic_net.R}
 
-elasticnet package
+% other packages
+% elasticnet package?
 
 
 % References: Deeper understanding
