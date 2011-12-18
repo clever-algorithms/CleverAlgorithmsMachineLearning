@@ -1,0 +1,98 @@
+% The Clever Algorithms Project: http://www.CleverAlgorithms.com
+% (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
+% This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
+
+% Considerations
+\section{Considerations} 
+\label{intro:considerations}
+
+overview of machine learning considerations
+
+
+
+% Bias-Variance
+\subsection{Bias-Variance Trade-off}
+
+bias - approximation is too crude
+variance - overfitting training data
+
+typically when the bias is low, variance is high, and vice-versa
+
+each problem has a sweet-spot in this trade-off
+i.e. prediction error on the training set goes down, but prediction error on the test set goes down then back up, you want the bottom of that inflection point.
+
+this has to do with model selection - which model to use
+
+cross validation addresses this problem - average fit over each fold gives a better idea of performance.
+
+voting an ensemble methods can reduce variance
+
+discussion of bias and variance in the context of ensembles \cite{Dietterich1995}
+- bias as the assumptions made by a method
+- absolute bias - (what area in the space of possible models) assumption that target function comes from a class
+- relative bias - (what preferences in the area) target function is more likely to come from one set of functions than another
+must adopt a bias to generalize beyond the training data
+
+statistical meaning of bias is the error is expected to make in a dataset. - systematic error
+
+variance is squared difference between a model and the averaged model (variance in the model between source datasets?)
+
+minimize statistical bias and variance = reduce error
+
+
+kind of related, but also about bagging \cite{Tibshirani1996a}
+
+model status
+- underfit - bias - too general
+- fit
+- overfit - high-bias - too specific
+
+Are you underfit or overfit? 
+- bias: train and validation set have high error
+- variance - train is low error, validation is high
+
+diagnosis (learning curves)
+- large variance - get more data
+- large gap between training error and validation error - get more data
+- high error and small gap between train and validation error - high bias
+
+
+Improving your model
+Andrew Ng from Stanford
+- getting more training examples (fix high variance)
+- feature selection - train on less features (fix high variance, high bias - fewer features not helpful)
+- collect additional features (fix high bias)
+- adding derived features (polynomial features) (fix high bias)
+- modifying parameters of algorithm (model or regularized model, say lambda) (fix high bias, fix high variance)
+
+
+% Methodology
+\subsection{Methodology}
+
+Methodology: (Andrew Ng)
+prepare model on test set
+select parameters on the validation set
+test on the test set
+
+use learning curves to diagnose bias/variance problems
+
+
+Approach (andrew ng)
+- Brainstorm and generate lots of approaches to the problem - sample each to get an idea of where to spend time...
+- try simple algorithms first - something quick and dirty
+- plot learning curves
+	- avoid premature optimization (use evidence to guide project)
+- perform error analysis
+	- manually examine errors
+	- look for systematic patterns in mis-classified instances
+
+use precision and recall
+- tune threshold to trade-off precision and recall
+	- higher threshold = higher precision, lower recall
+	- lower threshold = lower precision, higher recall
+- use f score
+
+some algorithm work better with more data
+- complex model - train error will be small (low bias) and lots of data and unlikely to over fit - train and test error will be similar (low variance)
+- can human experts do it - we should have enough to make predictions
+

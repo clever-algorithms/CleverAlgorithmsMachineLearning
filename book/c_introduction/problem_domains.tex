@@ -1,0 +1,49 @@
+% The Clever Algorithms Project: http://www.CleverAlgorithms.com
+% (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
+% This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
+
+% Problem Domains
+\section{Problem Domains} 
+\label{intro:problemdomains}
+\index{Problem Domains}
+
+overview of Problem Domains
+
+% Function Optimization
+\subsection{Function Optimization}
+
+
+
+% Function Approximation
+\subsection{Function Approximation}
+
+
+% taxonomy by problem
+\subsection{Problems}
+\label{subsec:problems}
+There are many subtly different classes of problem's that may be addressed via machine learning methods, all generally stemming from the abstract problem of Function Approximation. Function approximation is the problem of finding a function ($f$) that approximates a target function ($g$), where typically the approximated function is selected based on a sample of observations ($x$, also referred to as the training set) taken from the unknown target function.
+In Machine Learning, the function approximation formalism is used to describe general problem types commonly referred to as pattern recognition, such as classification, clustering, and curve fitting (called a decision or discrimination function). Such general problem types are described in terms of approximating an unknown Probability Density Function, which underlies the relationships in the problem space, and is represented in the sample data. This perspective of such problems is commonly referred to as statistical machine learning and/or density estimation.
+
+% general process
+The general process focuses on 1) the collection and preparation of the observations from the target function, 2) the selection and/or preparation of a model of the target function, and 3) the application and ongoing refinement of the prepared model. 
+% optimization
+The field of Function Optimization is related to function approximation, as many-sub-problems of function approximation may be defined as optimization problems. Many of the technique paradigms used for function approximation are differentiated based on the representation and the optimization process used to minimize error or maximize effectiveness on a given approximation problem. 
+% problems
+The difficulty of function approximation problems center around 1) the nature of the unknown relationships between attributes and features, 2) the number (dimensionality) of attributes and features, and 3) general concerns of noise in such relationships and the dynamic availability of samples from the target function.
+% other problems
+Additional difficulties include the incorporation of prior knowledge (such as imbalance in samples, incomplete information and the variable reliability of data), and problems of invariant features (such as transformation, translation, rotation, scaling, and skewing of features).
+
+The following describes some of the general sub-problems of function approximation addressed via Machine Learning methods:
+
+\begin{description}
+	\item[Feature Selection]: A feature is considered an aggregation of one-or-more attributes, where only those features that have meaning in the context of the target function are necessary to the modeling function. Feature selection methods may be used to reduce the dimensionality of a dataset, before addressing a follow-up problem such as classification. It is common to assess the information content of attributes in feature selection methods, or more crudely to determine the effect on models with and without specific attributes to determine their utility.
+	
+	\item[Classification]: Observations are inherently organized into labeled groups (classes) and a supervised process models an underlying discrimination function to classify unobserved samples. A system must deduce the boundaries between classes and be able to discriminate based on the class boundaries. Classification problems are addressed through a supervised learning method given labeled data from the domain is available to teach the model the class boundaries. 
+	
+	\item[Clustering]: Observations may be organized into natural groups based on underlying structure or features in the data. The groups are unlabeled requiring a process to model an underlying discrimination function without corrective feedback. As such, unsupervised methods are commonly used for clustering problems. Resulting data clusters may be labeled after the fact and used as the basis for follow-on classification problems.
+	
+	\item[Regression]: A model is prepared that provides a `best-fit' for a set of observations that may be used for interpolation over known observations and extrapolation for observations outside what has been modeled. The best-fit may be two-dimensional (line-fitting) or higher-dimensionality (surface fitting). It is common for regression problems to have a time axis.
+	
+	\item[Association]: Rules may be deduced between attributes in the data and may discover interesting and useful statistical patterns. Such rules may or may not be related to the predicted attributes, such as the class in a classification problem, and may useful for identifying ``important'' attributes such as in feature selection.
+		
+\end{description}

@@ -4,181 +4,23 @@
 
 % This is a chapter
 
-
-\begin{bibunit}
-
 % Argument and background information the user requires to read and understand the book
 \chapter{Introduction}
 \label{chap:intro}
+% welcome
+\emph{Welcome to Clever Algorithms!} This is a handbook of recipes for computational problem solving techniques from the field of Statistical Machine Learning. 
+% they are for using
+Clever Algorithms are interesting, practical, and fun to learn about and implement.
+% briefly the audience
+Research scientists may be interested in browsing algorithm in search of an interesting system to investigate. Developers and software engineers may compare various problem solving algorithms and technique-specific guidelines. Practitioners, students, and interested amateurs may implement state-of-the-art algorithms to address business or scientific needs, or simply play with the fascinating systems they represent.
 
-Not written yet.
+% briefly book overview
+This introductory chapter provides relevant background information on Machine Learning and Algorithms. The core of the book provides a large corpus of algorithms presented in a complete and consistent manner. The final chapter covers some advanced topics to consider once a number of algorithms have been mastered. This book has been designed as a reference text, where specific techniques are looked up, or where the algorithms across whole fields of study can be browsed, rather than being read cover-to-cover. This book is an algorithm handbook and a technique guidebook, and I hope you find something useful.
 
+% sections
+\newpage\begin{bibunit}\input{c_introduction/machine_learning}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{c_introduction/problem_domains}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{c_introduction/considerations}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{c_introduction/organization}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{c_introduction/further_reading}\putbib\end{bibunit}
 
-
-\section{Algorithms}
-
-out
-- text processing and information retrieval
-	- LSA, SVD, LDA
-- nature-inspired: genetic algorithms, neural networks - see other book
-	- perceptron, winnow, backprop, Restricted Boltzmann Machines, RBF
-- generative models
-	- bayesian network, hmm
-- clustering
-	- canopy, fuzzy kmeans, hierarchical, 
-- other
-	- ica, projection pursuit
-
-
-
-discriminant functions (first order classification models)
-- lda, fda, qda, gda
-
-in
-- dimensionality reduction
-	- mds, pca, sammon, 
-	- projection pursuit? 
-	- factor analysis?
-- clustering and mixture models
-	- em, kmeans
-- ensemble
-	- adaboost, bagging, gradient boost, random forest
-- optimization
-	- bfgs, conjugate gradient, gradient descent, nelder mead
-	- combine: gradient descent+stochastic gradient descent
-	- combine: bfgs, lbfgs
-	- circular coordinate descent
-- regression
-	- lda, locally weighted, logistic, mars, ols
-	- irls?
-- model selection
-	- stepwise, ridge, lasso, elastic net, subset, partial least squares
-- other
-	- naive bayes, svm, knn, cart
-
-
-
-\section{Considerations}
-
-
-\subsection{The bias-variance tradeoff}
-
-bias - approximation is too crude
-variance - overfitting training data
-
-typically when the bias is low, variance is high, and vice-versa
-
-each problem has a sweet-spot in this trade-off
-i.e. prediction error on the training set goes down, but prediction error on the test set goes down then back up, you want the bottom of that inflection point.
-
-this has to do with model selection - which model to use
-
-cross validation addresses this problem - average fit over each fold gives a better idea of performance.
-
-voting an ensemble methods can reduce variance
-
-discussion of bias and variance in the context of ensembles \cite{Dietterich1995}
-- bias as the assumptions made by a method
-- absolute bias - (what area in the space of possible models) assumption that target function comes from a class
-- relative bias - (what preferences in the area) target function is more likely to come from one set of functions than another
-must adopt a bias to generalize beyond the training data
-
-statistical meaning of bias is the error is expected to make in a dataset. - systematic error
-
-variance is squared difference between a model and the averaged model (variance in the model between source datasets?)
-
-minimize statistical bias and variance = reduce error
-
-
-kind of related, but also about bagging \cite{Tibshirani1996a}
-
-model status
-- underfit - bias - too general
-- fit
-- overfit - high-bias - too specific
-
-Are you underfit or overfit? 
-- bias: train and validation set have high error
-- variance - train is low error, validation is high
-
-diagnosis (learning curves)
-- large variance - get more data
-- large gap between training error and validation error - get more data
-- high error and small gap between train and validation error - high bias
-
-
-% advanced?
-\section{Advanced}
-
-\subsection{Improving You Model}
-
-Andrew Ng from Stanford
-- getting more training examples (fix high variance)
-- feature selection - train on less features (fix high variance, high bias - fewer features not helpful)
-- collect additional features (fix high bias)
-- adding derived features (polynomial features) (fix high bias)
-- modifying parameters of algorithm (model or regularized model, say lambda) (fix high bias, fix high variance)
-
-
-\subsection{Model Selection}
-
-Methodology: (Andrew Ng)
-prepare model on test set
-select parameters on the validation set
-test on the test set
-
-use learning curves to diagnose bias/variance problems
-
-% code samples?
-\section{Methodology}
-
-\subsection{Applied}
-in the real world - Usama Fayyad thesis
-
-- where is the data - business
-- mining in business and their constraints
-- domain knowledge
-- lifecycle maintenance - not just one ofs
-- metrics
-
-Approach (andrew ng)
-- Brainstorm and generate lots of approaches to the problem - sample each to get an idea of where to spend time...
-- try simple algorithms first - something quick and dirty
-- plot learning curves
-	- avoid premature optimization (use evidence to guide project)
-- perform error analysis
-	- manually examine errors
-	- look for systematic patterns in mis-classified instances
-
-use precision and recall
-- tune threshold to trade-off precision and recall
-	- higher threshold = higher precision, lower recall
-	- lower threshold = lower precision, higher recall
-- use f score
-
-some algorithm work better with more data
-- complex model - train error will be small (low bias) and lots of data and unlikely to over fit - train and test error will be similar (low variance)
-- can human experts do it - we should have enough to make predictions
-
-
-% code samples?
-\section{Code Examples}
-
-All in R for use with the R-project \cite{RDevelopmentCoreTeam2011}.
-
-CRAN Task View: Multivariate Statistics \url{http://cran.r-project.org/web/views/Multivariate.html}
-Machine Learning with R: \url{http://cran.r-project.org/web/views/MachineLearning.html}
-Machine Learning Demo in R: \url{http://i2pi.com/rez/ml_talk/ml_demo.R}
-Cluster Analysis and Finite Mixture Models: \url{http://cran.r-project.org/web/views/Cluster.html}
-
-some good examples to verify against \url{https://engineering.purdue.edu/ITE/workshops/workshops09-10/r_combinedfile.pdf}
-
-List of algorithms to describe \url{https://cwiki.apache.org/confluence/display/MAHOUT/Algorithms}
-List of algorithms to describe \url{http://www.autonlab.org/tutorials/}
-
-
-data mining in r wikibook: \url{http://en.wikibooks.org/wiki/Data_Mining_Algorithms_In_R}
-
-\renewcommand{\bibsection}{\section{\bibname}}
-\putbib
-\end{bibunit}
