@@ -7,6 +7,8 @@
 % Argument and background information the user requires to read and understand the book
 \chapter{Introduction}
 \label{chap:intro}
+\begin{bibunit}
+
 % welcome
 \emph{Welcome to Clever Algorithms!} This is a handbook of recipes for computational problem solving techniques from the field of Statistical Machine Learning. 
 % they are for using
@@ -18,9 +20,13 @@ Research scientists may be interested in browsing algorithm in search of an inte
 This introductory chapter provides relevant background information on Machine Learning and Algorithms. The core of the book provides a large corpus of algorithms presented in a complete and consistent manner. The final chapter covers some advanced topics to consider once a number of algorithms have been mastered. This book has been designed as a reference text, where specific techniques are looked up, or where the algorithms across whole fields of study can be browsed, rather than being read cover-to-cover. This book is an algorithm handbook and a technique guidebook, and I hope you find something useful.
 
 % sections
-\newpage\begin{bibunit}\input{c_introduction/machine_learning}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{c_introduction/problem_domains}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{c_introduction/considerations}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{c_introduction/organization}\putbib\end{bibunit}
-\newpage\begin{bibunit}\input{c_introduction/further_reading}\putbib\end{bibunit}
+\input{c_introduction/machine_learning}
+\input{c_introduction/problem_domains}
+\input{c_introduction/considerations}
+\input{c_introduction/organization}
+\input{c_introduction/further_reading}
 
+% bib
+\renewcommand{\bibsection}{\section{\bibname}}
+\putbib
+\end{bibunit}
