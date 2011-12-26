@@ -31,7 +31,7 @@ The Golden Section Search is related to pattern searches of discrete ordered lis
 % What is the information processing objective of a technique?
 The information processing objective of the method is to locate the extremum of a function.
 % What is a techniques plan of action?
-It does this by directly sampling the function using a pattern of three points. The points form the brackets on the search, the first and the last the current bounds of the search, and the third point that partitions the intervening space. The partitioning point is selected so that the ratio between the larger partition and the whole interval is the same as the ratio of the larger partition to the small partition, known as the golden ratio ($\phi$). 
+It does this by directly sampling the function using a pattern of three points. The points form the brackets on the search, the first and the last the current bounds of the search, and the third point that partitions the intervening space. The partitioning point is selected so that the ratio between the larger partition and the whole interval is the same as the ratio of the larger partition to the small partition, known as the golden ratio ($\phi$). The partitions are compared based on their function evaluation and the better performing section is selected as the new bounds on the search. The process recurses until the desired level of precision (bracketing of the optima) is obtained or the search stalls.
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -53,7 +53,7 @@ It does this by directly sampling the function using a pattern of three points. 
 % listing
 Listing~\ref{stats_golden_section_search} provides a code listing Golden Section Search method in R solving a one-dimensional nonlinear unconstrained optimization function.
 % algorithm and package
-The example uses the {optimize()} function in the \texttt{stats} core package which is limited to one-dimensional function. This function uses a Golden Section Search with successive Parabolic Interpolation. 
+The example uses the {optimize()} function in the \texttt{stats} core package which is limited to one-dimensional function. This function uses a Golden Section Search with successive Parabolic Interpolation. This combination of a linear search followed successively by Parabolic Interpolation is a common pattern for improving the overall result by leveraging the non-parametric nature of the former and the speed of convergence of the latter methods.
 % problem
 The test problem is the basin function in one-dimension where the optimum is at $f(0)=0$ and the domain is defined as $x \in [-5,5]$. 
 
@@ -67,11 +67,9 @@ The test problem is the basin function in one-dimension where the optimum is at 
 
 % primary sources
 \subsubsection{Primary Sources}
-% seminal?
-
-% early studies
-Early study \cite{Overholt1965}
-
+% seminal
+The method was described by Kiefer in 1953 as a method for finding the maximum of a function without regularity conditions such as continuity and function derivatives \cite{Kiefer1953}.
+Johnson provided an early description of the method in a technical report for RAND Corporation \cite{Johnson1955}.
 
 % more info
 \subsubsection{More Information}
