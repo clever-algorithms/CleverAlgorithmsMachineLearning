@@ -1,4 +1,4 @@
-# stat_gradient_descent.R
+# stats_golden_section_search.R
 # 
 # The Clever Algorithms Project: http://www.CleverAlgorithms.com
 # (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
