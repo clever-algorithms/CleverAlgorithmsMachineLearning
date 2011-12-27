@@ -1,5 +1,5 @@
 % The Clever Algorithms Project: http://www.CleverAlgorithms.com
-% (c) Copyright 2010 Jason Brownlee. Some Rights Reserved. 
+% (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
 % This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
 % This is a chapter
@@ -12,68 +12,43 @@
 \index{Optimization}
 
 \section{Overview}
-This chapter describes Optimization methods.
+This chapter describes unconstrained Optimization methods that common in the field of Machine Learning.
 
-
-% Strategy: Problem solving plan
-% The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
-\subsection{Strategy}
-% What is the information processing objective of a technique?
-% What is a techniques plan of action?
-
-classical optimization methods used in machine learning algorithms
-
-numerical methods for optimization convex functions
-
-
-\subsection{Loss Functions}
-optimization is typically about cost functions, in ML, it's about loss functions 
-give examples of loss functions.
-
-
-TODO introduce some nomenclature
-
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
+% Types of Optimization Algorithms
+\subsection{Taxonomy}
+The field of function optimization is mature, traditionally referred to as Mathematical Programming. Optimization forms the core of most Machine Learning methods, and many explicitly use a classical optimization method. For the purposes of our understanding of optimization in the context of Machine Learning, we can consider the following types of optimization algorithms:
 
 \begin{itemize}
-	\item 
+	\item \textbf{Direct Search}: These are methods that only sample the function to decide how to progress the search. These are generally inefficient compared to derivative based approaches, but have the advantage of working on functions where a derivative cannot be computed or cannot be computed easily, such as noisy or discontinuous functions. Any gradient information is inferred from direct samples. Examples include Line Search methods, Pattern Search, Nelder-Mead Search, Conjugate Direction Method.
+	\item \textbf{First-order Derivative}: Examples include Gradient Descent, Steepest Descent, and Conjugate Gradient Descent.
+	\item \textbf{Second-order Derivative}: Examples include Newton's Method, Gauss-Newton Method, Levenberg-Marquardt Method, Quasi-Newton Methods, BFGS and LM-BFGS.
+	\item \textbf{Stochastic Direct Search}: These are methods that are stochastic processes that sample the function. Examples include Simulated Annealing, Genetic Algorithms, and Particle Swarm Optimization.
 \end{itemize}
 
+% Nomenclature
+\subsection{Nomenclature}
+% conceputlaization
+Function optimization is commonly conceptualized geometrically, where the parameters of the function define an $n$-dimensional search space and the role of the algorithm is to locate the desired point within that search space.
+% optima
+A problem may be referred to as an objective function, cost function, utility function, or loss function and it may be minimization or maximization. One may talk about the objective of the function in the abstract as a function extrema or function optima. 
+% shape
+A function have one or more optima, and the shape of the functions response surface (the result of the function given parameter values) is referred to as being unimodal or multimodal respectively. The single optima of a unimodal function means that the local optima is the global optima. High-nonlinear and multimodal problems can have many optima, meaning that some optimization methods can get caught in local optima and fail to fund the global optima.
+% convex
+Many Machine Learning methods have been defined with the optimization of a convex function as a the core problem. For our purposes, a convex function is unimodal and is a type of function that looks like a bowl or basin shape when in two-dimensions.
 
-advanced numerical methods
-simple ones require a learning rate
-more advanced methods use a line search to find a good alpha each iteration
-beyond gradient descent are a lot more complex
-
-
-
-% References: Deeper understanding
-% The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
+% references
 \subsection{References}
-% What are the primary sources for a technique?
-% What are the suggested reference sources for learning more about a technique?
-
-% primary sources
-\subsubsection{Primary Sources}
-
-
-% more info
-\subsubsection{More Information}
-
-
-see
-\url{http://en.wikibooks.org/wiki/R_Programming/Optimization}
-\url{http://cran.r-project.org/web/views/Optimization.html}
-
+% general
+There are many texts on modern optimization methods. Some good general reference texts include Boyd and Vandenberghe  who provide a comprehensive introduction into the field of convex function optimization \cite{Boyd2004}, and Griva et~al. who provide a broader walk of the field of linear and non-linear optimization \cite{Griva2009}.
+% for machine learning
+Reed et~al. provide an excellent overview of modern optimization methods in the context of their adaptation for use in Artificial Neural Networks \cite{Reed1998} (Chapter 10).
+% R 
+Braun et~al. provide a gentle introduction to optimization algorithms in R with some worked examples \cite{Braun2007} (Chapter 7).
 
 \putbib
 \end{bibunit}
 
-\newpage\begin{bibunit}\input{a_optimization/line_search}\putbib\end{bibunit}
+\newpage\begin{bibunit}\input{a_optimization/golden_section_search}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_optimization/gradient_descent}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_optimization/nelder_mead}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_optimization/conjugate_gradient}\putbib\end{bibunit}
