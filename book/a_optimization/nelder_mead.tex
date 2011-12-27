@@ -13,38 +13,37 @@
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Nelder-Mead Method, Downhill Simplex Method, Simplex Method.}
+\emph{Nelder-Mead Method, Downhill Simplex Method, Simplex Method, Amoeba Algorithm.}
 
 % Taxonomy: Lineage and locality
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
+Nelder-Mead Method is an optimization algorithm for multidimensional nonlinear unconstrained functions.
+It is a Direct Search in that it does not use a function gradient during the procedure and it is a Pattern Search in that it uses a geometric pattern to explore the problem space.
 % What are the closely related approaches to a technique?
-Nelder-Mead Method is an optimization method for multidimensional nonlinear unconstrained functions.
-It is a direct search method that does require a differentiable function for a gradient, instead it infers the gradient from sampling.
+It is related to other Direct Search optimization methods such as Hooke and Jeeves' Pattern Search that uses a cross geometric pattern.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
-Nelder-Mead optimizes a function by overlaying a simplex (geometrical pattern) in the domain and iteratively increasing and/or reducing its size until an optimal value is found.
+The information processing objective of the Nelder-Mead Method is to locate the extrema of a function.
 % What is a techniques plan of action?
+This is achieved by overlaying a simplex (geometrical pattern) in the domain and iteratively increasing and/or reducing its size until an optimal value is found. The process involves identifying the worst performing point of the complex and replacing it with a point reflected through the centroid (center point) of the remaining points.
 
-% help me use this technique
-\subsection{Overview}
+operations: reflection, expansion, contraction
+simplex has n+1 vertices
 
-% what it is good at
-\subsubsection{Features}
-
-\begin{itemize}
-	\item It is relatively simple to understand and implement.
-	\item Works well non-differentiable functions, discontinuous functions, non-smooth functions, and noisy functions.
-\end{itemize}
-
-% what it is not good at
-\subsubsection{Limitations}
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item It is consider slow relative to modern methods.
+	\item Can be used with multi-dimensional functions (one or more parameters) and with non-linear response surfaces.
+	\item It does not use a function derivative meaning that it can be used on non-differentiable functions, discontinuous functions, non-smooth functions, and noisy functions.
+	\item As a direct search method it is consider inefficient and slow relative to modern derivative-based methods.
 	\item It is dependent on the starting position and call be caught by local optima in multimodal functions.
 \end{itemize}
 
@@ -63,7 +62,7 @@ The test problem is the Rosenbrock function in two-dimensions where the optimum 
 \lstinputlisting[firstline=7,language=r,caption={Example of Nelder-Mead in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stats_nelder_mead]{../src/algorithms/optimization/stats_nelder_mead.R}
 
 % other packages
-Some other packages that provide an implementation of the Nelder-Mead algorithm include \texttt{gsl} and \texttt{neldermead}.
+Some other packages that provide an implementation of the Nelder-Mead algorithm include \texttt{gsl} package and the \texttt{neldermead} package.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -74,12 +73,13 @@ Some other packages that provide an implementation of the Nelder-Mead algorithm 
 % primary sources
 \subsubsection{Primary Sources}
 % seminal
-The Nelder-Mead method was propose by Nelder and Mead in 1965 \cite{Nelder1965} as an extension of Spendley, et al. direct search method \cite{Spendley1962}.
+The Simplex optimization algorithm was proposed by Spendley in 1962 \cite{Spendley1962}.
+Nelder and Mead extended the method by adding the expansion and contraction operators to the process in what became known as the Nelder-Mead method \cite{Nelder1965}.
 
 % more info
 \subsubsection{More Information}
 % study
-Lagarias, et al provide a investigation of the convergence properties of the Nelder-Mead method on convex one- and two-dimensional problems \cite{Lagarias1998}.
+Lagarias et~al.\ provide a investigation of the convergence properties of the Nelder-Mead method on convex one- and two-dimensional problems as well as a careful and complete description of the method \cite{Lagarias1998}.
 % book
 Walters provides a book that focuses on the method which he refers to as Sequential Simplex Optimization \cite{Walters1991}.
 

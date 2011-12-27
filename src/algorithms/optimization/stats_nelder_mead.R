@@ -11,7 +11,7 @@ rosenbrock <- function(v) {
 
 # prepare a random starting position in the domain
 start <- c(runif(1, -3, 3), runif(1, -3, 3))
-start # display the starting position
+print(start) # display the starting position
 # solve using optim with the Nelder-Mead method
 rs = optim(start, rosenbrock, NULL, method="Nelder-Mead")
 

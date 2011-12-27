@@ -16,10 +16,14 @@ This chapter describes unconstrained Optimization methods that common in the fie
 
 % Types of Optimization Algorithms
 \subsection{Taxonomy}
+\index{Direct Search}
+\index{Stochastic Direct Search}
+\index{Convex Optimization}
+\index{Nonlinear Optimization}
 The field of function optimization is mature, traditionally referred to as Mathematical Programming. Optimization forms the core of most Machine Learning methods, and many explicitly use a classical optimization method. For the purposes of our understanding of optimization in the context of Machine Learning, we can consider the following types of optimization algorithms:
 
 \begin{itemize}
-	\item \textbf{Direct Search}: These are methods that only sample the function to decide how to progress the search. These are generally inefficient compared to derivative based approaches, but have the advantage of working on functions where a derivative cannot be computed or cannot be computed easily, such as noisy or discontinuous functions. Any gradient information is inferred from direct samples. Examples include Line Search methods, Pattern Search, Nelder-Mead Search, Conjugate Direction Method.
+	\item \textbf{Direct Search}: These are methods that only sample the function to decide how to progress the search. These are generally inefficient compared to derivative based approaches, but have the advantage of working on functions where a derivative cannot be computed or cannot be computed easily, such as noisy or discontinuous functions. Any gradient information is inferred from direct samples. The name `Direct Search' was proposed by Hooke and Jeeves \cite{Hooke1961} and a modern review of such methods can be seen in Lewis et~al. \cite{Lewis2000}. Examples of Direct Search algorithms include Line Search methods, Pattern Search, Rosenbrock's Method, Nelder-Mead Search, Powell's Conjugate Direction Method.
 	\item \textbf{First-order Derivative}: Examples include Gradient Descent, Steepest Descent, and Conjugate Gradient Descent.
 	\item \textbf{Second-order Derivative}: Examples include Newton's Method, Gauss-Newton Method, Levenberg-Marquardt Method, Quasi-Newton Methods, BFGS and LM-BFGS.
 	\item \textbf{Stochastic Direct Search}: These are methods that are stochastic processes that sample the function. Examples include Simulated Annealing, Genetic Algorithms, and Particle Swarm Optimization.
