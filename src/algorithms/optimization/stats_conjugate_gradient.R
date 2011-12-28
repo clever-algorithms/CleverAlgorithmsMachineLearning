@@ -18,7 +18,7 @@ gradient <- function(v) {
 
 # prepare a random starting position in the domain
 start <- c(runif(1, -3, 3), runif(1, -3, 3))
-start # display the starting position
+print(start) # display the starting position
 # set the Conjugate_Gradient update method to 2 (Polak-Ribiere)
 ctrl <- list(type=2)
 # solve using optim with the Conjugate_Gradient method 
