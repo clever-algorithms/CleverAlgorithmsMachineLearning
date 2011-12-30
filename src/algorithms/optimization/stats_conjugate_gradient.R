@@ -9,8 +9,8 @@ rosenbrock <- function(v) {
 	(1 - v[1])^2 + 100 * (v[2] - v[1]*v[1])^2
 }
 
-# 2d gradient for Rosenbrock function
-gradient <- function(v) {
+# first-order derivative for the 2d Rosenbrock function
+derivative <- function(v) {
 	c(-400 * v[1] * (v[2] - v[1]*v[1]) - 2 * (1 - v[1]), 
 	  200 * (v[2] - v[1]*v[1]))
 }
@@ -22,12 +22,12 @@ print(start) # display the starting position
 # set the Conjugate_Gradient update method to 2 (Polak-Ribiere)
 ctrl <- list(type=2)
 # solve using optim with the Conjugate_Gradient method 
-rs <- optim(start, rosenbrock, gradient, method="CG", control=ctrl)
+rs <- optim(start, rosenbrock, derivative, method="CG", control=ctrl)
 
 # summarise results
-rs$par # best coordinate
-rs$value # best value
-rs$counts # function calls
+print(rs$par) # best coordinate
+print(rs$value) # best value
+print(rs$counts) # function calls
 
 # dispaly the function as a contour plot
 x <- seq(-3, 3, length.out=100)
@@ -35,6 +35,6 @@ y <- seq(-3, 3, length.out=100)
 z <- rosenbrock(expand.grid(x, y))
 contour(x, y, matrix(log10(z), length(x)))
 # draw the optima as a point
-points(rs$par[1], rs$par[2], col="black", pch=19)
+points(rs$par[1], rs$par[2], col="red", pch=19)
 # draw a square around the optima to highlight it
 rect(rs$par[1]-0.2, rs$par[2]-0.2, rs$par[1]+0.2, rs$par[2]+0.2, lwd=2)
