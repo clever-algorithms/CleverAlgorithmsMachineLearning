@@ -4,37 +4,40 @@
 # (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
-# 2d Rosenbrock function, optima is at (1,1)
+# definition of the 2D Rosenbrock function, optima is at (1,1)
 rosenbrock <- function(v) {   
 	(1 - v[1])^2 + 100 * (v[2] - v[1]*v[1])^2
 }
 
-# first-order derivative for the 2d Rosenbrock function
+# definition of the gradient of the 2D Rosenbrock function
 derivative <- function(v) {
 	c(-400 * v[1] * (v[2] - v[1]*v[1]) - 2 * (1 - v[1]), 
 	  200 * (v[2] - v[1]*v[1]))
 }
 
-
-# prepare a random starting position in the domain
-start <- c(runif(1, -3, 3), runif(1, -3, 3))
-print(start) # display the starting position
-# set the Conjugate_Gradient update method to 2 (Polak-Ribiere)
-ctrl <- list(type=2)
-# solve using optim with the Conjugate_Gradient method 
-rs <- optim(start, rosenbrock, derivative, method="CG", control=ctrl)
-
+# locate the minimum of the function using the Conjugate Gradient method
+result <- optim(
+	c(runif(1,-3,3), runif(1,-3,3)),	# start at a random position
+	rosenbrock,							# the function to minimize
+	derivative,							# no function gradient 
+	method="CG",						# use the Conjugate Gradient method
+	control=c(							# configure Conjugate Gradient
+		maxit=100,						# maximum iterations of 100
+		reltol=1e-8,					# response tolerance over-one step
+		type=2))						# use the Polak-Ribiere update method
+		
 # summarise results
-print(rs$par) # best coordinate
-print(rs$value) # best value
-print(rs$counts) # function calls
+print(result$par)		# the coordinate of the minimim
+print(result$value)		# the function response of the minimum
+print(result$counts)	# the number of function calls performed
 
 # dispaly the function as a contour plot
 x <- seq(-3, 3, length.out=100)
 y <- seq(-3, 3, length.out=100)
 z <- rosenbrock(expand.grid(x, y))
-contour(x, y, matrix(log10(z), length(x)))
+contour(x, y, matrix(log10(z), length(x)), xlab="x", ylab="y")
 # draw the optima as a point
-points(rs$par[1], rs$par[2], col="red", pch=19)
+points(result$par[1], result$par[2], col="red", pch=19)
 # draw a square around the optima to highlight it
-rect(rs$par[1]-0.2, rs$par[2]-0.2, rs$par[1]+0.2, rs$par[2]+0.2, lwd=2)
+rect(result$par[1]-0.2, result$par[2]-0.2, result$par[1]+0.2, 
+	 result$par[2]+0.2, lwd=2)

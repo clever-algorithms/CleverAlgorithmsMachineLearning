@@ -25,11 +25,11 @@ It is related to other first-order derivative optimization algorithms such as Gr
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
-The information processing objective of the technique is to locate the extrema of a function.
+The information processing objective of the technique is to locate the extremum of a function.
 % What is a techniques plan of action?
 From a starting position, the method first computes the gradient to locate the direction of steepest descent, then performs a line search to locate the optimum step size ($\alpha$). The method then repeats the process of computing the steepest direction, computes direction of the search, and performing a line search to locate the optimum step size. A parameter $\beta$ defines the direction update rule based on the gradient and can be computed using one of a number of methods.
 % difference from steepest descent
-The difference between Conjugate Gradient and Steepest Descent is that it uses conjugate directions rather than local gradients to move downhill towards the function minima.
+The difference between Conjugate Gradient and Steepest Descent is that it uses conjugate directions rather than local gradients to move downhill towards the function minimum.
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -54,15 +54,25 @@ The difference between Conjugate Gradient and Steepest Descent is that it uses c
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{stats_conjugate_gradient} provides a code listing of the Conjugate Gradient method in R solving a two-dimensional nonlinear unconstrained optimization function.
+Listing~\ref{stats_conjugate_gradient} provides a code listing of the Conjugate Gradient method in R solving a two-dimensional nonlinear unconstrained optimization function. Figure~\ref{plot:conjugate_gradient_result} provides a plot of the test problem with the located minimum highlighted.
+
 % algorithm and package
-The example uses the {optim()} function in the \texttt{stats} core package configured to use the Conjugate Gradient Method as ``CG''. The method supports three update methods: Fletcher-Reeves update (default), Polak-Ribi\`ere update, and Beale-Sorenson update. For more information on the function, type \texttt{?optim}.
+The example uses the {optim()} function in the \texttt{stats} core package configured to use the Conjugate Gradient Method as ``CG'' \cite{RDevelopmentCoreTeam2011a}. The method supports three update methods: Fletcher-Reeves update (default), Polak-Ribi\`ere update, and Beale-Sorenson update. The \texttt{optim} function is for General-purpose Optimization, for more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?optim}.
+
 % problem
-The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1, y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$. The gradient for this function is specified and is used by the optimization method.
+The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1,y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$. The gradient for this function is specified and is used by the optimization method.
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Conjugate Gradient in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stats_conjugate_gradient]{../src/algorithms/optimization/stats_conjugate_gradient.R}
 
-% other packages ???
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{a_optimization/conjugate_gradient_result.pdf}
+\caption{Contour plot of the Rosenbrock function with the located minimum highlighted.}
+\label{plot:conjugate_gradient_result}
+\end{figure}
+
+% other packages
+The \texttt{gsl} package in the \texttt{multimin} function provides an implementation of Conjugate Gradient Method that makes use of the GNU Scientific Library \cite{Hankin2011}.
 
 
 % References: Deeper understanding

@@ -31,7 +31,7 @@ The Golden Section Search is related to pattern searches of discrete ordered lis
 % What is the information processing objective of a technique?
 The information processing objective of the method is to locate the extremum of a function.
 % What is a techniques plan of action?
-It does this by directly sampling the function using a pattern of three points. The points form the brackets on the search, the first and the last the current bounds of the search, and the third point that partitions the intervening space. The partitioning point is selected so that the ratio between the larger partition and the whole interval is the same as the ratio of the larger partition to the small partition, known as the golden ratio ($\phi$). The partitions are compared based on their function evaluation and the better performing section is selected as the new bounds on the search. The process recurses until the desired level of precision (bracketing of the optima) is obtained or the search stalls.
+It does this by directly sampling the function using a pattern of three points. The points form the brackets on the search, the first and the last the current bounds of the search, and the third point that partitions the intervening space. The partitioning point is selected so that the ratio between the larger partition and the whole interval is the same as the ratio of the larger partition to the small partition, known as the golden ratio ($\phi$). The partitions are compared based on their function evaluation and the better performing section is selected as the new bounds on the search. The process recurses until the desired level of precision (bracketing of the optimum) is obtained or the search stalls.
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -40,24 +40,35 @@ It does this by directly sampling the function using a pattern of three points. 
 % What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item Assumes that the function is convex and unimodal specifically, that the function has a single optima and that it lies between the first two bracket points.
+	\item Assumes that the function is convex and unimodal specifically, that the function has a single optimum and that it lies between the first two bracket points.
 	\item Intended to find the extrema one-dimensional continuous functions.
 	\item It was shown to be more efficient than equal-sized partition line search.
-	\item The termination criteria is a specification on the minimum distance between the brackets on the optima.
-	\item It can quickly locate the bracketed area of the optima but is less efficient at locating the specific optima.
+	\item The termination criteria is a specification on the minimum distance between the brackets on the optimum.
+	\item It can quickly locate the bracketed area of the optimum but is less efficient at locating the specific optimum.
 	\item Once a solution of desired precision is located, it can be provided as the basis to a second search algorithm that has a faster rate of convergence.
 \end{itemize}
 
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{stats_golden_section_search} provides a code listing Golden Section Search method in R solving a one-dimensional nonlinear unconstrained optimization function.
+Listing~\ref{stats_golden_section_search} provides a code listing Golden Section Search method in R solving a one-dimensional nonlinear unconstrained optimization function. Figure~\ref{plot:golden_section_search_result} provides a plot of the test problem with the located minimum highlighted.
+
 % algorithm and package
-The example uses the {optimize()} function in the \texttt{stats} core package which is limited to one-dimensional function. This function uses a Golden Section Search with successive Parabolic Interpolation. This combination of a linear search followed successively by Parabolic Interpolation is a common pattern for improving the overall result by leveraging the non-parametric nature of the former and the speed of convergence of the latter methods. For more information on the function, type \texttt{?optimize}.
+The example uses the {optimize()} function in the \texttt{stats} core package \cite{RDevelopmentCoreTeam2011a}. This function uses a Golden Section Search with successive Parabolic Interpolation. This combination of a linear search followed successively by Parabolic Interpolation is a common pattern for improving the overall result by leveraging the non-parametric nature of the former and the speed of convergence of the latter methods. The \texttt{optimize()} function is for One-Dimensional Optimization, for more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?optimize}.
+
 % problem
 The test problem is the basin function in one-dimension where the optimum is at $f(0)=0$ and the domain is defined as $x \in [-5,5]$. 
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Golden Section Search in R using the \texttt{optimize()} function in the \texttt{stats} core package.}, label=stats_golden_section_search]{../src/algorithms/optimization/stats_golden_section_search.R}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{a_optimization/golden_section_search_result.pdf}
+\caption{Plot of the basin function in one-dimension with the located minimum highlighted.}
+\label{plot:golden_section_search_result}
+\end{figure}
+
+The \texttt{stats} core package also provides an implementation of Brent's method in the \texttt{optim} function.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.

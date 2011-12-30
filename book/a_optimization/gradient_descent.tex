@@ -53,16 +53,24 @@ This is achieved by selecting a starting point in the search space. For a given 
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{gradient_descent} provides a code listing Gradient Descent algorithm in R solving a two-dimensional nonlinear unconstrained optimization function.
+Listing~\ref{gradient_descent} provides a code listing Gradient Descent algorithm in R solving a two-dimensional nonlinear unconstrained optimization function. Figure~\ref{plot:gradient_descent_result} provides a plot of the test problem with the located minimum highlighted.
+
 % algorithm and package
-The example provides a custom written \texttt{gradient\_descent} function for locating the minimum of a two-dimensional function. It has a configurable step size and desired precision parameters that are set to 0.05 and 1e-6 respectively.
+The example provides a custom written \texttt{gradient\_descent} function for locating the minimum of a two-dimensional function.
 % problem
 The test problem is the basin function in two-dimensions where the optimum is at $f(0)=0$ and the domain is defined as $x \in [-3,3]$. 
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Gradient Descent in R using a custom function.}, label=gradient_descent]{../src/algorithms/optimization/gradient_descent.R}
 
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{a_optimization/gradient_descent_result.pdf}
+\caption{Contour plot of the basin function with the located minimum highlighted.}
+\label{plot:gradient_descent_result}
+\end{figure}
+
 % other packages
-Another other packages that provides an implementation of Gradient Descent include \texttt{animation}. The \texttt{gsl} package in the \texttt{multimin} function provides an implementation of Steepest Descent that makes use of the GNU Scientific Library.
+Another other packages that provides an implementation of Gradient Descent include \texttt{animation}. The \texttt{gsl} package in the \texttt{multimin} function provides an implementation of Steepest Descent that makes use of the GNU Scientific Library \cite{Hankin2011}.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
