@@ -4,23 +4,28 @@
 
 % Name
 % The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used in terms of the heading and sub-headings of an algorithm description.
-\section{BFGS} 
+\section{Broyden-Fletcher-Goldfarb-Shanno Method} 
 \label{sec:bfgs}
-\index{Broyden-Fletcher-Goldfarb-Shanno}
-\index{BFGS}
+\index{Broyden-Fletcher-Goldfarb-Shanno Method}
+\index{BFGS Method}
 \index{Variable Metric Method}
+\index{L-BFGS}
+\index{Limited Memory BFGS}
+\index{BFGS-B}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Broyden-Fletcher-Goldfarb-Shanno, BFGS, Variable Metric Method.}
+\emph{Broyden-Fletcher-Goldfarb-Shanno Method, BFGS Method, Variable Metric Method.}
 
 % Taxonomy: Lineage and locality
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
-% What are the closely related approaches to a technique?
 BFGS is an optimization method for multidimensional nonlinear unconstrained functions.
-BFGS belongs to the family of Quasi-Newton (Variable Metric) optimization methods that seek a stationary point in a function where the gradient is zero.
+% What are the closely related approaches to a technique?
+BFGS belongs to the family of Quasi-Newton (Variable Metric) optimization methods that make use of both first-derivative (gradient) and second-derivative (Hessian matrix) based information of the function being optimized. It is related to other second-derivative optimization methods such as Newton's Method (Newton-Raphson Method), Gauss-Newton Method, Levenberg-Marquardt Method. 
+% extensions
+Two popular extension of BFGS is L-BFGS (Limited Memory BFGS) which has lower memory resource requirements and BFGS-B (Box BFGS) which imposes box constraints on the method.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -28,29 +33,16 @@ BFGS belongs to the family of Quasi-Newton (Variable Metric) optimization method
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
-Don't need to select a learning rate?
-it is a quasi-Newton method (variable metric algorithm)
-uses function values and gradients to understand the surface being optimization
 
-BFGS is a Quasi-Newton method that normally require second derivatives to be computed directly, although BFGS is able to make approximations.
-
-% help me use this technique
-\subsection{Overview}
-
-% what it is good at
-\subsubsection{Features}
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item 
+	\item It requires a relatively large memory footprint, as it maintains an $n*n$ Hessian matrix, where $n$ is the number of variables. This is a limitation on the methods scalability.
 \end{itemize}
-
-% what it is not good at
-\subsubsection{Limitations}
-
-\begin{itemize}
-	\item Requires a relatively large memory footprint, as it maintains an $n*n$ Hessian matrix, where $n$ is the number of variables.
-\end{itemize}
-
 
 % sample script in R
 \subsection{Code Listing}
@@ -65,7 +57,8 @@ The test problem is the Rosenbrock function in two-dimensions where the optimum 
 
 \lstinputlisting[firstline=7,language=r,caption={Example of BFGS in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stats_bfgs]{../src/algorithms/optimization/stats_bfgs.R}
 
-% other packages ???
+% other packages
+The \texttt{optim()} function in the \texttt{stats} core package also offers an implementation of BFGS with both the Limited Memory (L-BFGS) and box constraint (BFGS-B) extensions based on the FORTRAN implementation described by Zhu et~al. \ \cite{Zhu1997}.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -76,7 +69,7 @@ The test problem is the Rosenbrock function in two-dimensions where the optimum 
 % primary sources
 \subsubsection{Primary Sources}
 % seminal 
-BFGS was published by four authors at the same time in 1970: Broyden \cite{Broyden1970}, Fletcher \cite{Fletcher1970}, Goldfarb \cite{Goldfarb1970}, and Shanno \cite{Shanno1970}.
+The BFGS method was published by four authors at the same time in 1970: Broyden \cite{Broyden1970}, Fletcher \cite{Fletcher1970}, Goldfarb \cite{Goldfarb1970}, and Shanno \cite{Shanno1970}.
 
 % more info
 \subsubsection{More Information}
