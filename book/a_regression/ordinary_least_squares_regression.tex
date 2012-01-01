@@ -20,40 +20,48 @@
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
+Ordinary Least Squares is a method for estimating the parameters for a linear regression model.
 % What are the closely related approaches to a technique?
-Ordinary Least Squares is a regression method.
+It is related to other least squares methods for estimating the parameters of linear models such as Weighted Least Squares and Partial Least Squares.
 
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
+The information processing objective of the Ordinary Least Squares Method is define a line a best fit.
 % What is a techniques plan of action?
-
-Fit a straight line to a set of data points
-Assumes attributes are drawn from a normal distribution and a straight line can be drawn through the mean.
-
-minimize sum of squared residuals
+The regression model parameters are estimated by a process that seeks a minimum of the Sum of the Squared Residuals (SSR).
 
 
-% help me use this technique
-\subsection{Overview}
 
-% what it is good at
-\subsubsection{Features}
+
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
+
+Gauss-Markov conditions are the built-in assumptions of the method, that if hold make OLS the best linear unbiased estimate and mean that the estimates are maximum likelihood estimates (Gauss-Markov theorem). The 5 conditions are as follows:
+
+\begin{enumerate}
+	\item
+	\item 
+	\item 
+	\item 
+	\item 
+\end{enumerate}
+
+The following provide some Heuristics for using OLS:
 
 \begin{itemize}
-	\item Simple method for feature selection.
+	\item Assumes attributes are drawn from a normal distribution and a straight line can be drawn through the mean.
 	\item The dependent variable must be continuous, but the independent variables may be continuous or categorical.
+	\item Relative to modern methods the prediction accuracy is poor and interpretation of the model can be difficult.
+	\item An $R^2$ statistic can be used to indicate the ``goodness of fit'' of a resulting regression line. It represents the proportion of the variance of the dependent variable that can be explained by the independent variables. An $R^2>0.3$ (30\% of the variance) is considered a good fit.
+	\item The magnitude of a coefficient indicates the relative importance of its independent variable to the model.
 \end{itemize}
 
-% what it is not good at
-\subsubsection{Limitations}
-
-\begin{itemize}
-	\item prediction accuracy is poor
-	\item intepretation is difficult
-\end{itemize}
 
 % sample script in R
 \subsection{Code Listing}
@@ -80,8 +88,9 @@ The test problem is a two-dimensional dataset of 50 samples, where the x-values 
 
 % primary sources
 \subsubsection{Primary Sources}
-
-
+% least squares
+The method for Least Squares may be traced back to Gauss who claims to have devised the method in and later published it in 1809 \cite{Gauss1809, Gauss1823} (German). Legendre independently developed and published the Least Squares method in 1805 \cite{Legendre1805} (Appendix, French).
+% ordinary least squares?
 
 % more info
 \subsubsection{More Information}

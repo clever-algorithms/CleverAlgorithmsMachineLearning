@@ -12,51 +12,42 @@
 \index{Regression}
 
 \section{Overview}
-This chapter describes Regression.
+This chapter describes Regression methods that common in the field of Machine Learning.
+
+% Types of Regression Algorithms
+\subsection{Taxonomy}
+Regression is concerned with modeling the relationships between variables. In Machine Learning such methods are commonly used for predicting real and categorical variables. There are many frameworks used to understand regression models, this section summarizes some of them to provide a context for the regression methods described in this chapter.
+
+\textbf{Linear Regression}: These are models where the relationship between dependent and independent variables is modeled using a linear function (first-degree polynomial) also known as Linear Regression. We find the set of coefficients that minimize the empirical loss, most commonly the squared error over all observations (referred to as $L_2$) assuming normally distributed noise. 
+
+Extensions to Linear Regression are named after the feature they provide, for example \textbf{Multivariate Linear Regression} (also known as Multiple Linear Regression) is an extension from one independent variable (Univariate Linear Regression) to multiple independent variables.
+
+Methods for estimating the coefficients...
+
+% Non-Linear Regression ?????
+
+% Examples are named after the methods for finding the coefficients, such as Ordinary Least Squares (OLR).
+
+% , Generalized Least Squares (GLS), Iteratively Reweighted Least Squares (IRLS), Ridge Regression (RR), and Least-Angle Regression (LAR).
+
+\textbf{Generalized Linear Model}: (GLM) This is a framework that generalizes Linear Regression and considers models as composed of 1) conditional probability for the response variable assumed to be in the exponential family 2) a linear predictor and 3) a smooth and invertible link function. GLMs models are most commonly fit by the method of maximum likelihood. The framework unified Linear Regression (normal distribution), Logistic Regression (binomial distribution), and Poisson Regression (poisson distribution). The Generalized Linear Model framework was proposed by Nelder and Wedderburn \cite{Nelder1972}. McCullagh and Nelder provide an in depth presentation in their seminal text \cite{McCullagh1989}.
 
 
-% Strategy: Problem solving plan
-% The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
-\subsection{Strategy}
-% What is the information processing objective of a technique?
-% What is a techniques plan of action?
+% Nomenclature
+\subsection{Nomenclature}
 
-stats?
-
-here we take a machine learning / data mining perspective. 
-
-earth r package?
-
-types:
-Linear Regression
-Non-Linear Regression
-Generalized Linear Regression
-
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
-
-\begin{itemize}
-	\item 
-\end{itemize}
+bias = intercept (beta 0)
+regression line
+dependent variable (Y)
+independent variable (X)
+coefficients (beta)
+best fit
+residual
 
 
 
-% References: Deeper understanding
-% The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
-\subsection{References}
-% What are the primary sources for a technique?
-% What are the suggested reference sources for learning more about a technique?
-
-% primary sources
-\subsubsection{Primary Sources}
-
-
-% more info
-\subsubsection{More Information}
-
+% references
+\subsection{Further Reading}
 
 
 
