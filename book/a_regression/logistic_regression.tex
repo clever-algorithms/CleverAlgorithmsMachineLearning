@@ -17,58 +17,41 @@
 % Taxonomy: Lineage and locality
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
-% What are the closely related approaches to a technique?
-Logistic Regression is a regression method from the field of statistics, although us better understood as a classification method.
-The most common form is Binomial Logistic Regression where the dependent variable is binary.
-Logistic Regression may be considered a special case of Generalized Linear Regression.
-Logistic Regression has many extensions including Ordered Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependent variables.
-
-What is Weighted Logistic Regression?
-What is Stepwise Logistic Regression?
-Where does Regularized Logistic Regression fit in?
+Logistic Regression is a regression method from the field of statistics, although us better understood as a classification method. It is considered a special case of Generalized Linear Regression (GLR), it is an example of a Generalized Linear Model (GLM) and may be considered an extension of Linear Regression.
+% extensions
+Ordered Logistic Regression is an extension of Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependent variables.
+% relations
+It is related to other Generalized Linear Models such as Poisson Regression (log-linear model) and Gaussian Regression (probit model).
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
-Logistic Regression fits data to a logistic (sigmoidal) function and makes predictions of the probability of occurrence of an event. 
+Logistic Regression fits data to a logistic (sigmoidal) function and makes predictions of the probability of the occurrence of an event. 
 % What is a techniques plan of action?
-A logistic function is used because it can take any values (positive or negative) and produce a value between 0 and 1. The logistic function is influenced by a logit function which take a variable derived from a sum of the weighted attributes. The logit function is the natural logarithm of the odds of the dependent variable equalling one.
+A logistic function is used because it can take any values (positive or negative) and produce a value between 0 and 1. The logistic function is influenced by a logit function which take a variable derived from a sum of the weighted attributes. The logit function is the natural logarithm of the probability of the dependent variable equalling one.
 
-The sign of a regression coefficient may be interpreted as the increase or decrease of an attribute to the resulting probability, and the magnitude represents the influence of the attribute.
-The regression coefficients (weights) are fit by minimizing the maximum likelihood loss function. The problem as a system of linear equations use the Conjugate Gradient Method to solve the coefficients. Much research into the method is focused on more efficient algorithms for fitting the model.
+The regression coefficients (sometimes called `weights') are fit by minimizing the maximum likelihood loss function. The Conjugate Gradient Method is commonly used to solve the system of linear equations to find stable coefficients.
 
-
-% help me use this technique
-\subsection{Overview}
-
-% what it is good at
-\subsubsection{Features}
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item Generally fast to create and results in an explainable model.
-	\item Generally not parametrized, so there are no parameters to configure.
-	\item Produces values always between zero and one. 
-	\item Does not assume a linear relationship between the independent variables and the dependent variable. 
-	\item Does not require normally distributed variables.
-	\item The result is a probability of the occurrence of an event that may be interpreted as such and/or in turn be discretized to a binary classification prediction.
-	\item More data can result in a better fit of the model.
+	\item It is a relatively fast method to create a model and commonly does not require any configuration parameters.
+	\item The resulting model is considered understandable and always produces a prediction $\in[0,1]$.	
+	\item Does not assume a linear relationship between the independent variables and the dependent variable like Linear Regression. 
+	\item The result is a probability of the occurrence of an event that may be interpreted as such and/or in turn maybe be discretized to a binary classification prediction.
 	\item Training data with a minimum of 10 events per independent variable is recommended \cite{Peduzzi1996}.
-	\item Features should be selected prior to fitting.
-	\item Provides statistical test significance on a fitted model including: Wald Z-statistic, Likelihood-Ratio Test, and the Hosmer-Lemshow Goodness of Fit Test.
-\end{itemize}
-
-% what it is not good at
-\subsubsection{Limitations}
-
-\begin{itemize}
-	\item The dependent variable must be binary (otherwise one must use another form of the method).
+	\item It is of a class of model where generally on some problems more data can result in a better fit.
+	\item The sign of a regression coefficient may be interpreted as the increase or decrease of an attribute to the resulting probability, and the magnitude represents the influence of the attribute.
 	\item The use of a logistic function means that input attributes can take any value, the bounds do not need to be known prior to building the model.
 	\item It can only handle real-valued dependent variables.
-	\item Dependent on the size of the sample used to prepare the model, smaller samples ($<1000$ or $<500$) can result in a model that overfits the training data.
-	\item Solving the coefficients for large models can be very computationally expensive and remains an open area for research.
 	\item Missing values must be handled explicitly or those records removed.
-	\item Requires that the independent variable be related to the logit by a linear relationship.
+	\item The method requires that the independent variable be related to the logit by a linear relationship.
+	\item It does not require normally distributed variables.	
 \end{itemize}
 
 
@@ -77,13 +60,16 @@ The regression coefficients (weights) are fit by minimizing the maximum likeliho
 Listing~\ref{stats_logistic_regression} provides a code listing of Logistic Regression in R using the \texttt{glm} (generalized linear model) function of the \texttt{stats} core package. 
 % problem
 The test problem is a contrived one dimensional problem where given a health statistic ($h$) determine whether a patient will survive or not $s\in\{0,1\}$.
-The \texttt{gml} is distributed in core R and provides a number of functions besides the logistic function. By default, the method uses the Iteratively Re-weighted Least Squares (IWLS) method to fit.
+The \texttt{gml} is distributed in core R and provides a number of functions besides the logistic function. By default, the method uses the Iteratively Re-weighted Least Squares (IWLS) method to fit. IWLS is a quasi-Newton optimization method (also called Fisher's Scoring Method) that approximates the Hessian matrix with Fisher's information matrix.
 
 % TODO make 2D problem and show the decision boundary + data points
 % show stats?
 % show convergence of gradient descent?
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Logistic Regression in R using the \texttt{glm} function of the \texttt{stats} core package.}, label=stats_logistic_regression]{../src/algorithms/regression/stats_logistic_regression.R}
+
+% other
+glmnet can fit large logistic regression models
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -93,15 +79,20 @@ The \texttt{gml} is distributed in core R and provides a number of functions bes
 
 % primary sources
 \subsubsection{Primary Sources}
+% GLMs including logit model
+Nelder and Wedderburn outlined the framework for Generalized Linear Models \cite{Nelder1972}. In their paper, they described GLMs based on Normal, Binomial, and Poisson and gamma distributions.
+% seminal review
+McCullagh and Nelder provide an in depth presentation in their seminal text \cite{McCullagh1989}.
 
-What are some primary sources for this method?
 
 % more info
 \subsubsection{More Information}
-%Komarek and Moore provide promote the use of the method in modern data mining, suggesting modifications to the fit procedure to decrease computational complexity \cite{Komarek2005}.
+% general references
+There are many excellent books dedicated to Logistic Regression, some examples include a text by Pampel that provides a practical introduction to the method \cite{Pampel2000}, a text on applied Logistic Regression by Hosmer and Lemeshow that provides a wealth of references \cite{Hosmer2000}, and book by Kleinbaum, Klein, and Pryor that is also an excellent self-paced introductory text \cite{Kleinbaum2010}.
 
-There are many excellent books dedicated to Logistic Regression, some examples include 
-``Logistic Regression: A Primer'' by Pampel that provides a practical introduction to the method \cite{Pampel2000}, ``Applied logistic regression'' by Hosmer and Lemeshow that provides a wealth of references \cite{Hosmer2000}, and ``Logistic Regression: A Self-Learning Text'' by Kleinbaum, Klein, and Pryor that is also an excellent self-paced introductory text \cite{Kleinbaum2010}.
+% data mining and R
+Komarek and Moore promote the use of the method in modern data mining, suggesting modifications to the fit procedure to decrease computational complexity \cite{Komarek2005}.
+
 
 
 % END
