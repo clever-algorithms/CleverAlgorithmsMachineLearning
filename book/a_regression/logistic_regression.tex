@@ -19,9 +19,7 @@
 % To what fields of study does a technique belong?
 Logistic Regression is a regression method from the field of statistics, although us better understood as a classification method. It is considered a special case of Generalized Linear Regression (GLR), it is an example of a Generalized Linear Model (GLM) and may be considered an extension of Linear Regression.
 % extensions
-Ordered Logistic Regression is an extension of Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependent variables.
-% relations
-It is related to other Generalized Linear Models such as Poisson Regression (log-linear model) and Gaussian Regression (probit model).
+Ordered Logistic Regression is an extension of Logistic Regression that can handle ordinal dependent variables, and Multinomial Logistic Regression that can handle nominal (categorical) dependent variables. Other common extensions include Stepwise Logistic Regression for variable selection and Regularized Logistic Regression.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -31,7 +29,7 @@ Logistic Regression fits data to a logistic (sigmoidal) function and makes predi
 % What is a techniques plan of action?
 A logistic function is used because it can take any values (positive or negative) and produce a value between 0 and 1. The logistic function is influenced by a logit function which take a variable derived from a sum of the weighted attributes. The logit function is the natural logarithm of the probability of the dependent variable equalling one.
 
-The regression coefficients (sometimes called `weights') are fit by minimizing the maximum likelihood loss function. The Conjugate Gradient Method is commonly used to solve the system of linear equations to find stable coefficients.
+The regression coefficients (sometimes called `weights') are fit by minimizing the maximum likelihood loss function. The a quasi-Newton method is commonly used to solve the system of linear equations to find stable coefficients.
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -57,19 +55,26 @@ The regression coefficients (sometimes called `weights') are fit by minimizing t
 
 % sample script in R
 \subsection{Code Listing}
-Listing~\ref{stats_logistic_regression} provides a code listing of Logistic Regression in R using the \texttt{glm} (generalized linear model) function of the \texttt{stats} core package. 
-% problem
-The test problem is a contrived one dimensional problem where given a health statistic ($h$) determine whether a patient will survive or not $s\in\{0,1\}$.
-The \texttt{gml} is distributed in core R and provides a number of functions besides the logistic function. By default, the method uses the Iteratively Re-weighted Least Squares (IWLS) method to fit. IWLS is a quasi-Newton optimization method (also called Fisher's Scoring Method) that approximates the Hessian matrix with Fisher's information matrix.
+% listing
+Listing~\ref{stats_logistic_regression} provides a code listing of the Logistic Regression method in R. Figure~\ref{plot:logistic_regression_result} provides a plot of the training dataset with the line of best fit highlighted.
 
-% TODO make 2D problem and show the decision boundary + data points
-% show stats?
-% show convergence of gradient descent?
+% algorithm and package
+The example uses the \texttt{glm()} function in the \texttt{stats} core package which is responsible for fitting Generalized Linear Model models. The configuration specified a binomial distribution for the response variable with a logit link function. The implementation uses the Iteratively Re-weighted Least Squares (IWLS) method to fit. IWLS is a quasi-Newton optimization method (also called Fisher's Scoring Method) that approximates the Hessian matrix with Fisher's information matrix.
+
+% problem
+The test problem is a three-dimensional classification problem, where the $x$ and $y$ attributes are numerical and drawn from normal distributions around 0 and 4. A class value of ``a'' or ``b'' is assigned to each coordinate such that the two classes can be separated by a straight line. The dataset is split into a training set to make the model comprised of 67\% of the samples, and a test set for assessing the model comprised of 33\% of the samples.
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Logistic Regression in R using the \texttt{glm} function of the \texttt{stats} core package.}, label=stats_logistic_regression]{../src/algorithms/regression/stats_logistic_regression.R}
 
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{a_regression/logistic_regression_result.pdf}
+\caption{Plot 2D training dataset with the line of best fit.}
+\label{plot:logistic_regression_result}
+\end{figure}
+
 % other
-glmnet can fit large logistic regression models
+% glmnet can fit large logistic regression models
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -79,10 +84,10 @@ glmnet can fit large logistic regression models
 
 % primary sources
 \subsubsection{Primary Sources}
-% GLMs including logit model
-Nelder and Wedderburn outlined the framework for Generalized Linear Models \cite{Nelder1972}. In their paper, they described GLMs based on Normal, Binomial, and Poisson and gamma distributions.
-% seminal review
-McCullagh and Nelder provide an in depth presentation in their seminal text \cite{McCullagh1989}.
+% GLMs
+The development of Logistic Regression may be traced back to the classic paper that defined Generalized Linear Models (GLMs) by Nelder and Wedderburn \cite{Nelder1972}. In it they describe a regression framework where each model assumes a distribution in the response (such as Normal, Binomial, Possion and Gamma), a linear predictor, and a link function. In the case of a selected Binomial distribution, the link function was selected as probit or logit (generally considered equivalent for these purposes). This combination under the GLM framework became known as Logistic Regression.
+% early study
+McCullagh and Nelder provide a seminal presentation of GLMs in their seminal text \cite{McCullagh1989}.
 
 
 % more info

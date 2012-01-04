@@ -30,6 +30,7 @@ model <- svm(z~., data=train, method="C", kernel="radial")
 # summarize the model
 summary(model)
 
+
 # plot the model and the decision boundary
 plot(model, train, x~y, slice=list(x=3,y=4))
 
