@@ -14,16 +14,16 @@ regression <- function() {
 # get the data 
 data <- regression()
 # split data in to train and test (67%/33%)
-training_set = sample(100,67)
+training_set <- sample(100,67)
 train <- data[training_set,]
 test <- data[(1:100)[-training_set],]
 
 # create a linear regression model using ordinary least squares
-model = lm(
-	y~x,					# predict Y given X
-	train,				# training dataset
-	NULL,					# no weighting on the variables
-	NULL,					# no action on missing values
+model <- lm(
+	y~x,			# predict Y given X
+	train,			# training dataset
+	NULL,			# no weighting on the variables
+	NULL,			# no action on missing values
 	method="qr")	# QR decomposition (efficient matrix calculation method)
 
 # summarize the create linear regression model

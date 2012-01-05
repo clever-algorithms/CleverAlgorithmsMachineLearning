@@ -33,7 +33,6 @@ This achieved by a greedy hill-climbing algorithm that successively adds one of 
 
 Stepwise Regression applies Forward Model Selection as well as Backward Model Selection, allowing variables that have become redundant through the addition of other variables, to be removed from the model later in the process. The procedure requires the specification of threshold parameters for the minimum change in the of the selected measure for adding (F-to-enter) and removing (F-to-remove) variables to and from the model. The Forward method is applied until it can no longer add any more variables, then the Backward method is applied. This sequence repeats until the model stabilizes. One may start with no variables and successively grow a model, called Forward Stepwise Regression, or start with all variables and successively prune the model, called Backward Stepwise Regression.
 
-
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
 \subsection{Heuristics}
@@ -54,16 +53,22 @@ Stepwise Regression applies Forward Model Selection as well as Backward Model Se
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{stats_stepwise_linear_regression} provides a code listing of Stepwise Linear Regression method in R to find the relevant features and the line of best fit for those features.
+Listing~\ref{stats_stepwise_linear_regression} provides a code listing of Stepwise Multiple Linear Regression method in R. Figure~\ref{plot:stepwise_regression_result} provides a plot of the training dataset with the line of best fit highlighted.
+
 % algorithm and package
 The example uses the {lm()} function and the and \texttt{step()} in the \texttt{stats} core package which are responsible for fitting linear models and performing stepwise selection respectively. The \texttt{step()} function uses a Akaike Information Criterion as the model evaluation criteria.
 
 % problem
-The test problem is a four-dimensional dataset of 50 samples, where the x-values are drawn from a uniformly random distribution $x \in [0,10]$ and \texttt{y} values are dependent on the \texttt{x} value plus a value drawn from a normally random distribution with a mean of 0 and a standard deviation of 1. The features \texttt{a} and \texttt{b} are random independent variables that have no relevant interaction x and y. In this example, \texttt{y} is considered the dependent variable and x the single relevant independent. The stepwise method is expected to discount \texttt{a} and \texttt{b} and select a linear model for \texttt{y} given \texttt{x}.
+The test problem is a four-dimensional dataset of 100 samples, where the \texttt{x1}, \texttt{x2}, \texttt{x3} values are drawn from a uniformly random distribution $x \in [0,10]$ and \texttt{y} values are dependent on the \texttt{x1} value plus a value drawn from a normally random distribution with a mean of 0 and a standard deviation of 1. The features \texttt{x2} and \texttt{x3} are random independent variables that have no relevant interaction \texttt{x1} and \texttt{y}. In this example, \texttt{y} is considered the dependent variable and \texttt{x1} the single relevant independent. The stepwise method is expected to discount \texttt{x2} and \texttt{x3} and select a linear model for \texttt{y} given \texttt{x1}.
 
-% classification example?
+\lstinputlisting[firstline=7,language=r,caption={Example of Stepwise Multiple Linear Regression in R using the \texttt{lm()} and \texttt{step()} functions in the \texttt{stats} core package.}, label=stats_stepwise_linear_regression]{../src/algorithms/regression/stats_stepwise_linear_regression.R}
 
-\lstinputlisting[firstline=7,language=r,caption={Example of Stepwise Linear Regression in R using the \texttt{lm()} and \texttt{step()} functions in the \texttt{stats} core package.}, label=stats_stepwise_linear_regression]{../src/algorithms/regression/stats_stepwise_linear_regression.R}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{a_regression/stepwise_regression_result.pdf}
+\caption{Plot 2D training dataset with the line of best fit.}
+\label{plot:stepwise_regression_result}
+\end{figure}
 
 % other packages
 Other packages that provide stepwise selection include the \texttt{stepAIC} function of the \texttt{MASS} package. The \texttt{leaps} package does not provide stepwise selection, although does provides a related selection method called Regression Subset Selection that uses a branch and bound search.
@@ -77,7 +82,7 @@ Other packages that provide stepwise selection include the \texttt{stepAIC} func
 % primary sources
 \subsubsection{Primary Sources}
 % seminal
-Efroymson is credited with Stepwise Multiple Linear Regression \cite{Efroymson1960}.
+Efroymson is credited with Stepwise Multiple Linear Regression in which he used F-test significance for the add and remove decisions \cite{Efroymson1960}.
 % early review
 Breaux provides an early and salient overview of Efroymson's Stepwise Multiple Regression in his technical report that promotes the method as computationally efficient over enumerating all subsets of regression models \cite{Breaux1967}.
 
@@ -89,7 +94,6 @@ Miller provides an analysis on the convergence of Stepwise Regression \cite{Mill
 % stepwise is a bad idea
 Whittingham et~al.\ provide a modern enumeration of all of the known problems and reasons against using Stepwise Multiple Regression for modelling, and fret about its commonplace use in the field ecology \cite{Whittingham2006}.
 Mundry and Nunn provide a similar review and focus on the limitations of the meod for statistical inference \cite{Mundry2009}.
-
 % usage in R
 Faraway provides a good example of Stepwise procedures for regression with examples in R \cite{Faraway2002} (page 125).
 

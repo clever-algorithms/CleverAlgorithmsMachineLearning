@@ -15,7 +15,7 @@ classification <- function() {
 # get the data 
 data <- classification()
 # split data in to train and test (67%/33%)
-training_set = sample(100,67)
+training_set <- sample(100,67)
 train <- data[training_set,]
 test <- data[(1:100)[-training_set],]
 
