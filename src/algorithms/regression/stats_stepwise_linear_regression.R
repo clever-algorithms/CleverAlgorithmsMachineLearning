@@ -22,7 +22,7 @@ test <- data[(1:100)[-training_set],]
 
 # create a linear regression model using ordinary least squares
 base_model <- lm(
-	y~x1+x2+x3,		# predict Y given X
+	y~x1+x2+x3,		# predict y given x1, x2 and x3
 	train,			# training dataset
 	NULL,			# no weighting on the variables
 	NULL,			# no action on missing values
