@@ -8,22 +8,24 @@
 \label{sec:mars}
 \index{Multivariate Adaptive Regression Splines}
 \index{MARS}
+\index{MARSplines}
+\index{Adaptive Regression Splines}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Multivariate Adaptive Regression Splines, MARS.}
+\emph{Multivariate Adaptive Regression Splines, MARS, MARSplines, Adaptive Regression Splines.}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
+Multivariate Adaptive Regression Splines is a Multivariate Non-Parametric Regression method.
 % What are the closely related approaches to a technique?
-Multivariate Adaptive Regression Splines is a regression method.
-
-Fast MARS is an extension.
-MARS is trademarked and licensed to Salford Systems?
-non-parametric regression technique
+It is related to other Non-Parametric Regression methods such as Kernel Regression, Non-Parametric Multiplicative Regression, Additive Modelling and Regression Trees.
+% extensions
+Fast MARS in an extension of the canonical MARS method. % ref?
+% PolyMars
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -31,9 +33,16 @@ non-parametric regression technique
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
-generalization of stepwise linear regression?
+model is an expansion in product spline basis functions
 
-lots of meaty detail \url{http://en.wikipedia.org/wiki/Multivariate_adaptive_regression_splines}
+the number of basis functions as well as the parameters for each are determined determined automatically based on the data
+
+automatic: variable selection, variable transformation, interaction detection, self testing,
+
+inspired by recursive partitioning and shares the attractive properties of that model
+provides a continuous model 
+
+generalization of stepwise linear regression?
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -42,7 +51,7 @@ lots of meaty detail \url{http://en.wikipedia.org/wiki/Multivariate_adaptive_reg
 % What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item 
+	\item Friedman originally proposed it a suitable technique for sample sizes $50 \leq N \leq 1000$ and dimensions $3 \leq n \leq 20$.
 \end{itemize}
 
 % sample script in R
@@ -71,13 +80,13 @@ Some other packages that provide an implementation of MARS include the \texttt{m
 
 % primary sources
 \subsubsection{Primary Sources}
-
-Developed by Friedman in 1991 \cite{Friedman1991}.
+% seminal
+MARS was proposed by Friedman in 1991 \cite{Friedman1991}.
 
 % more info
 \subsubsection{More Information}
-
-
+% reviews
+Friedman and Roosen provide an early introduction to the method with sample output from the FORTRAN program and clinical case studies \cite{Friedman1995}.
 
 
 
