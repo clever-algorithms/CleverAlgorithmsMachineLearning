@@ -22,7 +22,7 @@
 % To what fields of study does a technique belong?
 Multivariate Adaptive Regression Splines is a Multivariate Non-Parametric Regression method.
 % What are the closely related approaches to a technique?
-It is related to other Non-Parametric Regression methods such as Kernel Regression, Non-Parametric Multiplicative Regression, Additive Modelling and Regression Trees. The procedure to prepare the model is related to Regressive Partitioning for decision trees (CART). The use of forward and backward phases in regression shows some similarity to Stepwise Regression.
+It is related to other Non-Parametric Regression methods such as Kernel Regression, Non-Parametric Multiplicative Regression, Additive Modeling and Regression Trees. The procedure to prepare the model is related to Regressive Partitioning for decision trees (CART). The use of forward and backward phases in regression shows some similarity to Stepwise Regression.
 % extensions
 Fast MARS in an extension of the canonical MARS method that suggests an optimization of the forward procedure when building the model.
 % PolyMars?
@@ -65,19 +65,27 @@ The generalized cross-validation score is a performance measure that takes the c
 \subsection{Code Listing}
 % listing
 Listing~\ref{earth_multivariate_adaptive_regression_splines} provides a code listing Multivariate Adaptive Regression Splines method in R to find a line of best fit for a two-dimensional data set.
+Figure~\ref{plot:multivariate_adaptive_regression_splines_result} provides a plot of the training dataset with the line of best fit highlighted.
+
 % algorithm and package
-The example uses the {earth()} function in the \texttt{earth} package that uses a generalized linear model as the underling method.
+The example uses the \texttt{earth()} function in the \texttt{earth} package that uses a generalized linear model as the underling method and provides access to Fast MARS features \cite{Milborrow2012}.
 % problem
-The test problem is a two-dimensional dataset of 50 samples, where the x-values are drawn from a uniformly random distribution $x \in [0,10]$ and y values are the x value plus a value drawn from a normally random distribution with a mean of 0 and a standard deviation of 1.
+The test problem is a two-dimensional dataset of 50 samples, where the \texttt{x}-values are drawn from a uniformly random distribution $x \in [0,10]$ and \texttt{y} values are the \texttt{x} value plus a value drawn from a normally random distribution with a mean of $0$ and a standard deviation of $1$.
 
 % code listing
 \lstinputlisting[firstline=7,language=r,caption={Example of Multivariate Adaptive Regression Splines in R using the \texttt{earth} function of the \texttt{earth} package.}, label=earth_multivariate_adaptive_regression_splines]{../src/algorithms/regression/earth_multivariate_adaptive_regression_splines.R}
 
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{a_regression/multivariate_adaptive_regression_splines_result.pdf}
+\caption{Plot 2D showing the line of best fit.}
+\label{plot:multivariate_adaptive_regression_splines_result}
+\end{figure}
+
 % other code examples
-For more information on the \texttt{earth} package and function type \texttt{?earth}. Foulkes provides an example of using the \texttt{earth} package for genetic analysis \cite{Foulkes2009}. Mills provides an example using the \texttt{earth} package with sample output and plots of the model \cite{Mills2010}. Torgo also provides a small example if using the \texttt(earth) package \cite{Torgo2009}. 
+For more information on the \texttt{earth} package and function type \texttt{?earth}. Milborrow provides notes and examples using the \texttt{earth} package \cite{Milborrow2011}. Foulkes provides an example of using the \texttt{earth} package for genetic analysis \cite{Foulkes2009}. Mills provides an example using the \texttt{earth} package with sample output and plots of the model \cite{Mills2010}. Torgo also provides a small example if using the \texttt(earth) package \cite{Torgo2009}. 
 % other package
 Some other packages that provide an implementation of MARS include the \texttt{mda} package and the \texttt{polymars} package.
-
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
@@ -100,7 +108,7 @@ The capability of representing non-linear relationships in the model using a num
 Friedman also suggested an improvement to optimize the forward pass procedure of the algorithm for large datasets called Fast MARS \cite{Friedman1993}.
 
 % reviews
-Friedman and Roosen provide an early introduction to the method with sample output from the FORTRAN program and clinical case studies \cite{Friedman1995}.
+Friedman and Roosen provide an early introduction to the method with sample output from the FORTRAN program and clinical case studies \cite{Friedman1995}. Hastie et~al. provide a very readable introduction to the method in the reference text on statistical machine learning \cite{Hastie2009}.
 % R
 Faraway provides a modern summary of the method and provides an example of using MARS using R \cite{Faraway2006} (page 271).
 
