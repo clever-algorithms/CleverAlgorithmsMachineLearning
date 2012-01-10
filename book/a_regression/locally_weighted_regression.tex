@@ -4,53 +4,55 @@
 
 % Name
 % The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used in terms of the heading and sub-headings of an algorithm description.
-\section{Locally Weighted Regression} 
-\label{sec:lwr}
+\section{Locally Estimated Scatterplot Smoothing} 
+\label{sec:loess}
 \index{Locally Weighted Regression}
-\index{LWR}
-
+\index{LOESS}
+\index{LOWESS}
+\index{Locally Estimated Scatterplot Smoothing}
+\index{Locally Weighted Scatterplot Smoothing}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Locally Weighted Regression, LWR.}
+\emph{Locally Weighted Regression, LWR, Locally Estimated Scatterplot Smoothing, LOESS.}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
+Locally Weighted Regression known as Locally Estimated Scatterplot Smoothing (LOESS) is a type of Local Regression and belong to the general class of Non-Parametric Regression methods. It also belongs to the framework of Generalized Additive Models (GAMs).
 % What are the closely related approaches to a technique?
-Locally Weighted Regression is a regression algorithm.
+LOESS is an extension to its precursor method Locally Weighted Scatterplot Smoothing (LOWESS).
+It is related to other Non-Parametric Regression methods such as Multivariate Adaptive Regression Splines (MARS), Non-Parametric Multiplicative Regression, Additive Regression Model and Regression Trees. 
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
+The information processing objective of the technique is to find an equation that best describes the relationships between independent and a dependent variable.
 % What is a techniques plan of action?
 
 
-
-% help me use this technique
-\subsection{Overview}
-
-% what it is good at
-\subsubsection{Features}
-
-\begin{itemize}
-	\item 
-\end{itemize}
-
-% what it is not good at
-\subsubsection{Limitations}
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item 
+	\item The method is well suited to problems of time series prediction and two-dimensional data exploration (by projecting the line on a scatter plot of the data).
 \end{itemize}
 
 
 % sample script in R
 \subsection{Code Listing}
 
+
+% other packages
+The \texttt{lowess} package provides an implementation of LOWESS Scatter Plot Smoothing, a pre-cursor to LOESS regression.
+
+lowess
 loess package/function
 gam package/function
 
@@ -62,14 +64,21 @@ gam package/function
 
 % primary sources
 \subsubsection{Primary Sources}
-
-
+% precursor
+Cleveland described a form of univariate local regression called Locally Weighted Scatterplot Smoothing (LOWESS) which also included a robust version of the method \cite{Cleveland1978, Cleveland1979}. 
+This method was extended to the multivariate case by Devlin in an unpublished technical report \cite{Devlin1986}.
+% seminal
+Locally Estimated Scatterplot Smoothing (LOESS) or Multivariate Locally Weighted Regression is credited to Cleveland and Devlin \cite{Cleveland1988}.
 
 % more info
 \subsubsection{More Information}
-
-
-
-
+% precursor
+Cleveland presented a FORTRAN routine for LOWESS for data exploration \cite{Cleveland1981}.
+% follow-ups
+LOESS was further described by Cleveland et~al.\ \cite{Cleveland1988a}.
+% implementation
+LOESS was further developed by Cleveland and Grosse \cite{Cleveland1991} and later well described in terms of an implementation in S (Rs pre-cursor) \cite{Cleveland1992}.
+% modern
+Cleveland and Loader provide a more recent salient description of local regression including the history of the general method and examples \cite{Cleveland1996}.
 
 % END
