@@ -16,20 +16,19 @@ This chapter describes Regression methods that common in the field of Machine Le
 
 % Types of Regression Algorithms
 \subsection{Taxonomy}
-Regression is concerned with modeling the relationships between variables. In Machine Learning such methods are commonly used for predicting real and categorical variables. There are many frameworks used to understand regression models, this section summarizes some of them to provide a context for the regression methods described in this chapter.
+Regression is concerned with modeling the relationships between variables, commonly as a line, surface or hyper-surface of best fit. In Machine Learning such methods are commonly used for predicting real and categorical variables. There are many frameworks used to understand regression models, this section summarizes some of them to provide a context for the regression methods described in this chapter.
 
 % Linear Regression
 \subsubsection{Linear Regression}
-These are models where the relationship between dependent and independent variables is modeled using a linear function (first-degree polynomial) also known as Linear Regression. We find the set of coefficients that minimize the empirical loss, most commonly the squared error over all observations (referred to as $L_2$) assuming normally distributed noise. 
+These are models where the relationship between dependent and independent variables is modeled using a linear function (first-order polynomial) also known as Linear Regression. Methods find the set of coefficients that minimize the empirical loss, most commonly the squared error over all observations (referred to as $L_2$) assuming normally distributed noise.
 
 Extensions to Linear Regression are named after the feature they provide, for example \textbf{Multivariate Linear Regression} (also known as Multiple Linear Regression) is an extension from one independent variable (Univariate Linear Regression) to multiple independent variables.
 
-Methods for estimating the coefficients...
-
+Numerical methods are used fit the models (estimating the coefficients) commonly by minimising a cost or loss function, such as using Gradient Descent or a quasi-Newton optimization algorithm to minimize the sum of the squared residuals (SSR).
 
 % Generalized Linear Model
 \subsubsection{Generalized Linear Model}
-Generalized Linear Models (GLM) is a framework proposed by Nelder and Wedderburn that generalizes Linear Regression to a broader class of maximum likelihood estimators \cite{Nelder1972}. A model under this framework is characterised by:
+Generalized Linear Models (GLM) are a framework proposed by Nelder and Wedderburn that generalizes Linear Regression to a broader class of maximum likelihood estimators \cite{Nelder1972}. A model under this framework is characterised by:
 
 \begin{itemize}
 	\item A conditional probability distribution for the dependent variable (\texttt{y}) that is assumed to be in the exponential family (such as Normal, Binomial, Poisson, Gamma).
@@ -37,7 +36,8 @@ Generalized Linear Models (GLM) is a framework proposed by Nelder and Wedderburn
 	\item A smooth and invertible link function that associates the predictors value with the mean of the probability distribution function, transforming the response from the predictor into an expected value of the data (output).
 \end{itemize}
 
- GLMs models are most commonly fit by the method of maximum likelihood. 
+GLMs models are most commonly fit by the method of maximum likelihood. 
+
 The framework unified Linear Regression (normal distribution), Logistic Regression (binomial distribution), and Poisson Regression (poisson distribution). The Generalized Linear Model framework was proposed by Nelder and Wedderburn \cite{Nelder1972}. McCullagh and Nelder provide an in depth presentation in their seminal text \cite{McCullagh1989}.
 
 extension of the Gauss-Markov theorem in what became known as Generalized Least Squares (GLS) \cite{Aitken1935}.
