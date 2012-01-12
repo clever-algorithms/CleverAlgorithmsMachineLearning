@@ -22,13 +22,13 @@ Regression is concerned with modeling the relationships between variables, commo
 \subsubsection{Linear Regression}
 These are models where the relationship between dependent and independent variables is modeled using a linear function (first-order polynomial) also known as Linear Regression. Methods find the set of coefficients that minimize the empirical loss, most commonly the squared error over all observations (referred to as $L_2$) assuming normally distributed noise.
 
-Extensions to Linear Regression are named after the feature they provide, for example \textbf{Multivariate Linear Regression} (also known as Multiple Linear Regression) is an extension from one independent variable (Univariate Linear Regression) to multiple independent variables.
+Extensions to Linear Regression are named after the feature they provide, for example \textbf{Multivariate Linear Regression} (also known as Multiple Linear Regression) is an extension from one independent variable (Univariate) Linear Regression to support multiple independent variables.
 
-Numerical methods are used fit the models (estimating the coefficients) commonly by minimising a cost or loss function, such as using Gradient Descent or a quasi-Newton optimization algorithm to minimize the sum of the squared residuals (SSR).
+Numerical methods are used fit the models (estimating the coefficients) commonly by minimising a cost or loss function, such as using first- or second-order derivative optimization algorithm to minimize the Sum of Squared Residual (SSR) error.
 
 % Generalized Linear Model
 \subsubsection{Generalized Linear Model}
-Generalized Linear Models (GLM) are a framework proposed by Nelder and Wedderburn that generalizes Linear Regression to a broader class of maximum likelihood estimators \cite{Nelder1972}. A model under this framework is characterised by:
+Generalized Linear Models (GLM) are a framework that generalizes Linear Regression to a broader class of maximum likelihood estimators. A model under this framework is characterised by the following characteristics:
 
 \begin{itemize}
 	\item A conditional probability distribution for the dependent variable (\texttt{y}) that is assumed to be in the exponential family (such as Normal, Binomial, Poisson, Gamma).
@@ -36,13 +36,8 @@ Generalized Linear Models (GLM) are a framework proposed by Nelder and Wedderbur
 	\item A smooth and invertible link function that associates the predictors value with the mean of the probability distribution function, transforming the response from the predictor into an expected value of the data (output).
 \end{itemize}
 
-GLMs models are most commonly fit by the method of maximum likelihood. 
 
-The framework unified Linear Regression (normal distribution), Logistic Regression (binomial distribution), and Poisson Regression (poisson distribution). The Generalized Linear Model framework was proposed by Nelder and Wedderburn \cite{Nelder1972}. McCullagh and Nelder provide an in depth presentation in their seminal text \cite{McCullagh1989}.
-
-extension of the Gauss-Markov theorem in what became known as Generalized Least Squares (GLS) \cite{Aitken1935}.
-
-concise history of GLMs \cite{McCulloch2000}
+The framework unified Linear Regression (normal distribution), Logistic Regression (binomial distribution), and Poisson Regression (poisson distribution). 
 
 Polynomial regression - adding new variables
 
@@ -90,6 +85,12 @@ Regression with R - book that covers linear and generalized linear models with a
 
 another good book on regression with R \cite{Sheather2009}
 
+
+The Generalized Linear Model framework was proposed by Nelder and Wedderburn \cite{Nelder1972}. McCullagh and Nelder provide an in depth presentation in their seminal text \cite{McCullagh1989}.
+
+extension of the Gauss-Markov theorem in what became known as Generalized Least Squares (GLS) \cite{Aitken1935}.
+
+concise history of GLMs \cite{McCulloch2000}
 
 
 \putbib
