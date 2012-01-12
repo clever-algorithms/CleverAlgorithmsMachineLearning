@@ -18,10 +18,10 @@
 % Taxonomy: Lineage and locality
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
-Nelder-Mead Method is an optimization algorithm for multidimensional nonlinear unconstrained functions.
-It is a Direct Search in that it does not use a function gradient during the procedure and it is a Pattern Search in that it uses a geometric pattern to explore the problem space.
+The Nelder-Mead Method is an optimization algorithm for multidimensional nonlinear unconstrained functions.
+It is a Direct Search Method in that it does not use a function gradient during the procedure. It is a Pattern Search in that it uses a geometric pattern to explore the problem space.
 % What are the closely related approaches to a technique?
-It is related to other Direct Search optimization methods such as Hooke and Jeeves' Pattern Search that uses a cross geometric pattern.
+It is related to other Direct Search optimization methods such as Hooke and Jeeves' Pattern Search that also uses a geometric pattern to optimize an objective function.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
@@ -29,7 +29,9 @@ It is related to other Direct Search optimization methods such as Hooke and Jeev
 % What is the information processing objective of a technique?
 The information processing objective of the Nelder-Mead Method is to locate the extremum of a function.
 % What is a techniques plan of action?
-This is achieved by overlaying a simplex (geometrical pattern) in the domain and iteratively increasing and/or reducing its size until an optimal value is found. The simplex is defined always with $n+1$ vertices, where $n$ is the number of dimensions of the search space. The process involves identifying the worst performing point of the complex and replacing it with a point reflected through the centroid (center point) of the remaining points. The simplex can be deformed (adapt itself to the topology of the search space) by expanding away from the worst point, contract along one dimension away from the worst point, or contract on all dimensions towards the best point.
+This is achieved by overlaying a simplex (geometrical pattern) in the domain and iteratively increasing and/or reducing its size until an optimal value is found. The simplex is defined always with $n+1$ vertices, where $n$ is the number of dimensions of the search space (i.e. a triangle for a 2D problem).
+
+The process involves identifying the worst performing point of the complex and replacing it with a point reflected through the centroid (center point) of the remaining points. The simplex can be deformed (adapt itself to the topology of the search space) by expanding away from the worst point, contract along one dimension away from the worst point, or contract on all dimensions towards the best point.
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -38,10 +40,10 @@ This is achieved by overlaying a simplex (geometrical pattern) in the domain and
 % What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item Can be used with multi-dimensional functions (one or more parameters) and with non-linear response surfaces.
+	\item It can be used with multi-dimensional functions (one or more parameters) and with non-linear response surfaces.
 	\item It does not use a function derivative meaning that it can be used on non-differentiable functions, discontinuous functions, non-smooth functions, and noisy functions.
 	\item As a direct search method it is consider inefficient and slow relative to modern derivative-based methods.
-	\item It is dependent on the starting position and call be caught by local optimum in multimodal functions.
+	\item It is dependent on the starting position and can be caught by local optimum in multimodal functions.
 	\item The stopping criteria can be a minimum change in the best position. 
 	\item The nature of the simplex structure can mean it can get stuck in non-optimal areas of the search space, this is more likely if the size of the initial simplex is too large.
 	\item When the method does work (is appropriate for the function being optimized) it has been shown to be fast and robust.
@@ -50,13 +52,13 @@ This is achieved by overlaying a simplex (geometrical pattern) in the domain and
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{stats_nelder_mead} provides a code listing of the Nelder-Mead method in R solving a two-dimensional nonlinear unconstrained optimization function. Figure~\ref{plot:nelder_mead_result} provides a plot of the test problem with the located minimum highlighted.
+Listing~\ref{stats_nelder_mead} provides a code listing of the Nelder-Mead method in R solving a two-dimensional nonlinear optimization function. Figure~\ref{plot:nelder_mead_result} provides a plot of the test problem with the located minimum highlighted.
 
 % algorithm and package
-The example uses the {optim()} function in the \texttt{stats} core package configured to use the ``Nelder-Mead'' method \cite{RDevelopmentCoreTeam2011a}. The example uses the algorithm default parameters of $\alpha=1.0$ (reflection factor), $\beta=0.5$ (contraction factor), and $\gamma=2.0$ (expansion factor). The procedure will stop if there is no improvement from an iteration (change in response is less than the square root of the machines precision). The \texttt{optim} function is for General-purpose Optimization, for more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?optim}.
+The example uses the \texttt{optim()} function in the \texttt{stats} core package configured to use the ``Nelder-Mead'' method \cite{RDevelopmentCoreTeam2011a}. The example uses the algorithm default parameters of $\alpha=1.0$ (reflection factor), $\beta=0.5$ (contraction factor), and $\gamma=2.0$ (expansion factor). The procedure will stop if there is no improvement from an iteration (change in response is less than the square root of the machines precision). The \texttt{optim()} function is for General-purpose Optimization, for more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?optim}.
 
 % problem
-The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1,y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$.
+The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x,y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$.
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Nelder-Mead in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stats_nelder_mead]{../src/algorithms/optimization/stats_nelder_mead.R}
 
@@ -68,7 +70,7 @@ The test problem is the Rosenbrock function in two-dimensions where the optimum 
 \end{figure}
 
 % other packages
-The \texttt{gsl} package in the \texttt{multimin} function provides an implementation of Nelder-Mead algorithm that makes use of the GNU Scientific Library \cite{Hankin2011}.
+The \texttt{gsl} package in the \texttt{multimin()} function provides an implementation of Nelder-Mead algorithm that makes use of the GNU Scientific Library \cite{Hankin2011}.
 The \texttt{neldermead} package also provides an implementation of the algorithm \cite{Bihorel2011}.
 
 % References: Deeper understanding

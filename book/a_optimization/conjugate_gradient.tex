@@ -29,7 +29,7 @@ The information processing objective of the technique is to locate the extremum 
 % What is a techniques plan of action?
 From a starting position, the method first computes the gradient to locate the direction of steepest descent, then performs a line search to locate the optimum step size ($\alpha$). The method then repeats the process of computing the steepest direction, computes direction of the search, and performing a line search to locate the optimum step size. A parameter $\beta$ defines the direction update rule based on the gradient and can be computed using one of a number of methods.
 % difference from steepest descent
-The difference between Conjugate Gradient and Steepest Descent is that it uses conjugate directions rather than local gradients to move downhill towards the function minimum.
+The difference between Conjugate Gradient and Steepest Descent is that it uses conjugate directions rather than local gradients to move downhill towards the function minimum, which can be very efficient.
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -41,12 +41,12 @@ The difference between Conjugate Gradient and Steepest Descent is that it uses c
 	\item It is more efficient than Steepest Descent, for example it may take a straight line path down narrow valley's, whereas Steepest Descent would have to zig-zag (pinball) down the valley.
 	\item Devolves into Steepest Descent if the conjugate direction is reset each iteration.
 	\item It is almost as fast as second-order gradient methods, requiring just $n$ iterations to locate an optimum for suitable functions (where $n$ is the number of parameters).
-	\item Does not maintain a Hessian matrix (like BFGS) and therefore may be suitable for those larger problems with many variables.
+	\item It does not maintain a Hessian matrix (like BFGS) and therefore may be suitable for larger problems with many variables.
 	\item The method is most efficient (works the best) with quadratic or quadratic-like functions, or where the function is approximately quadratic near the optimum.
 	\item The method is sensitive to its starting position on non-convex problems.
 	\item The learning rate (step size $\alpha$) does not have to be specified as a line search is used to locate the optimum value as needed.
-	\item Common methods for computing the direction update rule ($\beta$) are the Hestenes-Stiefel \cite{Hestenes1952}, Fletcher-Reeves \cite{Fletcher1964}, Polak-Ribi\`ere \cite{Polak1969} (French), and Beale-Sorenson \cite{Beale1972, Sorenson1969}. The Polak-Ribi\`ere method generally works better in practice for non-quadratic functions.
-	\item The method is dependent on the accuracy of the line search, errors introduced both from this and the less-than quadratic nature of the response surface will result in more frequent updates to the direction and a less efficient search.
+	\item Common methods for computing the direction update rule ($\beta$) are the Hestenes-Stiefel \cite{Hestenes1952}, Fletcher-Reeves \cite{Fletcher1964}, Polak-Ribi\`ere \cite{Polak1969} (French), and Beale-Sorenson \cite{Beale1972, Sorenson1969} methods. The Polak-Ribi\`ere method generally works better in practice for non-quadratic functions.
+	\item It is dependent on the accuracy of the line search, errors introduced both from this and the less-than quadratic nature of the response surface will result in more frequent updates to the direction and a less efficient search.
 	\item To avoid the search degenerating, consider restarting the search process after $n$ iterations, where $n$ is the number of function parameters.
 \end{itemize}
 
@@ -54,13 +54,13 @@ The difference between Conjugate Gradient and Steepest Descent is that it uses c
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{stats_conjugate_gradient} provides a code listing of the Conjugate Gradient method in R solving a two-dimensional nonlinear unconstrained optimization function. Figure~\ref{plot:conjugate_gradient_result} provides a plot of the test problem with the located minimum highlighted.
+Listing~\ref{stats_conjugate_gradient} provides a code listing of the Conjugate Gradient method in R solving a two-dimensional nonlinear optimization function. Figure~\ref{plot:conjugate_gradient_result} provides a plot of the test problem with the located minimum highlighted.
 
 % algorithm and package
-The example uses the {optim()} function in the \texttt{stats} core package configured to use the Conjugate Gradient Method as ``CG'' \cite{RDevelopmentCoreTeam2011a}. The method supports three update methods: Fletcher-Reeves update (default), Polak-Ribi\`ere update, and Beale-Sorenson update. The \texttt{optim} function is for General-purpose Optimization, for more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?optim}.
+The example uses the \texttt{optim()} function in the \texttt{stats} core package configured to use the Conjugate Gradient Method as ``CG'' \cite{RDevelopmentCoreTeam2011a}. The method supports three update methods: Fletcher-Reeves update (default), Polak-Ribi\`ere update, and the Beale-Sorenson update. The \texttt{optim} function is for General-purpose Optimization, for more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?optim}.
 
 % problem
-The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x=1,y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$. The gradient for this function is specified and is used by the optimization method.
+The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x,y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$. The gradient for this function is specified and is used by the optimization method.
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Conjugate Gradient in R using the \texttt{optim()} function in the \texttt{stats} core package.}, label=stats_conjugate_gradient]{../src/algorithms/optimization/stats_conjugate_gradient.R}
 
@@ -72,7 +72,7 @@ The test problem is the Rosenbrock function in two-dimensions where the optimum 
 \end{figure}
 
 % other packages
-The \texttt{gsl} package in the \texttt{multimin} function provides an implementation of Conjugate Gradient Method that makes use of the GNU Scientific Library \cite{Hankin2011}.
+The \texttt{gsl} package in the \texttt{multimin()} function provides an implementation of Conjugate Gradient Method that makes use of the GNU Scientific Library \cite{Hankin2011}.
 
 
 % References: Deeper understanding
