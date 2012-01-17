@@ -5,14 +5,14 @@
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
 # define 2D regression problem of 100 samples
-regression <- function() {   
+regression_dataset <- function() {   
 	x <- runif(100, 0, 10)
 	y <- x^2 + rnorm(100)
 	data.frame(x, y)	
 }
 
 # get the data 
-data <- regression()
+data <- regression_dataset()
 # split data in to train and test (67%/33%)
 training_set <- sample(100,67)
 train <- data[training_set,]

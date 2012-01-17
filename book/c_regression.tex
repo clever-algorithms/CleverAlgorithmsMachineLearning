@@ -12,7 +12,7 @@
 \index{Regression}
 
 \section{Overview}
-This chapter describes Regression methods that common in the field of Machine Learning.
+This chapter describes Regression methods that are common in the field of Machine Learning.
 
 % Types of Regression Algorithms
 \subsection{Taxonomy}
@@ -20,78 +20,49 @@ Regression is concerned with modeling the relationships between variables, commo
 
 % Linear Regression
 \subsubsection{Linear Regression}
-These are models where the relationship between dependent and independent variables is modeled using a linear function (first-order polynomial) also known as Linear Regression. Methods find the set of coefficients that minimize the empirical loss, most commonly the squared error over all observations (referred to as $L_2$) assuming normally distributed noise.
+These are models where the relationship between dependent and independent variables is modeled using a linear function (first-order polynomial) also known as Linear Regression. Methods find the set of coefficients that minimize the empirical loss, most commonly the squared error over all observations assuming normally distributed noise.
 
-Extensions to Linear Regression are named after the feature they provide, for example \textbf{Multivariate Linear Regression} (also known as Multiple Linear Regression) is an extension from one independent variable (Univariate) Linear Regression to support multiple independent variables.
+Extensions to Linear Regression are named after the feature they provide, for example Multivariate Linear Regression (also known as Multiple Linear Regression) is an extension from one independent variable (Univariate) Linear Regression to support multiple independent variables.
 
 Numerical methods are used fit the models (estimating the coefficients) commonly by minimising a cost or loss function, such as using first- or second-order derivative optimization algorithm to minimize the Sum of Squared Residual (SSR) error.
 
 % Generalized Linear Model
 \subsubsection{Generalized Linear Model}
-Generalized Linear Models (GLM) are a framework that generalizes Linear Regression to a broader class of maximum likelihood estimators. A model under this framework is characterised by the following characteristics:
+Generalized Linear Models (GLM) are a framework that generalizes Linear Regression to a broader class of maximum likelihood estimators. A model under this framework is characterised by the following:
 
 \begin{itemize}
 	\item A conditional probability distribution for the dependent variable (\texttt{y}) that is assumed to be in the exponential family (such as Normal, Binomial, Poisson, Gamma).
-	\item A predictor that linearly combines the independent variables using coefficients (regressors). The predictor is commonly fit by the maximum likelihood estimates using Iteratively Reweighted Linear Regression (IRLR) optimization procedure.
+	\item A predictor that linearly combines the independent variables using coefficients (regressors). The predictor is commonly fit by the maximum likelihood estimates using the Iteratively Reweighted Linear Regression (IRLR) optimization procedure.
 	\item A smooth and invertible link function that associates the predictors value with the mean of the probability distribution function, transforming the response from the predictor into an expected value of the data (output).
 \end{itemize}
 
-
-The framework unified Linear Regression (normal distribution), Logistic Regression (binomial distribution), and Poisson Regression (poisson distribution). 
-
-Polynomial regression - adding new variables
-
-
-Nonlinear Regression
-Nonparametric Regression - Generalized Nonparametric Regression
-
-Locally Weighted Regression
-Principle Component Regression
-Stepwise Regression
-Ridge Regression
-Robust Regression
+Examples of generalized linear models include Linear Regression (normal distribution), Logistic Regression (binomial distribution), and Poisson Regression (poisson distribution). 
 
 % Generalized Additive Model
 \subsubsection{Generalized Additive Model}
-generalization of additive models
-basically non-parametric regression methods
-
-MARS
-Linear Weighted Regression or LOESS
-
-paper: \cite{Hastie1986}
-book: \cite{Hastie1990}
-
+Generalized Additive Model (GAM) are a framework that updates the Generalized Linear Models to support Additive Models or Non-Linear Regression (a fit achieved using a non-parametric method).
+% exaqmples
+Examples of Non-Linear Regression methods include Multivariate Adaptive Regression Splines (MARS) and Locally Estimated Scatterplot Smoothing (LOESS).
 
 
 % Nomenclature
 \subsection{Nomenclature}
+Discussions on regression use terms from statistics and probability. This section touches on a few common terms used when discussing regression methods.
 
-bias = intercept (beta 0)
-regression line
-dependent variable (Y)
-independent variable (X)
-coefficients (beta)
-best fit
-residual
-regressors - coefficient
-
+Given a plot of data in two-dimensions (\texttt{x} and \texttt{y}), imagine a line that best describes the relationship between \texttt{x} and \texttt{y}. This line is called the regression line or the line of best fit. The point where the line touches the \texttt{y}-axis is called the \texttt{y}-intercept or in Machine Learning, the bias. The equation that describes the relationship between the variables is called the model. The model is prepared by a regression algorithm, where the coefficients that are found by the method are called the regressors. The regression equation answers the question, given a value \texttt{x} (independent variable), what is the value \texttt{y} (dependent variable).
 
 % references
 \subsection{Further Reading}
+% general regression analysis
+There are many excellent texts devoted to regression analysis.
+Tamhane and Dunlop provide an excellent introduction to the field in their text book \cite{Tamhane2000}, as does Montgomery \cite{Montgomery2001}.
+% regression in R
+Weisberg and Fox provide a good book for getting started with regression, covering linear and generalized linear models with all examples in R \cite{Weisberg2010}. Sheather also provides an good introduction to regression using the R platform \cite{Sheather2009}.
 
-
-Regression with R - book that covers linear and generalized linear models with all examples in R \cite{Weisberg2010}
-
-another good book on regression with R \cite{Sheather2009}
-
-
-The Generalized Linear Model framework was proposed by Nelder and Wedderburn \cite{Nelder1972}. McCullagh and Nelder provide an in depth presentation in their seminal text \cite{McCullagh1989}.
-
-extension of the Gauss-Markov theorem in what became known as Generalized Least Squares (GLS) \cite{Aitken1935}.
-
-concise history of GLMs \cite{McCulloch2000}
-
+% GLM
+The Generalized Linear Models framework was proposed by Nelder and Wedderburn \cite{Nelder1972}. McCullagh and Nelder provide an in depth presentation in their seminal text \cite{McCullagh1989}. McCulloch provides a concise history of Generalized Linear Models \cite{McCulloch2000}.
+% GAM
+Hastie and Tibshirani described the Generalized Additive Models framework \cite{Hastie1986}, who later published an extensive book on the topic \cite{Hastie1990}.
 
 \putbib
 \end{bibunit}

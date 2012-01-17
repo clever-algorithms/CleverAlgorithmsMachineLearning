@@ -22,7 +22,7 @@
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
-Locally Estimated Scatterplot Smoothing (LOESS) is a type of Local Regression and belong to the general class of Non-Parametric Regression methods. It also belongs to the framework of Generalized Additive Models (GAMs).
+Locally Estimated Scatterplot Smoothing (LOESS) is a type of Local Regression and belongs to the general class of Non-Parametric Regression methods. It also belongs to the framework of Generalized Additive Models (GAMs).
 % What are the closely related approaches to a technique?
 LOESS is an extension to its precursor method Locally Weighted Scatterplot Smoothing (LOWESS).
 It is related to other Non-Parametric Regression methods such as Multivariate Adaptive Regression Splines (MARS), Non-Parametric Multiplicative Regression, Additive Regression Model and Regression Trees. 
@@ -33,7 +33,7 @@ It is related to other Non-Parametric Regression methods such as Multivariate Ad
 % What is the information processing objective of a technique?
 The information processing objective of the technique is to find an equation that best describes the relationships between independent and a dependent variable.
 % What is a techniques plan of action?
-This is achieved by fitting a local low-order polynomial model to nearby points, where `nearby' is defined by a distance kernel function (such as a nearest neighbor Euclidean distance kernel for continuous variables) between observations. A given polynomial model is fit using weighted least squares as needed using the response point as the centroid for the distance kernel function. The amount of data used to fit each local model is called the bandwidth or smoothing parameter. Regression models are created just-in-time for each response that is required.
+This is achieved by fitting a local low-order polynomial model to nearby points, where `nearby' is defined by a distance kernel function (such as a nearest neighbor Euclidean distance kernel for continuous variables) between observations. A given polynomial model is fit using weighted least squares as needed,  where the response point is used as the centroid for the distance kernel function. The amount of data used to fit each local model is called the bandwidth or smoothing parameter. Regression models are created just-in-time for each response that is required.
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -45,20 +45,21 @@ This is achieved by fitting a local low-order polynomial model to nearby points,
 	\item LOESS is very simple, requiring only a sample of data to compute a local model for a given observation.
 	\item The method delays computation until the time a response is needed, although computation at this time can be relatively demanding.
 	\item The method is well suited to problems of time series prediction and two-dimensional data exploration (by projecting the line on a scatter plot of the data).
-	\item It is common set the bandwidth parameter used to fit a local model using a quarter to half of the given training dataset.
+	\item It is common set the bandwidth parameter used to fit a local model using 25\% to 50\% of the given training dataset.
 	\item It is common to use low order polynomials as local models, typically first (linear) or second (quadratic) degree. Higher order polynomials are expected to over-fit the data.
-	\item Performs is as good as the training data, requiring relatively large non-sparse datasets (good local structure) to produce good predictions.
+	\item It performs is as good as the training data, requiring relatively large non-sparse datasets (good local structure) to produce good predictions.
 	\item It does not produce a single equation model like OLS that can be analyzed and understood.
 \end{itemize}
 
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{stats_locally_estimated_scatterplot_smoothing} provides a code listing Locally Estimated Scatterplot Smoothing method in R.
+Listing~\ref{stats_locally_estimated_scatterplot_smoothing} provides a code listing of the Locally Estimated Scatterplot Smoothing method in R.
 Figure~\ref{plot:locally_estimated_scatterplot_smoothing_result} provides a plot of the training dataset with the line of best fit highlighted.
 
 % algorithm and package
-The example uses the \texttt{loess()} function in the \texttt{stats} core package that provides Local Polynomial Regression Fitting using the LOESS method.
+The example uses the \texttt{loess()} function in the \texttt{stats} core package that provides Local Polynomial Regression Fitting using the LOESS method \cite{RDevelopmentCoreTeam2011a}. For more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?loess}.
+
 % problem
 The test problem is a two-dimensional dataset of 50 samples, where the \texttt{x}-values are drawn from a uniformly random distribution $x \in [0,10]$ and \texttt{y} values are the \texttt{x} value plus a value drawn from a normally random distribution with a mean of $0$ and a standard deviation of $1$.
 

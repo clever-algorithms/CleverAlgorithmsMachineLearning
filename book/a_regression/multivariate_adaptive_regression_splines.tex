@@ -33,12 +33,12 @@ Fast MARS in an extension of the canonical MARS method that suggests an optimiza
 % What is the information processing objective of a technique?
 The information processing objective of the technique is to find an equation that best describes the relationships between independent and a dependent variable.
 % What is the model?
-This is achieved by preparing a model that is the weighted sum of basis functions. A basis function can be as simple as a constant, or as complex as one or the product of multiple sub-functions that add non-linearities called hinge functions. Hinge functions take the form of $max(0, x-c)$ where $0$ is the minimum value for the function, $x$ is the variable, and $c$ is a constant (that provides a kink or sharp turn in one-dimension) called the knot. The number of basis functions as well as the parameters for each are determined determined automatically through an iterative process based on the data.
+This is achieved by preparing a model that is the weighted sum of basis functions. A basis function can be as simple as a constant, or as complex as one or the product of multiple sub-functions that add non-linearities called hinge functions. Hinge functions take the form of $max(0, x-c)$ where $0$ is the minimum value for the function, $x$ is the variable, and $c$ is a constant (that provides a kink or sharp turn in one-dimension) called the knot. The number of basis functions as well as the parameters for each are determined automatically through an iterative process based on the data.
 
 % what is the algorithm to arrive at the model?
 MARS is motivated as a process to create a continuous model using a procedure like that used in recursive partitioning (CART). Like recursive partitioning, the method has a forward procedure to add terms and a backward procedure to prune terms from the model.
 % forward
-The forward procedure is a greedy algorithm that seeks to minimizes the sum of squared residual errors (SSR). It starts with the intercept and adds basis function terms to the model until a maximum number of terms have been added or no further improvements in SSR are possible. Terms are added and configured to give the greatest reduction in SSR.
+The forward procedure is a greedy algorithm that seeks to minimizes the Sum of Squared Residual (SSR) errors. It starts with the intercept and adds basis function terms to the model until a maximum number of terms have been added or no further improvements in SSR are possible. Terms are added and configured to give the greatest reduction in SSR.
 
 % backward
 The intent of the forward procedure is overfit the training data. The backward step is intended to add generality to the mode by pruning terms one-at-a-time selecting each term to remove based on the improvement in a generalized cross-validation score. The backward pass typically prunes one side of each pair of terms.
@@ -55,10 +55,10 @@ The generalized cross-validation score is a performance measure that takes the c
 	\item Friedman originally proposed it a suitable technique for sample sizes $50 \leq N \leq 1000$ and dimensions $3 \leq n \leq 20$.
 	\item The algorithm requires the specification of the maximum number of terms to add in the forward pass. % recommended values?
 	\item A penalty term (\texttt{d}) is used on the generalized cross-validation score which is commonly set to a small integer value ($d<4$, typically 2 or 3).
-	\item Constraints can be imposed on the addition of terms in the first pass, such as limitations on the number of interactions permitted between basis functions. Low numbers of interactions are common (such as 1 or 2).
+	\item Constraints can be imposed on the addition of terms in the forward pass, such as limitations on the number of interactions permitted between basis functions. Low numbers of interactions are common (such as 1 or 2).
 	\item It may be more suitable to real valued variables than recursive partitioning given the continuous nature of the hinge basis functions.
 	\item Like partitioning, data preparation may not required as the hinge functions can account for outliers.
-	\item The training times for MARS are relatively fast although it is a generally slower process than Recursive Partitioning on the same training dataset.
+	\item The training times for MARS are relatively fast although it is a generally slower process to fit than Recursive Partitioning on the same training dataset.
 \end{itemize}
 
 % sample script in R
@@ -68,7 +68,8 @@ Listing~\ref{earth_multivariate_adaptive_regression_splines} provides a code lis
 Figure~\ref{plot:multivariate_adaptive_regression_splines_result} provides a plot of the training dataset with the line of best fit highlighted.
 
 % algorithm and package
-The example uses the \texttt{earth()} function in the \texttt{earth} package that uses a generalized linear model as the underling method and provides access to Fast MARS features \cite{Milborrow2012}.
+The example uses the \texttt{earth()} function in the \texttt{earth} package that uses a generalized linear model as the underling method and provides access to Fast MARS features \cite{Milborrow2012}. For more information on this library type: \texttt{library(help="earth")}, and for more information on the function type: \texttt{?earth}.
+
 % problem
 The test problem is a two-dimensional dataset of 50 samples, where the \texttt{x}-values are drawn from a uniformly random distribution $x \in [0,10]$ and \texttt{y} values are the \texttt{x} value plus a value drawn from a normally random distribution with a mean of $0$ and a standard deviation of $1$.
 
@@ -83,9 +84,9 @@ The test problem is a two-dimensional dataset of 50 samples, where the \texttt{x
 \end{figure}
 
 % other code examples
-For more information on the \texttt{earth} package and function type \texttt{?earth}. Milborrow provides notes and examples using the \texttt{earth} package \cite{Milborrow2011}. Foulkes provides an example of using the \texttt{earth} package for genetic analysis \cite{Foulkes2009}. Mills provides an example using the \texttt{earth} package with sample output and plots of the model \cite{Mills2010}. Torgo also provides a small example if using the \texttt(earth) package \cite{Torgo2009}. 
+For more information on the \texttt{earth} package and function type \texttt{?earth}. Milborrow provides notes and examples using the \texttt{earth} package \cite{Milborrow2011}. Foulkes provides an example of using the \texttt{earth} package for genetic analysis \cite{Foulkes2009}. Mills provides an example using the \texttt{earth} package with sample output and plots of the model \cite{Mills2010}. Torgo also provides a small example if using the \texttt{earth} package \cite{Torgo2009}. 
 % other package
-Some other packages that provide an implementation of MARS include the \texttt{mda} package and the \texttt{polymars} package.
+Some other packages that provide an implementation of MARS include the \texttt{mda} and the \texttt{polymars} packages.
 
 % References: Deeper understanding
 % The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.

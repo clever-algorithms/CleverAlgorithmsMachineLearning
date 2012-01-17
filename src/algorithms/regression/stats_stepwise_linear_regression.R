@@ -5,7 +5,7 @@
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
 # define 5 variable regression problem of 100 samples
-regression <- function() {   
+regression_dataset <- function() {   
 	x1 <- runif(100, 0, 10)
 	x2 <- runif(100, 1, 2) 	# random
 	x3 <- runif(100, 2, 3) 	# random
@@ -14,7 +14,7 @@ regression <- function() {
 }
 
 # get the data 
-data <- regression()
+data <- regression_dataset()
 # split data in to train and test (67%/33%)
 training_set <- sample(100,67)
 train <- data[training_set,]
@@ -32,7 +32,7 @@ base_model <- lm(
 selected_model <- step(
 	base_model, 	# the model on which to operate
 	y~x1+x2+x3,		# parameter relationships
-	0, 				# estimate the sale for the AIC statistic
+	0, 				# estimate the scale for the AIC statistic
 	"both",			# use forward and backward selection
 	1, 				# provide debug information during the execution
 	NULL, 			# no filter function for models
