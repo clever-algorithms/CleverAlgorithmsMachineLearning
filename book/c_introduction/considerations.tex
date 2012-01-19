@@ -11,52 +11,55 @@ This section provides a brief introduction into some important considerations in
 % Nomenclature
 \subsection{Nomenclature}
 \index{Machine Learning!Nomenclature}
-There are many terms thrown around in the field of Machine Learning, some borrowed from Statistics, some from Artificial Intelligence, and some from Probability theory (as well as an assortment of other fields). Unless you have a grounding in many fields, the nomenclature can be confusing. This section provides a terse overview of some of the term used to refer to data and models
+There are many terms thrown around in the field of Machine Learning, some borrowed from Statistics, some from Artificial Intelligence, and some from Probability theory (as well as an assortment of other fields). Unless you have a grounding in many fields, the nomenclature can be confusing. This section provides a terse overview of some of the terms used to refer to data and models
 
-Data is the starting point. Data lone is useless. Processed data is \emph{information} and information that has meaning is \emph{knowledge}. For example, an objective of Data Mining is acquiring knowledge from data using Machine Learning algorithms. We organize our data into rows and columns. A row of data may be considered an \emph{instance}, \emph{example}, \emph{event} or an \emph{observation}. The columns of our data may be referred to as \emph{attributes}, \emph{variables} or \emph{features}. 
+Data is the starting point. Processed data is \emph{information} and information that has meaning is \emph{knowledge}. For example, an objective of Data Mining is acquiring knowledge from data using Machine Learning algorithms. We organize our data into rows and columns. A row of data may be considered an \emph{instance}, \emph{example}, \emph{event} or an \emph{observation}. The columns of our data may be referred to as \emph{attributes}, \emph{variables} or \emph{features}. 
 
-When we are asking a question of our data we build a model. In statistics, we refer to the relationships between variables as \emph{dependent} and those variables without \emph{relationships} as independent. In the context of a model, we may would say that we wish to predict a dependent variable based on one or more independent variables. Mathematically, a model encapsulates the relationships between the dependent and independent variables as a \emph{target function}. We may conceptualize an idealized version of this function that the model seeks to approximate or \emph{fit} over a training process. 
+When we are asking a question of our data we build a model. In statistics, we refer to the relationships between variables as \emph{dependent} and those variables without \emph{relationships} as independent. In the context of a model, we would say that we wish to predict a dependent variable based on one or more independent variables. Mathematically, a model encapsulates the relationships between the dependent and independent variables as a \emph{target function}. We may conceptualize an idealized version of this function that the model seeks to approximate or \emph{fit} over a training process. 
 
 When we are looking to train or fit a model, we take a sample of our data and call it the \emph{training dataset} and a separate independent sample called the \emph{testing dataset} for assessing the unbiased performance of the resulting model. A model should `learn' from the training set and generalize this knowledge to the test dataset and beyond. A model that is not trained enough and does not have enough knowledge is \emph{under-fit}, whereas a model that is trained too much cannot generalize (is too specialized on the training dataset) and is said to be \emph{over-fit}.
 
 % Bias-Variance
 \subsection{Bias-Variance Trade-off}
 \index{Bias-Variance Trade-off}
-A central theme in Machine Learning is walking the trade-off between bias and variance in a given model for a problem dataset.
+A central theme in Machine Learning is walking the trade-off between the \emph{bias} and \emph{variance} in a given model for a problem dataset.
 
 \begin{itemize}
-	\item \textbf{Bias}: Bias can best understood as the assumptions that constrain a model. Classically, this was referred to as Inductive Bias in Machine Learning. 
-	\item \textbf{Variance}: Variance can be best understood as the sensitive of the model to the specific that it is trained on.
+	\item \textbf{Bias}: Best understood as the assumptions that constrain a model. Classically, this was referred to as Inductive Bias in Machine Learning. 
+	\item \textbf{Variance}: Best understood as the sensitivity of the model to the specific data on which it is trained.
 \end{itemize}
 
 Bias and Variance have a dichotic relationship where an increase in bias results in a decrease in variance for a given model, and vice versa. 
-Practically, one may consider each problem to have sweet-spot in this trade-off - a minimum bias and a minimum variance. Typically, the objective of a problem may be to get as close as possible to this sweet-spot with a given model (but this may not always be the case). 
+Practically, one may consider each problem to have sweet-spot in this trade-off, a minimum bias and a minimum variance. Typically, the objective of a problem may be to get as close as possible to this sweet-spot with a given model (but this may not always be the case). 
 
-This trade-off is a useful motivation in fitting a model for a given dataset. It can be used as a lens through which summary statistics can be understood. An good example is that of a learning curve which is a plot of a models error score during training (such as sum error during a least squares optimization in linear regression). One can plot a learning curve for a training dataset and a test dataset during training. One may see the error curves decrease on the training and test set initially, although over an extended training period, the training error may continue to decrease and the test error may start to rise again.
+\index{Learning Curve}
+This trade-off is a useful motivation in fitting a model for a given dataset. It can be used as a lens through which summary statistics can be understood. An good example is that of a learning curve which is a plot of a models error score during training (such as the Sum Squared Residual error during a least squares optimization in linear regression). One can plot a learning curve for a training dataset and a test dataset during training. One may see the error curves decrease on the training and test set initially, although over an extended training period, the training error may continue to decrease and the test error may start to rise again.
 
-This is an example of model over-fitting where the model is tuned for performance the training data at the expense of performance on the test dataset - the model has a high variance. The inflection point where before the test set error starts to rise again may be an example of the sweet-spot in the bias-variance trade-off.
+This is an example of model over-fitting where the model is tuned for performance the training data at the expense of performance on the test dataset, the model has a high variance. The inflection point in the learning curve graph where before the test set error starts to rise again may be an example of the sweet-spot in the bias-variance trade-off.
 
-Dietterich and Kong provide an interesting discussion of the tradeoff in the context of decision trees \cite{Dietterich1995}. In their paper they present a more nuanced geometrical metaphor for model bias:
+Dietterich and Kong provide an interesting discussion of this trade-off in the context of decision trees \cite{Dietterich1995}. In their paper they present a more nuanced geometrical metaphor for model bias:
 
 \begin{itemize}
 	\item \textbf{Absolute Bias}: This is the general area in the search space of possible target functions available. The absolute bias is the acknowledgment that a selected method always reduces the set of target functions to a general sub-set.
 	\item \textbf{Relative Bias}: This is the preference within the general area of the search space of possible target functions. The relative bias is the acknowledgement that a target function is more likely to come from one set of functions than another.
 \end{itemize} 
 
-This understanding of bias highlights the fact that some bias must be adopted in the selection of a model, and that there is a need for bias to generalize beyond the training data - a function that can depict this relationship.
+This understanding of bias highlights the fact that some bias must be adopted in the selection of a model, and that there is a need for bias to generalize beyond the training data.
 
-We can use the learning curves introduced above to diagnose bias or variance problems with our models. For example:
+We can use the learning curves to diagnose bias or variance problems with our models. For example:
 
+\index{Under-fit}
+\index{Over-fit}
 \begin{itemize}
-	\item \textbf{Under-fit}: We may have high-bias in our model if error remains high on both our test and training datasets.
-	\item \textbf{Over-fit}: We may have high-variance if error on the training dataset is low and the error is high on the test dataset (the example described above).
+	\item \textbf{Model Under-fit}: We may have high-bias in our model if error remains high on both our test and training datasets.
+	\item \textbf{Model Over-fit}: We may have high-variance if error on the training dataset is low and the error is high on the test dataset (the example described above).
 \end{itemize}
 
-Knowledge of whether your model has a bias or a variance problem can provide some suggestion of improving performance. For example:
+Knowledge of whether your model has a bias or a variance problem can provide some suggestion for improving performance. For example:
 
 \begin{itemize}
-	\item \textbf{High-Bias}: Add more features to the training set or add additional derived features.
-	\item \textbf{High-Variance}: Try adding more training examples or train the model on fewer features.
+	\item \textbf{High-Bias Model}: Add more features to the training set or add additional derived features.
+	\item \textbf{High-Variance Model}: Try adding more training examples or train the model on fewer features.
 \end{itemize}
 
-I most cases, one can fine-tune the behavior of a model by modifying its parameters which most commonly results in adjusting its resulting bias and variance tradeoff. Complex models with lots of parameters commonly have a low bias and perform better with a long training time and/or a lot of training data.
+I most cases, one can fine-tune the behavior of a model by modifying its parameters which most commonly results in adjusting its resulting bias/variance trade-off. Complex models with lots of parameters commonly have a low bias and perform better with a long training time and/or a lot of training data.
