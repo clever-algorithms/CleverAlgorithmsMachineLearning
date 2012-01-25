@@ -14,53 +14,41 @@
 \section{Overview}
 This chapter describes Regularization.
 
-% TODO consider renaming to model selection
+% what is regularization?
+\subsection{Description}
+\index{Regularization!Description}
+% what is it
+Regularization is generally a method for fine tuning of the bias/variance trade-off of a model in the context of a training dataset by penalizing model complexity.
 
+% how does it generally work
+A common example in linear models is to modify the fit equation and/or loss function to include a penalty for the number or absolute magnitude of summed model coefficients. Such modifications would then favoring models with fewer coefficients or lower a lower absolute magnitude of summed coefficients. The effect is simpler models and the removal of parameters as coefficient values move toward zero. A validation dataset (separate from the training dataset) or cross validation is commonly used to assess the predictive capability of the model during the regularization process.
 
+% abstraction
+In this regard, regularization may be conceptualized as a type of feature selection or model selection favoring fewer features or less complex models. The reduction of complexity or shrinking of the model can reduce variance in the model and improve the models ability to generalize (address the model over-fitting the training dataset). 
 
-% Strategy: Problem solving plan
-% The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
-\subsection{Strategy}
-% What is the information processing objective of a technique?
-% What is a techniques plan of action?
+% when to use
+Regularization is useful when the risk of overfitting is high, such as when you have small amount of training data, few observations of a given type, or when you have more features than you do observations.
 
-regularization allow you to control bias/variance trade-off
-- find the balance for the problem
-- can perform model selection of lambda (small -> underfit, large -> overfit)
+% examples of methods
+\subsection{Taxonomy}
+\index{Regularization!Taxonomy}
+% examples...
+Some examples of regularization methods include:
+Ridge Regression,
+LASSO (using the Least Angle Regression algorithm),
+Basis Pursuit Denoising, 
+Dantzig Selector, 
+and Elastic Net which may be thought of as a combination of Ridge Regression and LASSO.
 
-Regularized Linear Regression
-Regularized Logistic Regression
+You can regularize many different model types. For example, it is common to prepend ``Regularized'' to the names models that make use of a regularization method such as Regularized Linear Regression and Regularized Support Vector Machine.
 
-% Heuristics: Usage guidelines
-% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
-\subsection{Heuristics}
-% What are the suggested configurations for a technique?
-% What are the guidelines for the application of a technique to a problem instance?
-
-\begin{itemize}
-	\item 
-\end{itemize}
-
-
-
-% References: Deeper understanding
-% The references element description includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, journal articles, and potentially websites. A bullet-pointed structure is suggested.
-\subsection{References}
-% What are the primary sources for a technique?
-% What are the suggested reference sources for learning more about a technique?
-
-% primary sources
-\subsubsection{Primary Sources}
-
-
-% more info
-\subsubsection{More Information}
-
-
+% further reading
+\subsection{Further Reading}
+\index{Regularization!Further Reading}
+TODO
 
 \putbib
 \end{bibunit}
-
 
 \newpage\begin{bibunit}\input{a_regularization/lasso}\putbib\end{bibunit}
 \newpage\begin{bibunit}\input{a_regularization/elastic_net}\putbib\end{bibunit}
