@@ -19,13 +19,11 @@ This chapter describes Regularization.
 \index{Regularization!Description}
 % what is it
 Regularization is generally a method for fine tuning of the bias/variance trade-off of a model in the context of a training dataset by penalizing model complexity.
-
 % how does it generally work
 A common example in linear models is to modify the fit equation and/or loss function to include a penalty for the number or absolute magnitude of summed model coefficients. Such modifications would then favoring models with fewer coefficients or lower a lower absolute magnitude of summed coefficients. The effect is simpler models and the removal of parameters as coefficient values move toward zero. A validation dataset (separate from the training dataset) or cross validation is commonly used to assess the predictive capability of the model during the regularization process.
 
 % abstraction
 In this regard, regularization may be conceptualized as a type of feature selection or model selection favoring fewer features or less complex models. The reduction of complexity or shrinking of the model can reduce variance in the model and improve the models ability to generalize (address the model over-fitting the training dataset). 
-
 % when to use
 Regularization is useful when the risk of overfitting is high, such as when you have small amount of training data, few observations of a given type, or when you have more features than you do observations.
 
@@ -35,8 +33,11 @@ Regularization is useful when the risk of overfitting is high, such as when you 
 % examples...
 Some examples of regularization methods include:
 Ridge Regression,
-LASSO (using the Least Angle Regression algorithm),
-Basis Pursuit Denoising, 
+Bridge Regression, 
+Non-negative Garrote,
+LASSO or Basis Pursuit (via Least Angle Regression or Coordinate Descent algorithms),
+Glmpath,
+Pathseeker,
 Dantzig Selector, 
 and Elastic Net which may be thought of as a combination of Ridge Regression and LASSO.
 
@@ -45,7 +46,7 @@ You can regularize many different model types. For example, it is common to prep
 % further reading
 \subsection{Further Reading}
 \index{Regularization!Further Reading}
-TODO
+Hastie et~al.\ provide a detailed treatment of regularization methods (\cite{Hastie2009}, Chapter 3) and also go on to describe more sophisticated methods (\cite{Hastie2009}, Chapter 5)
 
 \putbib
 \end{bibunit}
