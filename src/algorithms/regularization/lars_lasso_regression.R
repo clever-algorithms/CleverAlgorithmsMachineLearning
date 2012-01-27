@@ -4,37 +4,44 @@
 # (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
-# you may have to install the 'lars' package before you work with it
+# you may have to install the 'lars' package
 install.packages("lars")
 # load the 'lars' package
 library(lars)
 
-# regression problem where y is dependent on x and the other variables are unrelated
-regression <- function() {   
-	a <- runif(100, 1, 2)
-	b <- runif(100, 2, 3)
-	x <- runif(100, 0, 10)
-	y <- x + rnorm(100)
-	data.frame(a, b, x, y)
+# regression problem where y is dependent on x1
+regression_dataset <- function() {   
+	x1 <- runif(100, 1, 2)
+	x2 <- runif(100, 2, 3)
+	x3 <- runif(100, 0, 10)
+	y <- x1 + rnorm(100)
+	data.frame(x1, x2, x3, y)
 }
 
 # get the data 
-dataset <- regression()
+data <- regression_dataset()
 # split data in to train and test (67%/33%)
-training_set <- sample(1:100, 67, FALSE)
-train <- dataset[training_set,]
-test <- dataset[-training_set,]
+training_set <- sample(100,67)
+train <- data[training_set,]
+test <- data[(1:100)[-training_set],]
 
 # create a matrix from the inputs
-matrix <- model.matrix(~a+b+x, train)
+matrix <- model.matrix(~x1+x2+x3, train)
 # preapre a model using lasso
-model <- lars(matrix, train$y, type="lasso", trace=TRUE)
+model <- lars(
+	matrix, # the matrix of preditors
+	train$y, # the response variable
+	type="lasso", # perform lasso
+	trace=TRUE, # display progress
+	normalize=TRUE, # standrize variables
+	intercept=TRUE) # intercept is included and not penalized
+
 # summarize the model
 summary(model)
 # plot the model
 plot(model, breaks=TRUE)
 
-# select a good step
+# select a good step when the model had a minimum RSS
 step <- model$df[which.min(model$RSS)]
 
 # extract the selected coefficients from the fitted model
@@ -43,7 +50,7 @@ coef <- predict(model, matrix, s=step, type="coef")$coefficients
 colnames(matrix)[which(coef!=0)]
 
 # create a matrix from the test data to make predictions
-matrix <- model.matrix(~a+b+x, test)
+matrix <- model.matrix(~x1+x2+x3, test)
 # make predictions using the model
 predictions <- predict(model, matrix, s=step, type="fit")$fit
 # compute mean squared error
