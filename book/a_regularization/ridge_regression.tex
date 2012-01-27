@@ -53,17 +53,21 @@ The effect is that coefficients of a regression model are shrunk towards zero du
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{mass_ridge_regression} provides a code listing Ridge Regression method in R to find a line of best fit for a two-dimensional data set.
-
+Listing~\ref{mass_ridge_regression} provides a code listing of the Ridge Regression method in R.
 % algorithm and package
-The example uses the \texttt{lm.ridge()} function in the \texttt{MASS} core package which is responsible for fitting linear models using Ridge Regression.
+The example uses the \texttt{lm.ridge()} function in the \texttt{MASS} core package which is responsible for fitting linear models using Ridge Regression. The example trials a sequence of lambda values then uses the model with the best lambda value for prediction. Figure~\ref{plot:ridge_regression_result} provides a plot of the final coefficient values of each model for the given lambda values. For more information on this library type: \texttt{library(help="MASS")}, and for more information on the function type: \texttt{?lm.ridge}.
 
 % problem
-The test problem is a four-dimensional dataset of 100 samples, where the \texttt{x1}, \texttt{x2}, \texttt{x3} ...
-
-
+The test problem is a four-dimensional dataset of 100 samples, where \texttt{x3} and \texttt{y} are dependent on \texttt{x1} and \texttt{x1} and \texttt{x2} are independent variables. The problem is ill defined as \texttt{y} given \texttt{x1, x2, x3}. The model is expected to reduce the contribution of \texttt{x2} and \texttt{x3} toward zero leaving \texttt{y} given \texttt{x1}.
 
 \lstinputlisting[firstline=7,language=r,caption={Example of Ridge Regression in R using the \texttt{lm.ridge()} function in the \texttt{MASS} package.}, label=mass_ridge_regression]{../src/algorithms/regularization/mass_ridge_regression.R}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.70]{a_regularization/ridge_regression_result.png}
+\caption{Plot of the final coefficient values of each model for the given lambda values. The numbers reflect the \texttt{x} variables 1,2 and 3. The line shows a selected lambda value.}
+\label{plot:ridge_regression_result}
+\end{figure}
 
 % other packages ?
 Other packages that provide an implementation of Ridge Regression include \texttt{parcor}.
