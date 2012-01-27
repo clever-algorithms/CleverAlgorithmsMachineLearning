@@ -12,7 +12,7 @@
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{LASSO, Least Absolute Shrinkage and Selection Operator}
+\emph{LASSO, Lasso, Least Absolute Shrinkage and Selection Operator}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
@@ -31,8 +31,6 @@ generalized elastic net is an extension?
 graphical lasso is an extension?
 
 
-
-
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
@@ -49,38 +47,40 @@ uses the L1-penalty, the lasso does both continuous shrinkage and automatic vari
 
 imposes a bound on the absolute sum of the coefficients
 
-\subsection{Overview}
-
-% what it is good at
-\subsubsection{Features}
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
 	\item results in a sparse representation (fewer variables)
+	\item  not good at p>>n (more attributes than instances)
+	\item \cite{Zou2005} mentions 3 limitations of LASSO
 \end{itemize}
-
-% what it is not good at
-\subsubsection{Limitations}
-
-\cite{Zou2005} mentions 3 limitations of LASSO
-
-\begin{itemize}
-	\item not good at p>>n (more attributes than instances)
-\end{itemize}
-
 
 % sample script in R
 \subsection{Code Listing}
 % listing
-Listing~\ref{lars_lasso_regression} provides a code listing LASSO method in R.
-% algorithm and package
-The example uses the \texttt{lars()} function in the \texttt{lars} core package. The \texttt{lars} package provides the Least Angle Regression, Lasso, and the Forward Stagewise algorithms for regularization \cite{Hastie2011}.
-% problem
+Listing~\ref{lars_lasso_regression} provides a code listing of the LASSO method in R.
 
-http://www.utstat.utoronto.ca/reid/sta414/Table33R.txt
+
+% algorithm and package
+The example uses the \texttt{lars()} function in the \texttt{lars} core package. The \texttt{lars} package provides the Least Angle Regression, Lasso, and the Forward Stagewise algorithms for regularization \cite{Hastie2011}. Figure~\ref{plot:lasso_result} provides a plot of the final coefficient values of each model for the given lambda values. For more information on this library type: \texttt{library(help="lars")}, and for more information on the function type: \texttt{?lars}.
+
+% problem
+The test problem is a four-dimensional dataset of 100 samples, where \texttt{x3} and \texttt{y} are dependent on \texttt{x1} and \texttt{x1} and \texttt{x2} are independent variables. The problem is ill defined as \texttt{y} given \texttt{x1, x2, x3}. The model is expected to reduce the contribution of \texttt{x2} and \texttt{x3} toward zero leaving \texttt{y} given \texttt{x1}.
 
 % TODO provide a better problem with real variable selection
 
 \lstinputlisting[firstline=7,language=r,caption={Example of LASSO in R using the \texttt{lars()} function in the \texttt{lars} package.}, label=lars_lasso_regression]{../src/algorithms/regularization/lars_lasso_regression.R}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.60]{a_regularization/lasso_result.png}
+\caption{XXX.}
+\label{plot:lasso_result}
+\end{figure}
 
 % other packages
 Other packages provide implementations of the Lasso penalty method.
@@ -99,8 +99,8 @@ The \texttt{grpreg} package provides lasso regularization with grouped covariate
 
 % primary sources
 \subsubsection{Primary Sources}
-
-Proposed by Tibshirani \cite{Tibshirani1996}.
+% primary
+The Lasso was described by Tibshirani \cite{Tibshirani1996}.
 
 % more info
 \subsubsection{More Information}

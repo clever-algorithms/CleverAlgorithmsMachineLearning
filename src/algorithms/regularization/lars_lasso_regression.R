@@ -11,11 +11,11 @@ library(lars)
 
 # regression problem where y is dependent on x1
 regression_dataset <- function() {   
-	x1 <- runif(100, 1, 2)
-	x2 <- runif(100, 2, 3)
-	x3 <- runif(100, 0, 10)
-	y <- x1 + rnorm(100)
-	data.frame(x1, x2, x3, y)
+	x1 <- runif(100, 0, 10)
+	x2 <- rnorm(100)
+	x3 <- 6*x1 + rnorm(100)
+	y  <- x1 + rnorm(100)
+	data <- data.frame(x1, x2, x3, y)
 }
 
 # get the data 
