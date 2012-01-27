@@ -4,7 +4,7 @@
 # (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
-# define 5 variable regression problem of 100 samples
+# define 4 variable regression problem of 100 samples
 regression_dataset <- function() {   
 	x1 <- runif(100, 0, 10)
 	x2 <- runif(100, 1, 2) 	# random
