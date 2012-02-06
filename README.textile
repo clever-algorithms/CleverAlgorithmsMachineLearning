@@ -1,4 +1,4 @@
-h1. Clever Algorithms: Machine Learning Programming Recipes 
+h1. Clever Algorithms: Statistical Machine Learning Recipes 
 
 h2. Overview
 
@@ -12,18 +12,7 @@ h2. Outcomes
 
 h3. Book (Coming Soon)
 
-Jason Brownlee, *Clever Algorithms: Machine Learning Programming Recipes*, Lulu, (Coming Soon)
-
-h3. Technical Reports
-
-The content for the book is being developed as a series of technical reports. The book is the final outcome for the project, and all technical reports should be considered preliminary. 
-
-h4. Overview
-
-* Jason Brownlee. "Clever Algorithms: Machine Learning Project Overview":http://github.com/jbrownlee/CleverAlgorithmsMachineLearning/raw/master/workspace/release/techreport-20110207-1.pdf . Technical Report CA-TR-20110207-1, The Clever Algorithms Project http://www.CleverAlgorithms.com, February 2011.
-* Jason Brownlee. "Clever Algorithms: A Gentle Introduction to Machine Learning". Technical Report CA-TR-20110211-1, The Clever Algorithms Project http://www.CleverAlgorithms.com, February 2011.
-* Jason Brownlee. "Clever Algorithms: Machine Learning Algorithm Selection". Technical Report CA-TR-20110213-1, The Clever Algorithms Project http://www.CleverAlgorithms.com, February 2011.
-
+Jason Brownlee, *Clever Algorithms: Statistical Machine Learning Recipes*, Lulu Enterprises, [Expected mid 2012]. ISBN: xxx.
 
 h2. Contribute
 
@@ -40,7 +29,7 @@ You may want to:
 
 h2. License 
 
-(c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
+(c) Copyright 2012 Jason Brownlee. Some Rights Reserved. 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/au/">
 	<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/au/88x31.png" />
