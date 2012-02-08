@@ -3,6 +3,7 @@
 **/*/*~
 src/algorithms/**/*~
 .DS_Store
+book/*.bak
 book/*.idx
 book/*.ilg
 book/*.ind
