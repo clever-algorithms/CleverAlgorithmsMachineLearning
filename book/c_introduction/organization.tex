@@ -17,16 +17,16 @@ The remainder of this book is organized into two parts: \emph{Algorithms} that d
 % taxonomy
 Algorithms are presented in eight groups distilled from the broader fields of study each in their own chapter, as follows: 
 
-\begin{itemize}
-	\item \emph{Optimization}: Finding the minimum or maximum of a function, a process that commonly represents the core of a Machine Learning method.
-	\item \emph{Regression}: Model relationships between variables using coefficients and a fitting process.
-	\item \emph{Discriminant Functions}:	Model relationships between variables to characterize categorical dependent variable.
-	\item \emph{Workhorse Methods}: Methods that have become the workhorse methods of modern machine learning.
-	\item \emph{Dimensionality Reduction}: Methods for projecting high-dimensional data into lower dimensions for clustering, feature selection and visualization.
-	\item \emph{Clustering}: Methods for organizing unstructured data into like-groups.
-	\item \emph{Model Selection}: Methods search for the best subset of data features and model between the relationships at the same time.
-	\item \emph{Ensembles}:	Methods that combine and model the predictions from multiple models.
-\end{itemize}
+\begin{description}
+	\item[Optimization]: Finding the minimum or maximum of a function, a process that commonly represents the core of a Machine Learning method.
+	\item[Regression]: Model relationships between variables using coefficients and a fitting process.
+	\item[Discriminant Functions]:	Model relationships between variables to characterize categorical dependent variable.
+	\item[Workhorse Methods]: Methods that have become the workhorse methods of modern machine learning.
+	\item[Dimensionality Reduction]: Methods for projecting high-dimensional data into lower dimensions for clustering, feature selection and visualization.
+	\item[Clustering]: Methods for organizing unstructured data into like-groups.
+	\item[Model Selection]: Methods search for the best subset of data features and model between the relationships at the same time.
+	\item[Ensembles]:	Methods that combine and model the predictions from multiple models.
+\end{description}
 
 Algorithms were chosen to provide a diverse, interesting, and useful snapshot of the field of statistical Machine  Learning. As such, many algorithms and even classes of algorithms were not covered in this text. The following lists some of these general areas that may be taken as research projects for the keen reader:
 
@@ -44,13 +44,13 @@ Algorithms were chosen to provide a diverse, interesting, and useful snapshot of
 \index{Reinforcement Learning}
 \index{Temporal Difference Learning}
 \index{Q-learning}
-\begin{itemize}
-	\item \emph{Text Processing}: Methods used for processing documents of text and information retrieval such as Latent Semantic Analysis (LSA) and Latent Dirichlet Allocation (LDA).
-	\item \emph{Recommender Systems}: Methods that are popular for use in recommender systems such as Singular Value Decomposition (SVD).
-	\item \emph{Graphical Models}: Methods that are common for modeling the relationships between variables such as Hidden Markov Model (HMM), and Bayesian Networks.
-	\item \emph{Metaheuristics}: Methods, typically nature-inspired used for optimization and modeling such as Artificial Neural Networks (ANN) and Genetic Algorithms (GA).
-	\item \emph{Reinforcement Learning}: Methods for learning in uncertain environments such as Temporal Difference Learning (TDL) and Q-learning.
-\end{itemize}
+\begin{description}
+	\item[Text Processing]: Methods used for processing documents of text and information retrieval such as Latent Semantic Analysis (LSA) and Latent Dirichlet Allocation (LDA).
+	\item[Recommender Systems]: Methods that are popular for use in recommender systems such as Singular Value Decomposition (SVD).
+	\item[Graphical Models]: Methods that are common for modeling the relationships between variables such as Hidden Markov Model (HMM), and Bayesian Networks.
+	\item[Metaheuristics]: Methods, typically nature-inspired used for optimization and modeling such as Artificial Neural Networks (ANN) and Genetic Algorithms (GA).
+	\item[Reinforcement Learning]: Methods for learning in uncertain environments such as Temporal Difference Learning (TDL) and Q-learning.
+\end{description}
 
 % requirements
 \index{Clever Algorithms!Template}
@@ -58,14 +58,14 @@ A given algorithm is more than just a procedure or code listing, each approach i
 
 % template
 The standardized algorithm description template covers the following subjects:
-\begin{itemize}
-	\item \emph{Name}: The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used as the heading of an algorithm description.
-	\item \emph{Taxonomy}: The algorithm taxonomy defines where a technique fits into the field, both the specific sub-fields of Statistics and Machine Learning. The taxonomy also provides a context for determining the relationships between algorithms.
-	\item \emph{Strategy}: The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. A given problem solving strategy may be realized as one of a number of specific algorithms or problem solving systems.
-	\item \emph{Heuristics}: The heuristics section describes the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the technique's procedure and data structures for general classes of application (neither specific implementations nor specific problem instances).
-	\item \emph{Code Listing}: The code listing description provides a minimal but functional version of the technique implemented with a programming language. The code description can be typed into a computer and provide a working execution of the technique. The technique implementation also includes a minimal problem instance to which it is applied, and both the problem and algorithm implementations are complete enough to demonstrate the techniques procedure. The description is presented as a programming source code listing with a terse introductory summary.
-	\item \emph{References}: The references section includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, and journal articles.
-\end{itemize}
+\begin{description}
+	\item[Name]: The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used as the heading of an algorithm description.
+	\item[Taxonomy]: The algorithm taxonomy defines where a technique fits into the field, both the specific sub-fields of Statistics and Machine Learning. The taxonomy also provides a context for determining the relationships between algorithms.
+	\item[Strategy]: The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. A given problem solving strategy may be realized as one of a number of specific algorithms or problem solving systems.
+	\item[Heuristics]: The heuristics section describes the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the technique's procedure and data structures for general classes of application (neither specific implementations nor specific problem instances).
+	\item[Code Listing]: The code listing description provides a minimal but functional version of the technique implemented with a programming language. The code description can be typed into a computer and provide a working execution of the technique. The technique implementation also includes a minimal problem instance to which it is applied, and both the problem and algorithm implementations are complete enough to demonstrate the techniques procedure. The description is presented as a programming source code listing with a terse introductory summary.
+	\item[References]: The references section includes a listing of both primary sources of information about the technique as well as useful introductory sources for novices to gain a deeper understanding of the theory and application of the technique. The description consists of hand-selected reference material including books, peer reviewed conference papers, and journal articles.
+\end{description}
 
 
 % sample code
@@ -73,10 +73,10 @@ The standardized algorithm description template covers the following subjects:
 \index{R!Versions}
 \index{R!Download}
 \index{R!CRAN}
-Source code listings are included in the algorithm descriptions, and R was selected for this use throughout the book. R is an an open source environment for statistical programming and visualization \cite{RDevelopmentCoreTeam2011}. R was selected because it is the tool of choice for statistical and machine learning work in academia and in the industry. A strength of the platform is the large number of third party libraries available that provide plugin-in algorithms and procedures. The Comprehensive R Archive Network (CRAN) provides access to these third party libraries. Finally, R is free to download and use from the Internet.\footnote{R can be downloaded for free from \url{http://www.r-project.org}}
+Source code listings are included in the algorithm descriptions, and R was selected for this use throughout the book. R is an an open source environment for statistical programming and visualization \cite{RDCT2011}. R was selected because it is the tool of choice for statistical and machine learning work in academia and in the industry. A strength of the platform is the large number of third party libraries available that provide plugin-in algorithms and procedures. The Comprehensive R Archive Network (CRAN) provides access to these third party libraries. Finally, R is free to download and use from the Internet.\footnote{R can be downloaded for free from \url{http://www.r-project.org}}
 
 The sample code provides a working version of a given technique for demonstration purposes. Having a tinker with a technique can really bring it to life and provide valuable insight into a method. The sample code is a minimum implementation, providing plenty of opportunity to explore, extend and optimize.
-All of the code listings presented in this book is available from the companion website, online at \url{http://www.CleverAlgorithms.com}. All algorithm scripts were tested with R version 2.14.0 which should be considered a minimum version to execute the examples. For a high-level hands-on introduction into the R environment, see \emph{Appendix A - R: Quick-Start Guide} \ref{ch:appendix1}.
+All of the code listings presented in this book is available from the companion website, online at \url{http://www.CleverAlgorithms.com}. All algorithm scripts were tested with R version 2.14.0 which should be considered a minimum version to execute the examples. For a high-level hands-on introduction into the R environment, see Appendix~\ref{ch:appendix1}.
 
 % Advanced Topics
 \subsection{Advanced Topics}
@@ -85,12 +85,12 @@ There are some advanced topics that cannot be meaningfully considered until one 
 % examples
 The Advanced Topics chapter addresses:
 
-\begin{itemize}
-	\item \emph{Plotting}: A gentle introduction into plotting in R with examples of common plots for data problems and overview of popular plot types and plot frameworks all with working examples.
-	\item \emph{Useful Statistics}: A gentle introduction into applied statistics in R, with a focus on summary statistics and statistical hypothesis tests that may be useful when exploring data sets, all with working examples.
-	\item \emph{Model Tuning}: A introduction into methods for tuning a given model to get the most out of it, with usable examples in R.
-	\item \emph{Model Verification}: An introduction into model verification such as cross validation and methods to avoid fitting with examples in R.
-\end{itemize}
+\begin{description}
+	\item[Plotting]: A gentle introduction into plotting in R with examples of common plots for data problems and overview of popular plot types and plot frameworks all with working examples.
+	\item[Useful Statistics]: A gentle introduction into applied statistics in R, with a focus on summary statistics and statistical hypothesis tests that may be useful when exploring data sets, all with working examples.
+	\item[Model Tuning]: A introduction into methods for tuning a given model to get the most out of it, with usable examples in R.
+	\item[Model Verification]: An introduction into model verification such as cross validation and methods to avoid fitting with examples in R.
+\end{description}
 
 % starting point
 Like the background information provided in this chapter, the extensions provide a gentle introduction and starting point into some advanced topics, and references for seeking a deeper understanding.
@@ -105,9 +105,9 @@ It is a trusted handbook of practical computational recipes to be consulted when
 % audience
 The audience for this work may be interested in the fields of Statistics and Machine Learning and may count themselves as belonging to one of the following broader groups:
 
-\begin{itemize}
-	\item \emph{Scientists}: Research scientists concerned with theoretically or empirically investigating algorithms, addressing questions such as: \emph{What is the motivating information processing strategy for a given technique? What are some algorithms that may be used in a comparison within a given subfield or across subfields?}
-	\item \emph{Engineers}: Programmers and developers concerned with implementing, applying, or maintaining algorithms, addressing questions such as: \emph{What is the application procedure for a given technique? What are the best practice heuristics for employing a given technique?}
-	\item \emph{Students}: Undergraduate and graduate students interested in learning about techniques, addressing questions such as: \emph{What are some interesting algorithms to study? How to play with a given approach?}
-	\item \emph{Amateurs}: Practitioners interested in knowing more about algorithms, addressing questions such as: \emph{What classes of techniques exist and what algorithms do they provide? What is the intuition of a given technique?}
-\end{itemize}
+\begin{description}
+	\item[Scientists]: Research scientists concerned with theoretically or empirically investigating algorithms, addressing questions such as: \emph{What is the motivating information processing strategy for a given technique? What are some algorithms that may be used in a comparison within a given subfield or across subfields?}
+	\item[Engineers]: Programmers and developers concerned with implementing, applying, or maintaining algorithms, addressing questions such as: \emph{What is the application procedure for a given technique? What are the best practice heuristics for employing a given technique?}
+	\item[Students]: Undergraduate and graduate students interested in learning about techniques, addressing questions such as: \emph{What are some interesting algorithms to study? How to play with a given approach?}
+	\item[Amateurs]: Practitioners interested in knowing more about algorithms, addressing questions such as: \emph{What classes of techniques exist and what algorithms do they provide? What is the intuition of a given technique?}
+\end{description}

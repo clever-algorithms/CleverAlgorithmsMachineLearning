@@ -11,7 +11,10 @@ require 'bibtex'
 OUTPUT_DIR = "docs"
 BIBTEX_FILE = "../book/bibtex.bib"
 
-TITLE = "Clever Algorithms: Statistical Machine Learning Recipes"
+TITLE = "Clever Algorithms"
+SUBTITLE = "Statistical Machine Learning Recipes"
+FULLTITLE = "#{TITLE}: #{SUBTITLE}"
+DATE = "2012"
 
 def create_directory(name)
   Dir.mkdir(name) unless File.directory?(name)
@@ -56,6 +59,11 @@ end
 def get_data_in_brackets(line)
   i,j = line.index("{")+1, line.rindex("}")
   return line[i...j]
+end
+
+def get_data_in_square_brackets(line)
+  i,j = line.index("["), line.index("]")
+  return line[i..j]
 end
 
 # lazy state machine for processing chapters (optional), sections, subsections, subsubsections
@@ -157,12 +165,9 @@ end
 def replace_custom_refs(s)
   # Appendix~\ref{ch:appendix1}
   s = s.gsub("Appendix~\\ref{ch:appendix1}") do |elem|
-    "<a href='appendix1.html'>Appendix A: Ruby: Quick-Start Guide</a>"
+    # "<a href='appendix1.html'>Appendix A: R: Quick-Start Guide</a>"
+    "Appendix A: R: Quick-Start Guide"
   end
-  # Section~{subsec:nfl} in problem solving strategies
-  s = s.gsub("Section~{subsec:nfl}") do |elem|
-    "the <a href='../introduction.html'>Introduction</a>"
-  end  
   return s
 end
 
@@ -351,13 +356,13 @@ def post_process_text(s)
   # replace \copyright with html copyright
   s = s.gsub("\\copyright", "&copy;")
   # replace \mybookdate\ with publication date 2011
-  s = s.gsub("\\mybookdate", "2011")
+  s = s.gsub("\\mybookdate", DATE)
   # replace \mybookauthor with the author ame
   s = s.gsub("\\mybookauthor", "Jason Brownlee")
   # replace \mybooktitle with the book title
-  s = s.gsub("\\mybooktitle", "Clever Algorithms")
+  s = s.gsub("\\mybooktitle", TITLE)
   # replace \mybooksubtitle with the book subtitle
-  s = s.gsub("\\mybooksubtitle", "Nature-Inspired Programming Recipes")
+  s = s.gsub("\\mybooksubtitle", SUBTITLE)
   # finally switch ` for ' (late in the subs)
   s = s.gsub("`", "'")
   
@@ -391,7 +396,7 @@ def final_pretty_code_listing(lines, caption=nil, ruby_filename=nil)
   raw = process_angle_brackets_and_ampersands(raw)
   s = ""
   # table is a hack to ensure lines wrap
-  add_line(s, "<pre class='prettyprint lang-rb'>")
+  add_line(s, "<pre class='prettyprint'>")
   add_line(s, raw)
   add_line(s, "</pre>")
   if !caption.nil?
@@ -399,7 +404,7 @@ def final_pretty_code_listing(lines, caption=nil, ruby_filename=nil)
     add_line(s, "<div class='caption'>#{caption}</div>") 
   end  
   if !ruby_filename.nil?
-	  add_line(s, "<div class='download_src'>Download: <a href='#{ruby_filename}'>#{ruby_filename}</a>. Unit test available in the <%=natureinspired_dev_url(\"github project\")%></div>")
+	  add_line(s, "<div class='download_src'>Download: <a href='#{ruby_filename}'>#{ruby_filename}</a>. Unit test available in the <%=machinelearning_dev_url(\"github project\")%></div>")
 	end
   return s
 end
@@ -457,11 +462,20 @@ def collect_subpages_for_page(data)
         stack << e[:content]
       elsif e.kind_of?(String)
         next if e.nil? or e.empty?
+        flag = false
         e.gsub(/\\newpage\\begin\{bibunit\}\\input\{/) do |c| 
           filename = e.match(/\\input\{([^}]+)\}/).to_s
           subpages << filename[(filename.index("/")+1)...-1]
+          flag = true
           ""
         end        
+        if !flag
+          e.gsub(/\\input\{/) do |c| 
+            filename = e.match(/\\input\{([^}]+)\}/).to_s
+            subpages << filename[(filename.index("/")+1)...-1]
+            ""
+          end
+        end
       else 
         raise "got something unexpected in raw structure: #{e}"
       end
@@ -967,6 +981,13 @@ def to_text_content(data)
     elsif starts_with?(line, "\\end{itemize}")  # end itemize
       out, in_items = true, false
       add_line(s, "</ul>")
+     elsif starts_with?(line, "\\begin{quotation}") # start quotation
+        s << "</p>\n" if !out # end paragraph
+        add_line(s, "<blockquote>")
+        out, in_items = true, true
+      elsif starts_with?(line, "\\end{quotation}")  # end quotation
+        out, in_items = true, false
+        add_line(s, "</blockquote>")      
     elsif starts_with?(line, "\\begin{algorithm}") # start pseudocode
       s << "</p>\n" if !out # end paragraph
       out, in_algorithm = true, true
@@ -1032,7 +1053,8 @@ def to_text_content(data)
           add_line(s, "<li>#{post_process_text(line).gsub("\\item", "")}</li>")
         elsif in_desc
           l1 = post_process_text(line).gsub("\\item", "") # remove \item
-          l2 = l1.match(/\[([^}]+)\]/).to_s # bold bracketed part
+          # l2 = l1.match(/\[([^}]+)\]/).to_s # bold bracketed part
+          l2 = get_data_in_square_brackets(l1)
           add_line(s, "<li><strong>#{l2[1...-1]}</strong>#{l1[l2.size..-1]}</li>")
         elsif in_algorithm
           # ignore (for now)
@@ -1107,6 +1129,7 @@ def recursive_html_for_chapter(data, has_chapter=true)
     else
       # always ignore some lines at this point
       next if starts_with?(element, "\\newpage\\begin{bibunit}\\input{")
+      next if starts_with?(element, "\\input{")
       next if starts_with?(element, "\\addcontentsline{toc}")
       # collect lines (so we can process them in batch)
       lines << element
@@ -1183,9 +1206,12 @@ def html_for_algorithm(name, data, bib, parent)
   s << head(data.last[:section], parent[:name], get_keywords(data))
   s << breadcrumb(name, data.last[:section], parent)
   s << recursive_html_for_chapter(data, false)
-  # bib
-  add_line(s, "<h2>Bibliography</h2>")  
-  add_line(s, prepare_bibliography(data, bib))
+  # bib - if there is one
+  bibdata = prepare_bibliography(data, bib)
+  if bibdata != "<table>\n</table>\n"
+    add_line(s, "<h2>Bibliography</h2>")  
+    add_line(s, bibdata)
+  end
   return s
 end
 
@@ -1353,8 +1379,8 @@ end
 def create_toc_html(algorithms, algorithms_completed, frontmatter)
   s = ""
   # head
-  add_line(s, "<% content_for :head_title, \"#{TITLE}\" %>")
-  add_line(s, "<% content_for :head_description, \"#{TITLE}\" %>")
+  add_line(s, "<% content_for :head_title, \"#{FULLTITLE}\" %>")
+  add_line(s, "<% content_for :head_description, \"#{FULLTITLE}\" %>")
   add_line(s, "<% content_for :head_keywords, \"clever algorithms, statistical machine learning, machine learning\" %>")
   # front matter
   add_line(s, "<h1>Table of Contents</h1>")
@@ -1564,7 +1590,7 @@ def create_sitemap
 	add_line(s, "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\" xmlns:codesearch=\"http://www.google.com/codesearch/schemas/sitemap/1.0\">")
 	# html
 	host = "http://www.cleveralgorithms.com"
-	dir = "nature-inspired"
+	dir = "machinelearning"
 	# root
 	add_url_to_sitemap(s, host, nil, nil, ["small_cover.png"])	
 	# all pages

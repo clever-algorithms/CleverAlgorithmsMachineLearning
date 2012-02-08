@@ -58,7 +58,7 @@ Given an initial starting position, it prepares an approximation of the Hessian 
 Listing~\ref{stats_bfgs} provides a code listing of the BFGS method in R solving a two-dimensional nonlinear optimization function. Figure~\ref{plot:bfgs_result} provides a plot of the test problem with the located minimum highlighted.
 
 % algorithm and package
-The example uses the \texttt{optim()} function in the \texttt{stats} core package configured to use the BFGS method \cite{RDevelopmentCoreTeam2011a}. The \texttt{optim()} function is for General-purpose Optimization, for more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?optim}.
+The example uses the \texttt{optim()} function in the \texttt{stats} core package configured to use the BFGS method \cite{RDCT2011a}. The \texttt{optim()} function is for General-purpose Optimization, for more information on this library type: \texttt{library(help="stats")}, and for more information on the function type: \texttt{?optim}.
 
 % problem
 The test problem is the Rosenbrock function in two-dimensions where the optimum is at $x,y=1$. The starting position for the algorithm is taken as a random point $x,y \in [-3,3]$. The gradient for this function is specified and is used by the optimization method.
