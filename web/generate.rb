@@ -1385,7 +1385,7 @@ def create_toc_html(algorithms, algorithms_completed, frontmatter)
   add_line(s, "<li><a href='copyright.html'>copyright</a></li>") # hard code copyright
   frontmatter.each do |name|
     output = name[(name.index('_')+1)..-1]
-    add_line(s, "<li>#{output}</li>")
+    add_line(s, "<li><a href=\"#{output}.html\">#{output}</a></li>")
   end
   # intro
   add_line(s, "<li><strong>Background</strong></li>")
@@ -1609,7 +1609,7 @@ if __FILE__ == $0
   build_toc(ALGORITHM_CHAPTERS, ALGORITHM_CHAPTERS_COMPLETED, FRONT_MATTER)
   # front matter
   build_copyright()
-#  FRONT_MATTER.each {|name| build_chapter(bib, name) }
+  FRONT_MATTER.each {|name| build_chapter(bib, name) }
   # introduction chapter
 	build_introduction_chapter(bib)  
   # process algorithm chapters
