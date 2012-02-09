@@ -1141,15 +1141,15 @@ def head(name, parent, keywords)
   s = ""
   # title
   if parent.nil?
-    add_line(s, "<% content_for :head_title, \"#{name} - Clever Algorithms: Nature-Inspired Programming Recipes\" %>")
+    add_line(s, "<% content_for :head_title, \"#{name} - #{FULLTITLE}\" %>")
   else 
-    add_line(s, "<% content_for :head_title, \"#{name} - Clever Algorithms: Nature-Inspired Programming Recipes\" %>")
+    add_line(s, "<% content_for :head_title, \"#{name} - #{FULLTITLE}\" %>")
   end
   # description  
   if parent.nil?
-    add_line(s, "<% content_for :head_description, \"#{name} - Clever Algorithms: Nature-Inspired Programming Recipes\" %>")
+    add_line(s, "<% content_for :head_description, \"#{name} - #{FULLTITLE}\" %>")
   else 
-    add_line(s, "<% content_for :head_description, \"#{name} - #{parent} - Clever Algorithms: Nature-Inspired Programming Recipes\" %>")
+    add_line(s, "<% content_for :head_description, \"#{name} - #{parent} - #{FULLTITLE}\" %>")
   end
   # keywords
   if keywords.nil? or keywords.empty?
