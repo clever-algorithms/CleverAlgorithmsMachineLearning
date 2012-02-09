@@ -22,22 +22,22 @@ test <- data[(1:100)[-training_set],]
 
 # create a linear regression model using ordinary least squares
 base_model <- lm(
-	y~x1+x2+x3,		# predict y given x1, x2 and x3
-	train,			# training dataset
-	NULL,			# no weighting on the variables
-	NULL,			# no action on missing values
+	y~x1+x2+x3, # predict y given x1, x2 and x3
+	train, # training dataset
+	NULL, # no weighting on the variables
+	NULL, # no action on missing values
 	method="qr")	# QR decomposition (efficient matrix calculation method)
 	
 # apply the Stepwise Regression procedure	
 selected_model <- step(
-	base_model, 	# the model on which to operate
-	y~x1+x2+x3,		# parameter relationships
-	0, 				# estimate the scale for the AIC statistic
-	"both",			# use forward and backward selection
-	1, 				# provide debug information during the execution
-	NULL, 			# no filter function for models
-	1000, 			# maximum steps to execute
-	2) 				# Use AIC as the test criterion (use log(n) for BIC)
+	base_model, # the model on which to operate
+	y~x1+x2+x3, # parameter relationships
+	0, # estimate the scale for the AIC statistic
+	"both", # use forward and backward selection
+	1, # provide debug information during the execution
+	NULL, # no filter function for models
+	1000, # maximum steps to execute
+	2) # Use AIC as the test criterion (use log(n) for BIC)
 
 # summarize the selected linear regression model
 summary(selected_model)

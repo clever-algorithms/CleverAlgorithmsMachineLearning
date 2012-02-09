@@ -21,9 +21,9 @@ test <- data[(1:100)[-training_set],]
 
 # create the discriminator using Logistic Regression
 model <- glm(
-	z~x+y, 										# model formula, z give x and y
-	binomial(link="logit"),		# binomial using a logit link function
-	train) 										# the training dataset
+	z~x+y, # model formula, z give x and y
+	binomial(link="logit"), # binomial using a logit link function
+	train) # the training dataset
 
 # summarize the fitted model
 summary(model)

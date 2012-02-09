@@ -11,14 +11,14 @@ basin <- function(x) {
 
 # # locate the minimum of the function using a Golden Section Line Search
 result <- optimize( 
-	basin,			# the function to be minimized
-	c(-5, 5),		# the bounds on the function paramter
-	maximum=FALSE, 	# we are concerned with the function minima
-	tol=1e-8)		# the size of the final bracketing
+	basin, # the function to be minimized
+	c(-5, 5), # the bounds on the function paramter
+	maximum=FALSE, # we are concerned with the function minima
+	tol=1e-8) # the size of the final bracketing
 
 # display the results
-print(result$minimum)	# function parameter
-print(result$objective)	# function response
+print(result$minimum) #function parameter
+print(result$objective) # function response
 
 # plot the function 
 x <- seq(-5, 5, length.out=100)

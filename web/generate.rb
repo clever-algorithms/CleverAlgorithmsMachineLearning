@@ -395,10 +395,7 @@ def final_pretty_code_listing(lines, caption=nil, ruby_filename=nil)
   # pretty print does not like <> brackets
   raw = process_angle_brackets_and_ampersands(raw)
   s = ""
-  # table is a hack to ensure lines wrap
-  add_line(s, "<pre class='prettyprint'>")
-  add_line(s, raw)
-  add_line(s, "</pre>")
+  add_line(s, "<pre class='prettyprint'>#{raw}</pre>")
   if !caption.nil?
     caption = post_process_text(caption) # process text
     add_line(s, "<div class='caption'>#{caption}</div>") 
@@ -416,7 +413,7 @@ def pretty_print_code_listing(code_listing_line)
   # get the caption
   parts = code_listing_line.split(",")
   raise "Caption not where expected" if !starts_with?(parts[2], "caption")
-  caption = parts[2][(parts[2].index("=")+1)..-1]
+  caption = parts[2][(parts[2].index("=")+2)...-1]
   raw = IO.readlines(filename)
   ruby_filename = filename[(filename.rindex("/")+1)..-1]
   # trim top 7 lines
@@ -737,7 +734,7 @@ def process_figure(lines)
   caption = post_process_text(caption) # processing of text
   just_file = filename[(filename.index('/')+1)..-1]
   s = ""
-  add_line(s, "<img src='/images/#{just_file}.png' align='middle' alt='#{caption}' class='book_image'>")
+  add_line(s, "<img src='/images/machinelearning/#{just_file}' align='middle' alt='#{caption}' class='book_image'>")
   add_line(s, "<br />")
   add_line(s, "<div class='caption'>#{caption}</div>")
   
@@ -1512,43 +1509,18 @@ def get_ruby_into_position(chapters)
 		  # locate link to file
 		  filename = nil
 		  lines.each do |line|
-		  	if starts_with?(line.strip, "\\lstinputlisting[firstline=")    		
+		  	if starts_with?(line.strip, "\\lstinputlisting[firstline=")
+					line = line[line.rindex("{")..-1]
 		  		filename = get_data_in_brackets(line)
 		  		break
 		  	end
 		  end
-		  raise "could not locate ruby file in #{source + "/" + file}" if filename.nil?
+		  raise "could not locate R file in #{source + "/" + file}" if filename.nil?
 		  # load
 			raw = IO.readlines(filename)
 			ruby_filename = OUTPUT_DIR + "/" + chapter + "/" + filename[(filename.rindex("/")+1)..-1]
 			# write
 			File.open(ruby_filename, 'w') {|f| f.write(raw.join("")) }
-		end
-	end
-	# process advanced chapter
-	begin
-		chapter = "advanced"
-		source = "../book/c_"+chapter
-		Dir.entries(source).each do |file|
-		  next if file == "." or file == ".."
-		  next if File.extname(file) != ".tex"
-		  # load and process the algorithm
-		  lines = get_all_data_lines(source + "/" + file)
-		  # locate link to file
-		  filenames = []
-		  lines.each do |line|
-		  	if starts_with?(line.strip, "\\lstinputlisting[")    		
-		  		filenames << get_data_in_brackets(line)
-		  	end
-		  end
-		  next if filenames.empty? # some have no files
-		  # load
-		  filenames.each do |filename|
-				raw = IO.readlines(filename)
-				ruby_filename = OUTPUT_DIR + "/" + chapter + "/" + filename[(filename.rindex("/")+1)..-1]
-				# write
-				File.open(ruby_filename, 'w') {|f| f.write(raw.join("")) }		  
-		  end
 		end
 	end
 end
@@ -1648,8 +1620,8 @@ if __FILE__ == $0
 #  build_appendix(bib) 
   # eratta
 #  build_errata(bib)
-  # ruby files
-#  get_ruby_into_position(ALGORITHM_CHAPTERS)
+  # R files
+  get_ruby_into_position(ALGORITHM_CHAPTERS_COMPLETED)
   # site map
 #  create_sitemap
 end

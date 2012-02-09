@@ -20,11 +20,11 @@ test <- data[(1:100)[-training_set],]
 
 # create a linear regression model using ordinary least squares
 model <- lm(
-	y~x,			# predict Y given X
-	train,			# training dataset
-	NULL,			# no weighting on the variables
-	NULL,			# no action on missing values
-	method="qr")	# QR decomposition (efficient matrix calculation method)
+	y~x, # predict Y given X
+	train, # training dataset
+	NULL, # no weighting on the variables
+	NULL, # no action on missing values
+	method="qr") # QR decomposition (efficient matrix calculation method)
 
 # summarize the create linear regression model
 summary(model)

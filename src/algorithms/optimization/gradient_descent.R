@@ -30,15 +30,15 @@ gradient_descent <- function(func, derv, start, step=0.05, tol=1e-8) {
 
 # locate the minimum of the function using the Gradient Descent method
 result <- gradient_descent(
-	basin,								# the function to optimize
-	derivative,							# the gradient of the function
-	c(runif(1,-3,3), runif(1,-3,3)),	# start point of the search			
-	0.05,								# step size (alpha)
-	1e-8)								# relative tolerance for one step
+	basin, # the function to optimize
+	derivative, # the gradient of the function
+	c(runif(1,-3,3), runif(1,-3,3)), # start point of the search			
+	0.05, # step size (alpha)
+	1e-8) # relative tolerance for one step
 
 # display a summary of the results
-print(result)			# coordinate of fucntion minimum
-print(basin(result))	# response of fucntion minimum
+print(result) # coordinate of fucntion minimum
+print(basin(result)) # response of fucntion minimum
 
 # dispaly the function as a contour plot
 x <- seq(-3, 3, length.out=100)

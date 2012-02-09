@@ -17,19 +17,19 @@ derivative <- function(v) {
 
 # locate the minimum of the function using the Conjugate Gradient method
 result <- optim(
-	c(runif(1,-3,3), runif(1,-3,3)),	# start at a random position
-	rosenbrock,							# the function to minimize
-	derivative,							# no function gradient 
-	method="CG",						# use the Conjugate Gradient method
-	control=c(							# configure Conjugate Gradient
-		maxit=100,						# maximum iterations of 100
-		reltol=1e-8,					# response tolerance over-one step
-		type=2))						# use the Polak-Ribiere update method
+	c(runif(1,-3,3), runif(1,-3,3)), # start at a random position
+	rosenbrock, # the function to minimize
+	derivative, # no function gradient 
+	method="CG", # use the Conjugate Gradient method
+	control=c( # configure Conjugate Gradient
+		maxit=100, # maximum iterations of 100
+		reltol=1e-8, # response tolerance over-one step
+		type=2)) # use the Polak-Ribiere update method
 		
 # summarise results
-print(result$par)		# the coordinate of the minimim
-print(result$value)		# the function response of the minimum
-print(result$counts)	# the number of function calls performed
+print(result$par) # the coordinate of the minimim
+print(result$value) # the function response of the minimum
+print(result$counts) # the number of function calls performed
 
 # dispaly the function as a contour plot
 x <- seq(-3, 3, length.out=100)

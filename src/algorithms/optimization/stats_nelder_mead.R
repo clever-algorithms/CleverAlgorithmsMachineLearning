@@ -11,21 +11,21 @@ rosenbrock <- function(v) {
 
 # locate the minimum of the function using the Nelder-Mead method
 result <- optim(
-	c(runif(1,-3,3), runif(1,-3,3)),	# start at a random position
-	rosenbrock,							# the function to minimize
-	NULL,								# no function gradient 
-	method="Nelder-Mead",				# use the Nelder-Mead method
-	control=c(							# configure Nelder-Mead
-		maxit=100,						# maximum iterations of 100
-		reltol=1e-8,					# response tolerance over-one step
-		alpha=1.0,						# reflection factor
-		beta=0.5,						# contraction factor
-		gamma=2.0))						# expansion factor
+	c(runif(1,-3,3), runif(1,-3,3)), # start at a random position
+	rosenbrock, # the function to minimize
+	NULL, # no function gradient 
+	method="Nelder-Mead", # use the Nelder-Mead method
+	control=c( # configure Nelder-Mead
+		maxit=100, # maximum iterations of 100
+		reltol=1e-8, # response tolerance over-one step
+		alpha=1.0, # reflection factor
+		beta=0.5, # contraction factor
+		gamma=2.0)) # expansion factor
 		
 # summarise results
-print(result$par)		# the coordinate of the minimim
-print(result$value)		# the function response of the minimum
-print(result$counts)	# the number of function calls performed
+print(result$par) # the coordinate of the minimim
+print(result$value) # the function response of the minimum
+print(result$counts) # the number of function calls performed
 
 # dispaly the function as a contour plot
 x <- seq(-3, 3, length.out=100)
