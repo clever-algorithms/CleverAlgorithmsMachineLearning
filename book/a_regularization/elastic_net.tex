@@ -4,58 +4,50 @@
 
 % Name
 % The algorithm name defines the canonical name used to refer to the technique, in addition to common aliases, abbreviations, and acronyms. The name is used in terms of the heading and sub-headings of an algorithm description.
-\section{Elastic-Net} 
+\section{Elastic Net} 
 \label{sec:elasticnet}
 \index{Elastic-Net}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Elastic-Net}
+\emph{Elastic Net, Elastic-Net, Na\"ive Elastic Net}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
 \subsection{Taxonomy}
 % To what fields of study does a technique belong?
+Elastic Net is a Regularization method for Multiple Linear Regression models, and can be generalized to other machine learning methods.
 % What are the closely related approaches to a technique?
-Elastic-Net is a Regularization algorithm.
-
-extension of elastic-net
-
+It is related to other Regularization methods such as LASSO and Ridge Regression.
 
 % Strategy: Problem solving plan
 % The strategy is an abstract description of the computational model. The strategy describes the information processing actions a technique shall take in order to achieve an objective. The strategy provides a logical separation between a computational realization (procedure) and a analogous system (metaphor). A given problem solving strategy may be realized as one of a number specific algorithms or problem solving systems. The strategy description is textual using information processing and algorithmic terminology.
 \subsection{Strategy}
 % What is the information processing objective of a technique?
+The information processing objective of the Elastic Net is to promote a parsimonious model.
 % What is a techniques plan of action?
+This is achieved by adding a penalty term that is a sum of the term used for Ridge Regression (squared sum of the coefficient values or $L_2$-norm) and the term used in the LASSO method (sum of absolute coefficient values or the $L_1$-norm). This penalty term is added to the models cost function with a penalty weight parameter ($\alpha$) and a shrinkage parameter $t$ that imposes a linear constraint on the term. 
+It was proposed to address the limitations in the LASSO when Ridge Regression was demonstrated to perform better. 
 
+Na\"ive Elastic Net is a two-stage procedure, first for each 
 
-uses the LARS-EN algorithm
+% optimization solutions
+A modification of the Least Angle Regression (LARS) algorithm was proposed to solve the Elastic Net objective function called Least Angle Regression Elastic Net (LARS-EN).
 
-elastic net is a compromise between ridge regression and the lasso
-combine the strengths of L2 regularization and L1 minimization
-The elastic net is especially useful in the "large p small n setting," as is the case for microarray data
-
-lambda is fit by cyclic coordinate descent (same in lasso?)
-
-all about maximizing the appropriate penalized log-likelihood
-
-\subsection{Overview}
-
-% what it is good at
-\subsubsection{Features}
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
-	\item 
+	\item It is expected to be useful in problems with a large number of predictors $p$ and a smaller number of observations $n$, $p>n$ problems.
+	\item When the penalty weighting is 1 ($\alpha=1$), Na\"ive Elastic Net behaves like Ridge Regression. $\alpha$ is typically $\in \{0.1)$
+	\item It can perform shrinkage of coefficients and variable selection simultaneously in the same way that the LASSO can.
+	\item It has been demonstrated to outperform the LASSO while achieving a similarly sparse models.
+	\item It encourages a grouping effect, where strongly correlated predictors tend to be in or out of the model together, a feature that had to be explicitly added to the LASSO in Group LASSO.
 \end{itemize}
-
-% what it is not good at
-\subsubsection{Limitations}
-
-\begin{itemize}
-	\item 
-\end{itemize}
-
 
 % sample script in R
 \subsection{Code Listing}
@@ -81,8 +73,8 @@ The example uses the \texttt{glmnet()} function in the \texttt{glmnet} core pack
 
 % primary sources
 \subsubsection{Primary Sources}
-
-proposed \cite{Zou2005}
+% seminal
+The Elastic-Net was described by Zou and Hastie to address short-comings in LASSO by combining the penalty functions of Ridge Regression and the LASSO \cite{Zou2005}. Both a Na\"ive Elastic Net and the Elastic Net method proper were described as was a solution to the objective function called Least Angle Regression Elastic Net (LARS-EN).
 
 % more info
 \subsubsection{More Information}
