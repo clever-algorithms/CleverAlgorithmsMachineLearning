@@ -12,11 +12,12 @@
 \index{Phillips-Twomey Method}
 \index{Constrained Linear Inversion}
 \index{Linear Regularization}
+\index{Penalized $L_2$ Regression}
 
 % other names
 % What is the canonical name and common aliases for a technique?
 % What are the common abbreviations and acronyms for a technique?
-\emph{Ridge Regression, Tikhonov Regularization, Tikhonov-Miller Method, Phillips-Twomey Method, Constrained Linear Inversion, Linear Regularization}
+\emph{Ridge Regression, Tikhonov Regularization, Tikhonov-Miller Method, Phillips-Twomey Method, Constrained Linear Inversion, Linear Regularization, Penalized $L_2$ Regression}
 
 % Taxonomy: Lineage and locality
 % The algorithm taxonomy defines where a techniques fits into the field, both the specific subfields of Computational Intelligence and Biologically Inspired Computation as well as the broader field of Artificial Intelligence. The taxonomy also provides a context for determining the relation- ships between algorithms. The taxonomy may be described in terms of a series of relationship statements or pictorially as a venn diagram or a graph with hierarchical structure.
@@ -33,8 +34,8 @@ The general method of penalizing a model based on the sum of squared parameters 
 % What is the information processing objective of a technique?
 The information processing objective of Ridge Regression is to reduce or shrink the magnitude of the coefficients in a regression model.
 % What is a techniques plan of action?
-This is achieved by penalising models based on the sum of the squared coefficients. This term is added to the regression equation during the preparation of the model and is weighted by a complexity parameter ($\lambda$) that controls the amount of shrinkage of the coefficients. 
-The effect is that coefficients of a regression model are shrunk towards zero during the training of the model. The intercept is not penalised.
+This is achieved by penalizing models based on the sum of the squared coefficients called an $L_2$ penalty or the $L_2$ norm. This term is added to the regression equation during the preparation of the model and is weighted by a complexity parameter ($\lambda$) that controls the amount of shrinkage of the coefficients. 
+The effect is that coefficients of a regression model are shrunk towards zero during the training of the model. The intercept is not penalized.
 
 % Heuristics: Usage guidelines
 % The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
@@ -48,6 +49,7 @@ The effect is that coefficients of a regression model are shrunk towards zero du
 	\item Unlike other selection methods, Ridge Regression does not drop coefficients, all model parameters are maintained at the end of the process providing shrinkage but not selection of parameters.
 	\item Inputs are commonly standardized before training the model as models are not equivalent under scaling.
 	\item Cross-validation is commonly used to assess the model and model selection or stopping criteria.
+	\item It is suited for problems where there are more predictors $p$ than there are observations $n$, $p>n$ problems.
 \end{itemize}
 
 % sample script in R
@@ -84,7 +86,7 @@ Other packages that provide an implementation of Ridge Regression include \textt
 % seminal
 The method was originally described by Tychonoff \cite{Tikhonov1943, Tikhonov1963} (Russian), who later published a full account of the method as a book \cite{Tikhonov1977}.
 % others
-Phillips independently described the method \cite{Phillips1962}. Hoerl was first to use the term `Ridge Regression' which was adopted in the field of Statistics \cite{Hoerl1962, Hoerl1970, Hoerl1970a}.
+Phillips independently described the method \cite{Phillips1962}. Hoerl was first to use the term `Ridge Regression' which was adopted in the field of Statistics for $p>n$ problems \cite{Hoerl1962, Hoerl1970, Hoerl1970a}.
 
 % more info
 \subsubsection{More Information}
