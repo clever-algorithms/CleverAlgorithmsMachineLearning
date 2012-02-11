@@ -30,17 +30,16 @@ Regularization is useful when the risk of overfitting is high, such as when you 
 % examples of methods
 \subsection{Taxonomy}
 \index{Regularization!Taxonomy}
-% examples...
-Some examples of regularization methods include:
-Ridge Regression,
-Bridge Regression, 
-Non-negative Garrote,
-LASSO or Basis Pursuit (via Least Angle Regression or Coordinate Descent algorithms),
-Smoothly Clipped Absolute Deviation (SCAD) penalty,
-Glmpath,
-Pathseeker,
-Dantzig Selector, 
-and Elastic Net which may be thought of as a combination of Ridge Regression and LASSO.
+A useful way to conceptualize the study of Regularization methods is to consider the type of penalty that is added to the cost function.
+
+\begin{description}
+	\item[$L_1$-norm Penalty] This is the sum of the absolute values in a regression model or the $L_1$-norm of the coefficient vector. Examples include the Dantzig selector, and the LASSO (a.k.a Basis Pursuit) and extensions to the LASSO such as Group LASSO, Blockwise Sparse Regression (BSR), Fused LASSO, Graphical LASSO.
+	\item[$L_2$-norm Penalty] This is the squared sum of the absolute values in a regression model or the $L_2$-norm of the coefficient vector. Examples include Ridge Regression.
+	\item[Hybrid of $L_1$-norm and $L_2$-norm Penalty] These are methods that makes use of both types of penalty or combine them in some way. Examples include the Elastic Net and Smoothly Clipped Absolute Deviation (SCAD) penalty.
+	\item[\item[$L_q$-norm Penalty]] These are a generalization of the $L_1$ and $L_2$ norm penalties. Examples include Bridge Regression.
+\end{description}
+
+% where does the Non-negative Garrote fit?
 
 You can regularize many different model types. For example, it is common to prepend ``Regularized'' to the names models that make use of a regularization method such as Regularized Linear Regression and Regularized Support Vector Machine. It is also common for regularization methods to be described and analyzed in the context of simple regression models such as Linear Regression.
 
