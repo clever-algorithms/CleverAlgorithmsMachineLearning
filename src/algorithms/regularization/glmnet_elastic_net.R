@@ -9,26 +9,29 @@ install.packages("glmnet")
 # load the 'glmnet' package
 library(glmnet)
 
-classification <- function() {
-	a <- runif(100, 1, 2)
-	b <- runif(100, 2, 3)
-	x <- c(rnorm(50, mean=0), rnorm(50, mean=4))
-	y <- c(rnorm(50, mean=4), rnorm(50, mean=0))
-	z <- c(rep("1", 50), rep("0", 50))
-	data.frame(a, b, x, y, z)
+classification_dataset <- function() {
+	x1 <- runif(100, 1, 2)
+	x2 <- runif(100, 2, 3)
+	x3 <- c(rnorm(50, mean=0), rnorm(50, mean=4))
+	x4 <- c(rnorm(50, mean=4), rnorm(50, mean=0))
+	y <- c(rep("1", 50), rep("0", 50))
+	data.frame(x1, x2, x3, x4, y)
 }
 
 # get the data 
-dataset <- classification()
+data <- classification_dataset()
 # split data in to train and test (67%/33%)
 training_set <- sample(1:100, 67, FALSE)
-train <- dataset[training_set,]
-test <- dataset[-training_set,]
+train <- data[training_set,]
+test <- data[-training_set,]
 
 # create a matrix from the inputs
-matrix <- model.matrix(~a+b+x+y, train)
+matrix <- model.matrix(~x1+x2+x3+x4, train)
 # preapre a model using lasso
-model <- glmnet(matrix, train$z, family="binomial")
+model <- glmnet(
+	matrix, 
+	train$y, 
+	family="binomial")
 
 # plot the model
 par(mfrow=c(2,2))
@@ -40,7 +43,7 @@ plot(model, xvar="dev", label=TRUE)
 coef(model, 0.005)
 
 # create a matrix from the test data to make predictions
-matrix <- model.matrix(~a+b+x+y, test)
+matrix <- model.matrix(~x1+x2+x3+x4, test)
 # make predictions using the model
 predictions <- predict(model, matrix, type="class", s=0.01)
 # cunfusion matrix of the results
