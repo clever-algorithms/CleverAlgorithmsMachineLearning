@@ -23,3 +23,22 @@ histograms
 function plots
 surface plots
 
+% 
+% saving plots
+% 
+\subsection{Saving Plots}
+% graphic devices...
+Plots can be saved to disk in many different formats.
+
+The following listing provides an example of saving a scatter plot in PNG format to the working directory using the \texttt{png()} function from the \texttt{grDevices} core package. For more information on the function type \texttt{?png}. Other functions that may be useful include \texttt{bmp()}, \texttt{jpeg()}, \texttt{tiff()}, and \texttt{pdf()}.
+
+\begin{lstlisting}
+# save a PNG of plot to the home directory as sample_plot.png
+png('sample_plot.png')
+# your plotting code goes here, here is a scatter plot
+plot(rnorm(100),rnorm(100))
+# turn off writing to file
+dev.off()
+\end{lstlisting}
+
+

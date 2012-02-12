@@ -27,7 +27,7 @@ test <- data[(1:100)[-training_set],]
 
 # create a matrix from the inputs
 matrix <- model.matrix(~x1+x2+x3, train)
-# preapre a model using lasso
+# preapre a model using the LASSO method and the LARS algorithm
 model <- lars(
 	matrix, # the matrix of preditors
 	train$y, # the response variable

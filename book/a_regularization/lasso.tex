@@ -10,6 +10,14 @@
 \index{Least Absolute Shrinkage and Selection Operator}
 \index{Penalized $L_1$ Regression}
 \index{Basis Pursuit}
+\index{$L_1$-norm Penalty}
+\index{Least Angle Regression}
+\index{LARS}
+\index{Cyclical Coordinate Descent}
+\index{Group LASSO}
+\index{Blockwise Sparse Regression}
+\index{Fused LASSO}
+\index{Graphical LASSO}
 
 % other names
 % What is the canonical name and common aliases for a technique?
@@ -59,6 +67,7 @@ The objective function for the LASSO is non-differentiable and has been subject 
 	\item It is most suited for datasets where there are are a large number of small effects and least suited to problems where there are a small number of large effects.
 	\item It provides sparse solutions in problems where the number of predictors $p$ is larger than the number of observed cases $n$ ($p>n$ problems).
 	\item Zou and Hastie describe three limitations of the LASSO: a) in $p>n$ problems (more variables than observations) the LASSO is limited to selecting $n$ variables, b) it selects one variable from the group of variables that pairwise highly-correlated, c) it is outperformed by ridge regression when there is high correlation between variables \cite{Zou2005}.
+	\item Tibshirani et~al.\ provide a collection of strong rules (heuristics) that may be applied to LASSO-type problems to remove predictors from a model \cite{Tibshirani2011}
 \end{itemize}
 
 % sample script in R

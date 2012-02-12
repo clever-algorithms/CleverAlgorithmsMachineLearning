@@ -9,42 +9,54 @@ install.packages("glmnet")
 # load the 'glmnet' package
 library(glmnet)
 
-classification_dataset <- function() {
-	x1 <- runif(100, 1, 2)
-	x2 <- runif(100, 2, 3)
-	x3 <- c(rnorm(50, mean=0), rnorm(50, mean=4))
-	x4 <- c(rnorm(50, mean=4), rnorm(50, mean=0))
-	y <- c(rep("1", 50), rep("0", 50))
-	data.frame(x1, x2, x3, x4, y)
+# regression problem, y depends on x1, x5 and x6 correlate with x1
+regression_dataset <- function() {   
+	x1 <- runif(100, 0, 10)
+	x2 <- rnorm(100)
+	x3 <- rnorm(100)
+	x4 <- rnorm(100)
+	x5 <- 0.1*x1 + rnorm(100)
+	x6 <- 0.5*x1 + rnorm(100)
+	y  <- x1 + rnorm(100)
+	data <- data.frame(x1,x2,x3,x4,x5,x6,y)
 }
 
 # get the data 
-data <- classification_dataset()
+data <- regression_dataset()
 # split data in to train and test (67%/33%)
 training_set <- sample(1:100, 67, FALSE)
 train <- data[training_set,]
 test <- data[-training_set,]
 
 # create a matrix from the inputs
-matrix <- model.matrix(~x1+x2+x3+x4, train)
-# preapre a model using lasso
+matrix <- model.matrix(~x1+x2+x3+x4+x5+x6, train)
+# preapre a model using Elastic Net method and Coordinate Descent
 model <- glmnet(
-	matrix, 
-	train$y, 
-	family="binomial")
-
-# plot the model
-par(mfrow=c(2,2))
-plot(model, xvar="lambda", label=TRUE)
+	matrix, # the matrix of preditors
+	train$y, # the response variable
+	family="gaussian", # gaussian function (linear regression)
+	alpha=0.5, # Elastic Net mixing parameter (1=LASSO)
+	nlambda=100, # number of lambda values to test
+	lambda.min.ratio=0.0001, # used in selecting lambda's to test
+	lambda=NULL, # sequence of lambda's to test (NULL=automatic)
+	standardize=TRUE, # standardize data prior to fitting
+	thresh=1E-7, # stop condition for coordinate descent
+	type.gaussian="covariance") # efficientcy when number of vars<500
+	
+# plot the L1-norm of the coefficients
 plot(model, xvar="norm", label=TRUE)
-plot(model, xvar="dev", label=TRUE)
+
 
 # extract coefficients
-coef(model, 0.005)
+# coef(model, 0.005)
+
+
+
+
 
 # create a matrix from the test data to make predictions
-matrix <- model.matrix(~x1+x2+x3+x4, test)
-# make predictions using the model
-predictions <- predict(model, matrix, type="class", s=0.01)
-# cunfusion matrix of the results
-table(predictions, test$z)
+# matrix <- model.matrix(~x1+x2+x3+x4, test)
+# # make predictions using the model
+# predictions <- predict(model, matrix, type="class", s=0.01)
+# # cunfusion matrix of the results
+# table(predictions, test$z)

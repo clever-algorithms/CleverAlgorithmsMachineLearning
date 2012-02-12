@@ -32,21 +32,40 @@ Regularization is useful when the risk of overfitting is high, such as when you 
 \index{Regularization!Taxonomy}
 A useful way to conceptualize the study of Regularization methods is to consider the type of penalty that is added to the cost function.
 
+\index{LASSO}
+\index{Basis Pursuit}
+\index{Group LASSO}
+\index{Blockwise Sparse Regression}
+\index{Fused LASSO}
+\index{Graphical LASSO}
+\index{Ridge Regression}
+\index{Elastic Net}
+\index{Smoothly Clipped Absolute Deviation}
+\index{SCAD}
+\index{$L_1$-norm Penalty}
+\index{$L_2$-norm Penalty}
+\index{Bridge Regression}
+\index{Non-negative Garrote}
+\index{Stepwise Regression}
+\index{Subset Selection}
 \begin{description}
 	\item[$L_1$-norm Penalty] This is the sum of the absolute values in a regression model or the $L_1$-norm of the coefficient vector. Examples include the Dantzig selector, and the LASSO (a.k.a Basis Pursuit) and extensions to the LASSO such as Group LASSO, Blockwise Sparse Regression (BSR), Fused LASSO, Graphical LASSO.
 	\item[$L_2$-norm Penalty] This is the squared sum of the absolute values in a regression model or the $L_2$-norm of the coefficient vector. Examples include Ridge Regression.
 	\item[Hybrid of $L_1$-norm and $L_2$-norm Penalty] These are methods that makes use of both types of penalty or combine them in some way. Examples include the Elastic Net and Smoothly Clipped Absolute Deviation (SCAD) penalty.
 	\item[$L_q$-norm Penalty] These are a generalization of the $L_1$ and $L_2$ norm penalties. Examples include Bridge Regression.
+	\item[Other] These are regularization methods that don't fit into the chosen taxonomy. Examples include the Non-negative Garrote. Other methods related to regularization that are commonly directly compared in simulation studies include Stepwise Regression and Subset Selection.
 \end{description}
 
-% where does the Non-negative Garrote fit?
+Methods such as the LASSO and Elastic Net pose difficult function optimization problems. Much research goes into the development of efficient algorithmic solutions to these objective functions. Examples include Least Angle Regression (LARS) and Cyclical Coordinate Descent.
 
 You can regularize many different model types. For example, it is common to prepend ``Regularized'' to the names models that make use of a regularization method such as Regularized Linear Regression and Regularized Support Vector Machine. It is also common for regularization methods to be described and analyzed in the context of simple regression models such as Linear Regression.
 
 % further reading
-% \subsection{Further Reading}
-% \index{Regularization!Further Reading}
-% Hastie et~al.\ provide a detailed treatment of regularization methods (\cite{Hastie2009}, Chapter 3) and also go on to describe more sophisticated methods (\cite{Hastie2009}, Chapter 5)
+\subsection{Further Reading}
+\index{Regularization!Further Reading}
+Regularization as a subject of study in its own right is a relatively recent development. There are few if any texts dedicated to it. Some Machine Learning texts provide a treatment of the subject in the context of modifications to regression models.
+
+Nevertheless, Hastie et~al.\ provide a detailed treatment of regularization methods (\cite{Hastie2009}, Chapter 3) and also go on to describe more sophisticated methods (\cite{Hastie2009}, Chapter 5).
 
 \putbib
 \end{bibunit}
