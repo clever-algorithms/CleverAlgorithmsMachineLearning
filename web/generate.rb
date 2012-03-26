@@ -1531,15 +1531,12 @@ def add_image(s, host, filename)
 	add_line(s, "\t\t</image:image>")	
 end
 	
-def add_url_to_sitemap(s, host, dir, path, images)
+def add_url_to_sitemap(s, host, dir, path)
 	add_line(s, "\t<url>")
 	url = host
 	url = url+"/"+dir if !dir.nil?
 	url = url+"/"+path if !path.nil?
 	add_line(s, "\t\t<loc>#{url}</loc>")
-	images.each do |image|
-		add_image(s, host, image)
-	end
 	add_line(s, "\t</url>")
 end
 
@@ -1551,7 +1548,7 @@ def add_code_url_to_sitemap(s, host, dir, path)
 	add_line(s, "\t\t<loc>#{url}</loc>")
 	# special code stuff
 	add_line(s, "\t\t<codesearch:codesearch>")
-	add_line(s, "\t\t\t<codesearch:filetype>ruby</codesearch:filetype>")
+	add_line(s, "\t\t\t<codesearch:filetype>R</codesearch:filetype>")
 	add_line(s, "\t\t</codesearch:codesearch>")	
 	add_line(s, "\t</url>")
 end
@@ -1563,30 +1560,21 @@ def create_sitemap
 	# html
 	host = "http://www.cleveralgorithms.com"
 	dir = "machinelearning"
-	# root
-	add_url_to_sitemap(s, host, nil, nil, ["small_cover.png"])	
 	# all pages
-	images = ["very_small_cover.png"]
 	Dir.entries(OUTPUT_DIR).each do |file|
 		next if file == "." or file == ".."
 		if File.directory?(OUTPUT_DIR+"/"+file)
 			Dir.entries(OUTPUT_DIR+"/"+file).each do |subfile|
 				next if subfile == "." or subfile == ".."
-				if File.extname(subfile) == ".rb" 
+				if File.extname(subfile) == ".R" 
 					add_code_url_to_sitemap(s, host, dir, "#{file}/#{subfile}")
 				elsif File.extname(subfile) == ".html" 
-					# check for the special case of the visualization chapter
-					if file=="advanced" and subfile=="visualizing_algorithms.html"
-						others = ["basin1.png", "basin2.png", "ga1.png", "ga2.png", "ga3.png", "pso1.png", "tsp1.png", "tsp2.png", "tsp3.png"]
-						add_url_to_sitemap(s, host, dir, "#{file}/#{subfile}", images+others)
-					else
-						add_url_to_sitemap(s, host, dir, "#{file}/#{subfile}", images)
-					end				
+					add_url_to_sitemap(s, host, dir, "#{file}/#{subfile}")			
 				end
 			end
 		else
 			next if File.extname(file) != ".html" 
-			add_url_to_sitemap(s, host, dir, file, images)
+			add_url_to_sitemap(s, host, dir, file)
 		end	
 	end	
 	add_line(s, "</urlset>")
@@ -1623,5 +1611,5 @@ if __FILE__ == $0
   # R files
   get_ruby_into_position(ALGORITHM_CHAPTERS_COMPLETED)
   # site map
-#  create_sitemap
+  create_sitemap
 end
