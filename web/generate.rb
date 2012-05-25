@@ -1567,7 +1567,8 @@ def create_sitemap
 			Dir.entries(OUTPUT_DIR+"/"+file).each do |subfile|
 				next if subfile == "." or subfile == ".."
 				if File.extname(subfile) == ".R" 
-					add_code_url_to_sitemap(s, host, dir, "#{file}/#{subfile}")
+          # add_code_url_to_sitemap(s, host, dir, "#{file}/#{subfile}")
+          next
 				elsif File.extname(subfile) == ".html" 
 					add_url_to_sitemap(s, host, dir, "#{file}/#{subfile}")			
 				end
