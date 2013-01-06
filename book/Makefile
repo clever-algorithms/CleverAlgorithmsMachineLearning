@@ -27,7 +27,7 @@ lulu : ${PAPERBACK}.tex
 
 # Delete all the guff and build matter
 clean : 
-	rm *.pdf *.out *.bbl *.blg *.aux *.idx *.log *.toc *.ilg *.ind
+	rm *.pdf *.out *.bbl *.blg *.aux *.idx *.log *.toc *.ilg *.ind *~ a_*/*~ c_*/*~
 
 # View the PDF on Linux
 vl:
