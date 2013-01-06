@@ -1,7 +1,7 @@
 # stat_bfgs.R
 # 
 # The Clever Algorithms Project: http://www.CleverAlgorithms.com
-# (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
+# (c) Copyright 2013 Jason Brownlee. Some Rights Reserved. 
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
 # definition of the 2D Rosenbrock function, optima is at (1,1)

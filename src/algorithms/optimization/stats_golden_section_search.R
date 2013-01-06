@@ -1,7 +1,7 @@
 # stats_golden_section_search.R
 # 
 # The Clever Algorithms Project: http://www.CleverAlgorithms.com
-# (c) Copyright 2011 Jason Brownlee. Some Rights Reserved. 
+# (c) Copyright 2013 Jason Brownlee. Some Rights Reserved. 
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
 # define a 1D basin function, optima at f(0)=0
