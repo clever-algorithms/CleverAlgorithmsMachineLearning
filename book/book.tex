@@ -7,9 +7,6 @@
 \include{f_title_page}
 \makeindex
 
-% Lulu Trade Paperback
-\geometry{bindingoffset=1cm, twoside, paperwidth=6in, paperheight=9in, top=.9in, bottom=.6667in, outer=0.667in}
-
 % \includeonly{c_introduction, c_optimization, c_regression}
 
 \begin{document}
@@ -17,7 +14,9 @@
 \frontmatter
 	\maketitle
 	\include{f_copyright}		
-	\cleardoublepage\include{f_toc}
+	\cleardoublepage
+	\setcounter{tocdepth}{1}
+	\tableofcontents
 	\addtocontents{toc}{\protect\markboth{Contents}{}}
 	\cleardoublepage\include{f_foreword}
 	\cleardoublepage\include{f_preface}
