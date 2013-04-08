@@ -1,2 +1,0 @@
-
-Source code created in the development of the content for the Clever Algorithms: Machine Learning book.

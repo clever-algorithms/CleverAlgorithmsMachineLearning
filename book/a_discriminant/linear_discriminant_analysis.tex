@@ -43,26 +43,30 @@ Related to linear regression which provides a linear model for a numeric rather 
 % What is the information processing objective of a technique?
 % What is a techniques plan of action?
 
+seeks to find a linear combination of features to separate two classes
+the resulting model can be used for classification or the selected features may be used as the basis of feature selection
+assumes normally distributed classes and equal class covariance
+subtle difference between LDA and Fisher's linear discriminant 
+	a relaxed assumption i think
+can be extended to a multi-class case
+can be regularized
+can be kernelized
+
+
+
 used for classification and dimensionality reduction
 kind of like regression
 linear model for a nominal (categorical) dependent variable.
 
 
-% help me use this technique
-\subsection{Overview}
-
-% what it is good at
-\subsubsection{Features}
+% Heuristics: Usage guidelines
+% The heuristics element describe the commonsense, best practice, and demonstrated rules for applying and configuring a parameterized algorithm. The heuristics relate to the technical details of the techniques procedure and data structures for general classes of application (neither specific implementations not specific problem instances). The heuristics are described textually, such as a series of guidelines in a bullet-point structure.
+\subsection{Heuristics}
+% What are the suggested configurations for a technique?
+% What are the guidelines for the application of a technique to a problem instance?
 
 \begin{itemize}
 	\item Used for prediction of a nominal (categorical) dependent variable, cannot be used for regression.
-\end{itemize}
-
-% what it is not good at
-\subsubsection{Limitations}
-
-\begin{itemize}
-	\item 
 \end{itemize}
 
 
@@ -95,6 +99,7 @@ Other packages that provide an implementation of Linear Discriminant Analysis in
 % primary sources
 \subsubsection{Primary Sources}
 
+Fisher's method \cite{Fisher1936}, source of iris dataset
 
 
 % more info

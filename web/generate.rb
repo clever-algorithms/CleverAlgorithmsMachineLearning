@@ -5,16 +5,16 @@
 # (c) Copyright 2013 Jason Brownlee. Some Rights Reserved. 
 # This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License.
 
-require 'bibtex'
+require 'web/bibtex'
 
 
-OUTPUT_DIR = "docs"
-BIBTEX_FILE = "../book/bibtex.bib"
+OUTPUT_DIR = "web/docs"
+BIBTEX_FILE = "book/bibtex.bib"
 
 TITLE = "Clever Algorithms"
 SUBTITLE = "Statistical Machine Learning Recipes"
 FULLTITLE = "#{TITLE}: #{SUBTITLE}"
-DATE = "2012"
+DATE = "2013"
 
 def create_directory(name)
   Dir.mkdir(name) unless File.directory?(name)
