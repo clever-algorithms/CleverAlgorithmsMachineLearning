@@ -41,14 +41,10 @@
 	\part{Appendix}
 		\appendix
 		\include{b_appendix1}
-
 	% correct handling of the index (new odd page)
-  \cleardoublepage
-  \phantomsection
+	\cleardoublepage
+	\phantomsection
 	\addcontentsline{toc}{part}{Index}
-	{\footnotesize \printindex}	
-	
-	% blank page
-	\blanknonumber\cleardoublepage
-	
+	{\footnotesize \printindex}
+	\blanknonumber\cleardoublepage	
 \end{document}
