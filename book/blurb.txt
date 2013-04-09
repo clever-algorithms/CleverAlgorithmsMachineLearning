@@ -1,5 +1,0 @@
-Implementing an Machine Learning algorithms is difficult. Algorithm descriptions may be incomplete, inconsistent, and distributed across a number of papers, chapters and even websites. This can result in varied interpretations of algorithms, undue attrition of algorithms, and ultimately bad science.
-
-This book is an effort to address these issues by providing a handbook of algorithmic recipes drawn from the field of Machine Learning, described in a complete, consistent, and centralized manner. These standardized descriptions were carefully designed to be accessible, usable, and understandable. 
-
-An encyclopedic algorithm reference, this book is intended for research scientists, engineers, students, and interested amateurs. Each algorithm description provides a working code example in R.
