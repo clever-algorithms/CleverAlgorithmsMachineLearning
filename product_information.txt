@@ -26,25 +26,37 @@ What is the sales price?
 	$19.99 US for the 6"x9" trade paperback
 
 What are the product features?
-	
+	The book will be approximately 300-500 pages in length.
+	Each algorithm is described in a consistent manner using a template.
+	Each algorithm description can be read independently with minimal prior knowledge.
+	Each algorithm has a standalone executable worked example in the R language.
+	The book will have three parts:
+		Introduction providing a brief overview of the field of machine learning.
+		Algorithms providing algorithm descriptions organized into types of methods.
+		Extensions providing advanced methods.
 
 Why will customers buy this product?
-	
+	Many algorithms described in a complete, consistent, and centralized manner.
 
 
 Sales Blueprint
 
 What is the problem?
-	
+	Information about a given algorithm is spread across papers, books, websites and code. Synthesizing a consistent understanding of a given method from desperate source materials is very time consuming. Source materials have to be located, read and evaluated, distilled into their key contributions and insights and the results unified into a form suitable for the needs.
 	
 Why does the problem persist?
-	
+	New algorithms are being developed and new insights are being discovered every day. The mass of material in the field and on each method is daunting and will continually become more so. 
 	
 What's possible?
-	
+	Knowing the common names and aliases of a method can help with deeper research into the method.
+	Knowing the related methods defines how the method fits into the field.
+	Knowing the information processing principles provides an intuition for how the method works.
+	Having an executable worked example provides the basis for experimentation and development.
+	Having the list of primary sources and useful further information provides the references needed for efficiently learning more.
+	Having all the algorithms in one compendium in a consistent form allows rapid comparison between methods.
 
 What's different now?
-	
+	The trick is knowing which are the key sources, what are the heuristics for operating the method and what are the insights and intuitions about the information processing strategy. The vast amount of time to locate, distill and synthesize the material on each algorithm has already been done and the results are provided in this book.
 
 What should you do now?
-	
+	Get the paperback, ebook or read the website and get on with learning about and using clever algorithms.
