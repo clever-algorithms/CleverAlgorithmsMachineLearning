@@ -18,7 +18,7 @@ Formats: paperback and ebook
 h2. How to Build
 
 # Assumes a Linux or Mac workstation with make, Latex such as "TeXLive":http://www.tug.org/texlive/ or "MacTex":http://www.tug.org/mactex/  and "JabRef":http://jabref.sourceforge.net/ installed.
-# @git clone git@@github.com:jbrownlee/CleverAlgorithmsMachineLearning.git@
+# <code>git clone git@github.com:jbrownlee/CleverAlgorithmsMachineLearning.git</code>
 # @cd CleverAlgorithmsMachineLearning@
 # @make r@ (creates the file @book/book.pdf@)
 # @make vl@ (to view the PDF on linux) or @make vm@ (to view the PDF on mac)
