@@ -30,7 +30,7 @@ h3. How to Build
 
 h3. Contribute
 
-If you find a typo or a mistake, please email me at "jasonb@CleverAlgorithms.com":mailto:jasonb@CleverAlgorithms.com or clone this project and make, make a change and submit a pull request. I will happily give you credit in the acknowledgements.
+If you find a typo or a mistake, please email me at "jasonb@CleverAlgorithms.com":mailto:jasonb@CleverAlgorithms.com or clone this project and make, make a change and submit a pull request. I will happily give you credit in the acknowledgments.
 
 h3. Support
 
