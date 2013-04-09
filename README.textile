@@ -6,11 +6,17 @@ h2. Overview
 
 The book will be released for free on the website "CleverAlgorithms.com":http://cleveralgorithms.com and will be available for purchase as a paperback and ebook.
 
+h3. Book Details
+
 | Title | *Clever Algorithms: Statistical Machine Learning Recipes* |
 | Author | Jason Brownlee |
-| Date |  mid 2013 |
+| Release |  mid 2013 |
 
 !http://www.cleveralgorithms.com/images/CleverAlgorithms_ML_3D_400.jpg!
+
+h3. Blurb
+
+bq. Implementing an Machine Learning algorithms is difficult. Algorithm descriptions may be incomplete, inconsistent, and distributed across a number of papers, chapters and even websites. This can result in varied interpretations of algorithms, undue attrition of algorithms, and ultimately bad science. This book is an effort to address these issues by providing a handbook of algorithmic recipes drawn from the field of Machine Learning, described in a complete, consistent, and centralized manner. These standardized descriptions were carefully designed to be accessible, usable, and understandable. An encyclopedic algorithm reference, this book is intended for research scientists, engineers, students, and interested amateurs. Each algorithm description provides a working code example in R.
 
 h2. Project
 
@@ -24,7 +30,7 @@ h3. How to Build
 
 h3. Contribute
 
-If you find a typo or a mistake, please email me at "jasonb@CleverAlgorithms.com":mailto:jasonb@CleverAlgorithms.com or clone this project and make a pull request. I will happily give you credit in the acknowledgements.
+If you find a typo or a mistake, please email me at "jasonb@CleverAlgorithms.com":mailto:jasonb@CleverAlgorithms.com or clone this project and make, make a change and submit a pull request. I will happily give you credit in the acknowledgements.
 
 h3. Support
 
