@@ -1,5 +1,7 @@
 h1. Clever Algorithms: Statistical Machine Learning Recipes 
 
+!http://www.cleveralgorithms.com/images/CleverAlgorithms_ML_3D_400.jpg!
+
 h2. Overview
 
 *Clever Algorithms: Statistical Machine Learning Recipes* is an open source book that has the goal to describe a large number of algorithmic techniques from the the field of statistical machine learning in a complete, consistent, and centralized manner such that they are accessible, usable, and understandable. This is a repository for the book project used during the development and ongoing maintenance of the books' content.
@@ -11,8 +13,6 @@ h3. Book Details
 | Title | *Clever Algorithms: Statistical Machine Learning Recipes* |
 | Author | Jason Brownlee |
 | Release |  mid 2013 |
-
-!http://www.cleveralgorithms.com/images/CleverAlgorithms_ML_3D_400.jpg!
 
 h3. Blurb
 
