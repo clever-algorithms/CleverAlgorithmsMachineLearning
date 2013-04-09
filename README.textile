@@ -15,7 +15,7 @@ Author: Jason Brownlee
 Date: mid 2013
 Formats: paperback and ebook
 
-!https://raw.github.com/jbrownlee/CleverAlgorithmsMachineLearning/master/cover_3d.jpg(Clever Algorithms: Statistical Machine Learning Recipes )!
+!http://www.cleveralgorithms.com/images/CleverAlgorithms_ML_3D_400.jpg!
 
 h2. Project
 
