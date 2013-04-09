@@ -2,25 +2,34 @@ h1. Clever Algorithms: Statistical Machine Learning Recipes
 
 h2. Overview
 
-The Clever Algorithms: Machine Learning project is an effort to describe a large number of algorithmic techniques from the the field of Machine Learning in a complete, consistent, and centralized manner such that they are accessible, usable, and understandable. 
+This project is an effort to describe a large number of algorithmic techniques from the the field of Machine Learning in a complete, consistent, and centralized manner such that they are accessible, usable, and understandable. 
 
 The Clever Algorithms project is currently hosted online at "http://www.CleverAlgorithms.com":http://www.CleverAlgorithms.com 
 
-This is a repository for the Clever Algorithms: Machine Learning project for hosting, versioning and collaboration, used during the development of the content for deliverables (website and book), as well as for the ongoing maintenance of the outcomes from the project.
+This is a repository for the project for hosting, versioning and collaboration, used during the development of the content for deliverables (website and book), as well as for the ongoing maintenance of the outcomes from the project.
 
-h2. Outcomes
+h2. Book
 
-h3. Book (Coming Soon)
+Title: Clever Algorithms: Statistical Machine Learning Recipes
+Author: Jason Brownlee
+Date: mid 2013
+Formats: paperback and ebook
 
-Jason Brownlee, *Clever Algorithms: Statistical Machine Learning Recipes*, [Expected mid 2013]. ISBN: xxx.
+h2. How to Build
+
+# Assumes a Linux or Mac workstation with make, Latex such as "TeXLive":http://www.tug.org/texlive/ or "MacTex":http://www.tug.org/mactex/  and "JabRef":http://jabref.sourceforge.net/ installed.
+# git clone git@github.com:jbrownlee/CleverAlgorithmsMachineLearning.git
+# cd CleverAlgorithmsMachineLearning
+# make r (makes a book/book.pdf)
+# make vl (to view the PDF on linux) or make vm (to view the PDF on mac)
 
 h2. Contribute
 
 Found a typo in some content or a bug in the source code? Are you an expert in a given area and know some facts that could improve an algorithm description for all? Do you want to get that warm feeling from contributing to an open source project? Do you want to see your name as an acknowledgment in print?
 
-Two pillars of this effort are i) that the best domain experts are people outside of the project, and ii) that this work is subjected to continuous improvement. 
-
-*Please help to make this work less wrong!*
+Two pillars of this effort are:
+# That the best domain experts are people outside of the project.
+# That this work is subjected to continuous improvement. 
 
 You may want to:
 * Email the author: "jasonb@CleverAlgorithms.com":mailto:jasonb@CleverAlgorithms.com
@@ -29,11 +38,8 @@ You may want to:
 h2. License 
 
 (c) Copyright 2013 Jason Brownlee. Some Rights Reserved.
-
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/au/">
-	<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/au/88x31.png" />
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/au/88x31.png" />
 </a>
 
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/au/">Creative Commons Attribution-Noncommercial-Share Alike 2.5 Australia License</a>.
-
-Why would I release all of the work product from this project under a permissive license? Because I agree with "Tim O'Reilly":http://openp2p.com/lpt/a/3015 that "_obscurity is a far greater threat to authors and creative artists than piracy_". It is more important to me that the outcomes of this project are read and used than be treated as a revenue generating commodity.
