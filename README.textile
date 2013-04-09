@@ -2,19 +2,13 @@ h1. Clever Algorithms: Statistical Machine Learning Recipes
 
 h2. Overview
 
-This project is an effort to describe a large number of algorithmic techniques from the the field of Machine Learning in a complete, consistent, and centralized manner such that they are accessible, usable, and understandable. 
+*Clever Algorithms: Statistical Machine Learning Recipes* is an open source book that has the goal to describe a large number of algorithmic techniques from the the field of statistical machine learning in a complete, consistent, and centralized manner such that they are accessible, usable, and understandable. This is a repository for the book project used during the development and ongoing maintenance of the books' content.
 
-The Clever Algorithms project is currently hosted online at "http://www.CleverAlgorithms.com":http://www.CleverAlgorithms.com 
-
-This is a repository for the project for hosting, versioning and collaboration, used during the development of the content for deliverables (website and book), as well as for the ongoing maintenance of the outcomes from the project.
-
-h2. Book
+The book will be released for free on the website "CleverAlgorithms.com":http://cleveralgorithms.com and will be available for purchase as a paperback and ebook.
 
 | Title | *Clever Algorithms: Statistical Machine Learning Recipes* |
 | Author | Jason Brownlee |
 | Date |  mid 2013 |
-| Formats |  paperback and ebook |
-| Availability | All major online book retailers |
 
 !http://www.cleveralgorithms.com/images/CleverAlgorithms_ML_3D_400.jpg!
 
@@ -31,6 +25,12 @@ h3. How to Build
 h3. Contribute
 
 If you find a typo or a mistake, please email me at "jasonb@CleverAlgorithms.com":mailto:jasonb@CleverAlgorithms.com or clone this project and make a pull request. I will happily give you credit in the acknowledgements.
+
+h3. Support
+
+The best support you can give to this project is to buy a copy of the paperback and spread the word by writing a review, blog post or tweet.
+
+You might be interested in the previous book that covered Genetic Algorithms, Swarm Intelligence, Neural Networks and related algorithms. See "Clever Algorithms: Nature Inspired Programming Recipes":https://github.com/jbrownlee/CleverAlgorithms
 
 h2. License 
 
