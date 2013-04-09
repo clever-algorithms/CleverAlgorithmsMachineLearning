@@ -1,0 +1,50 @@
+Product Information Sheet
+
+What is the product name?
+	Clever Algorithms: Statistical Machine Learning Recipes 
+
+When will the product ship?
+	June-July 2013
+
+What is your product?
+	A handbook of statistical machine learning algorithms where each algorithm is described consistently to be accessible, usable, and understandable.
+
+Who is the customer?
+	Developers who require source information on how to implement a given method.
+	Research scientists who require information on methods to trial or compare against.
+	Data scientists who require heuristics for operating algorithms.
+	Interested amateurs who are looking to get started with a given technique.	
+
+Who will sell it?
+	Online distributors of paper and/or ebooks such as Amazon, Smashwords and iTunes.
+
+How many people will buy it?
+	50-500
+
+What is the sales price?
+	$2.99 US for the ebook (kindle/apple/etc)
+	$19.99 US for the 6"x9" trade paperback
+
+What are the product features?
+	
+
+Why will customers buy this product?
+	
+
+
+Sales Blueprint
+
+What is the problem?
+	
+	
+Why does the problem persist?
+	
+	
+What's possible?
+	
+
+What's different now?
+	
+
+What should you do now?
+	
