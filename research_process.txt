@@ -1,0 +1,106 @@
+Algorithm Research Process
+
+It is important that each algorithm description is as complete and correct as possible to ensure the content is as useful as it can be. Toward this end, it is critical that a systematic process is used to research each algorithm before preparing an algorithm description. This guide captures the systematic research process followed to research each algorithm for the book.
+
+Principles:
+
+* Research takes place first and is synthesized into an algorithm description second.
+* Research takes place in a separate and less constrained file from the formal algorithm description.
+* Each resource is touched only once.
+* Print this document and use it as a checklist.
+* Complete algorithm research incrementally or in batch.
+* Complete algorithm research in 5-8 hours.
+
+
+01. Open a new text file and save it in the project with a filename that includes the algorithm name.
+   For example, if researching the "Linear Regression" algorithm the file will be named "linear_regression.txt".
+
+02. Under a heading "PRIOR KNOWLEDGE", list in point form all prior knowledge about the algorithm.
+	For example, list known problem types, parameters, parameter configurations and even specialty resources that come to mind. This prior knowledge may or may not be accurate and should be acknowledged to improve the objectiveness of the research.
+
+03. Under the heading "NAMES", list in point form the name of the algorithm and all known and possible aliases and acronyms. Keep this list up to date as the research unfolds.
+
+04. Under the heading "TAXONOMY" list algorithms that are related to the algorithm under research including extensions and parent methods. List the field of study to which this algorithm belongs and any specialty subfields of study that extend the method. Keep this list up to date as the research unfolds.
+
+05. For each physical book on Machine Learning, Artificial Intelligence or related fields:
+
+	05a. Write the title of the book as a heading.
+	05b. Search the table of contents and index for the algorithm name.
+	05c. Note in point form all salient details of the method described in the text. If there is no content on the algorithm, list N/A under the book title.
+
+06. Summarize each relevant book accessible on Amazon Book search:
+
+	06a. Visit http://www.amazon.com
+	06b. Change the search category to "Books" and search for the algorithm name (repeat for any or all aliases as needed)
+	06c. Review each book in the search results on at least the first two pages (24 results), skipping any books whose content has already processed for this algorithm.
+
+		06c,1. Write the title of the book as a heading, amended with (AMAZON BOOK).
+		06c,2. Click on the book in the search results.
+		06c,3. Click on the cover to "look inside", if not skip and mark "cannot access content"
+		06c,4. Using the "Search within book" field on the left of screen, search for the algorithm name and review all mentions. Fall back to reviewing the "Table of Contents" and/or "Index" of this search fails.
+		07c,5. Note in point form all salient details of the method described in the text. If there is no content on the algorithm, list N/A under the book title.
+
+07. Summarize each relevant book accessible on Google Book search:
+
+	07a. Visit http://books.google.com
+	07b. Search for the algorithm name (repeat for any or all aliases as needed)
+	07c. Review each book in the search results on at least the first two pages (40 results), skipping any books whose content has already processed for this algorithm. 
+
+		07c,1. Write the title of the book as a heading, amended with (GOOGLE BOOK).
+		07c,2. Click on the book in the search results.		
+		07c,3. The books contents should be shown, if not skip and mark "cannot access content"
+		07c,4. Using the "Search within book" field on the left of screen, search for the algorithm name.
+		07c,5. In the yellow bar above the book, click "View All" and reach all relevant mentions. Fall back to reviewing the "Table of Contents" and/or "Index" of this search fails.
+		07c,6. Note in point form all salient details of the method described in the text. If there is no content on the algorithm, list N/A under the book title.
+
+08. Summarize each relevant resource accessible on Google Scholar search:
+
+	08a. Visit http://scholar.google.com
+	08b. Search for the algorithm name (repeat for any or all aliases as needed)
+	08c. Review each result in the search results on at least the first three pages (30 results), skipping any resources whose content has already processed for this algorithm. 
+
+		08c,1. Write the title of the resource as a heading.
+		08c,2. Click on the search entry, skipping resource any whose content has already been processed.
+		08c,3. If a Google Book result, follow the process in STEP 07c from 07c,1.
+		08c,4. If the resource is not accessible, try links in the "All versions" link below the search entry in the main link, otherwise skip and mark as "cannot access content".
+		08c,5. Note in point form all salient details of the method described in the text. If there is no content on the algorithm, list N/A.
+		08c,6, Note all relevant resources not already processed in the bibliography, use resource name and context of reference in this determination.
+
+09. Summarize the Wikipedia article for the algorithm.
+
+	09a. Visit http://en.wikipedia.org/wiki/Main_Page
+	09a. Locate the Wikipedia article for the algorithm. 
+	09b. Write the page title and URL as a heading, write the heading "WIKIPEDIA" if no such entry exists.
+	09c. Note in point form related algorithms and fields of study linked throughout the document and in related pages at the bottom of the entry.
+	09d. Note in point form all salient details of the method described in the resource. If there is no content on the algorithm, list N/A under the book title.
+	09e. Note any resources listed at the bottom of the article in the Notes, References, or Further Reading sections not already processed.
+
+# Springer search
+
+# Scirus search
+
+# IEEE search
+
+# JSTOR search
+
+# CiteSeer Search
+
+# ACM Search
+
+# cran search
+
+# google web search
+
+
+
+
+Appendix A: Salient Information
+
+Salient Information is identified using the following motivating questions:
+
+	* Does the method take parameters, if so what are they?
+	* What are common values for algorithm parameters?
+	* Does input require normalization or standardization prior to running the method?
+	* What is a description of the algorithm using words?
+	* What types of problems is the algorithm suited?
+	* What are the primary sources?
