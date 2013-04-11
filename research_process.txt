@@ -117,34 +117,44 @@ Principles:
 	16b. Search for the algorithm name (repeat for any or all aliases as needed)
 	16c. Review (using STEP 08c from 08c,1) each result in the search results on at least the first page (20 results), skipping any resources whose content has already processed for this algorithm. 
 
-17. Summarize each relevant resource and tips on MetaOptimize Q+A
+17. Summarize each relevant resource on Q/A Sites. 
+		They can be a good source of tips, tricks, usage heuristics and introductory resources.
 
-	17a. Visit http://metaoptimize.com/qa/
+	17a. Visit website (or use a google search with "site:<URL>" followed by algorithm name)
+		http://metaoptimize.com/qa/
+		http://www.quora.com/search
+		http://stackoverflow.com/search
+		http://stats.stackexchange.com/search
+		http://cstheory.stackexchange.com/search
+		http://programmers.stackexchange.com/search
+		http://www.reddit.com/search
+		https://www.hnsearch.com/search
+		https://www.kaggle.com/forums
+		http://www.netflixprize.com//community/search.php
+		https://list.scms.waikato.ac.nz/mailman/htdig/wekalist/
 	17b. Search for the algorithm name (repeat for any or all aliases as needed)
-	17c. Review (using STEP 08c from 08c,1) each result in the search results on at least the first page (20 results), skipping any resources whose content has already processed for this algorithm.
+	17c. Review (using STEP 08c from 08c,1) each result in the search results on at least 20 results, skipping any resources whose content has already processed for this algorithm.
 
-18. Summarize each relevant resource and tips on Quora
+18. Summarize relevant resources on video sites.
+		They can be a good source of tips, intuitions and usage heuristics and tie together what you have been reading.
 
-	18a. Visit http://www.quora.com/search
-	18b. Search for the algorithm name (repeat for any or all aliases as needed)
-	18c. Review (using STEP 08c from 08c,1) each result in the search results on at least the first page, skipping any resources whose content has already processed for this algorithm.
+		18a. Visit website
+			http://www.youtube.com/
+			http://vimeo.com/
+		18b. Search for the algorithm name (repeat for any or all aliases as needed)
+		18c. Review (using STEP 08c from 08c,1) each result in the search results on at least 20 results, skipping any resources whose content has already processed for this algorithm.
 
-19. Summarize each relevant resource and tips on Cross Validated
+19. Search for relevant implementations on CRAN
 
-	19a. Visit http://stats.stackexchange.com/search
+	19a. Visit http://cran.r-project.org/search.html
 	19b. Search for the algorithm name (repeat for any or all aliases as needed)
-	19c. Review (using STEP 08c from 08c,1) each result in the search results on at least the first page, skipping any resources whose content has already processed for this algorithm.
+	19c. Click each search entry on the first two results pages (20 results) and only consider CRAN package web pages, skip others.
+	19d. For each User Manual and Vignette resource on the package webpage review using STEP 08c from 08c,1
 
-20. Search for relevant implementations on CRAN
+20. Are there any resources which give an indication of being useful but for which the content has not been reviewed because the resource has not been accessible? 
+	Some strategies to locate an accessible version of the resource include:
 
-	20a. Visit http://cran.r-project.org/search.html
-	20b. Search for the algorithm name (repeat for any or all aliases as needed)
-	20c. Click each search entry on the first two results pages (20 results) and only consider CRAN package web pages, skip others.
-	20d. For each User Manual and Vignette resource on the package webpage review using STEP 08c from 08c,1
-
-21. Are there any resources which give an indication of being useful but for which the content has not been reviewed because the resource has not been accessible? Some strategies to locate an accessible version of the resource include:
-
-	21a. Search for the full name of the resource on:
+	20a. Search for the full name of the resource on:
 	 	http://scholar.google.com
 		http://books.google.com
 		http://google.com	
@@ -154,17 +164,18 @@ Principles:
 		http://www.jstor.org/
 		http://citeseerx.ist.psu.edu/
 		http://dl.acm.org/
-	21b. Search for each authors full name on http://google.com and attempt to locate their home page and email address. Reach out to each author and request a copy of the paper via email.
-	21c. Contact friends in universities and request a copy of the paper providing a direct link to the PDF on the publishers website.
+	20b. Search for each authors full name on http://google.com and attempt to locate their home page and email address. Reach out to each author and request a copy of the paper via email.
+	20c. Contact friends in universities and request a copy of the paper providing a direct link to the PDF on the publishers website.
+	
+21. Are there any resources that have been listed as being potentially useful but have not yet been processed?
+
+	21a. Used the tactics in STEP 19 starting at 19a.
 
 22. Do you have sufficient salient information about the algorithm (questions listed in Appendix A)? 
 
 	22a. If not, search for each incomplete question using the sources listed in STEP 21a.
-	22b. Search for each incomplete question on:
-		http://metaoptimize.com/qa/
-		http://stats.stackexchange.com/search
-		http://www.quora.com/search
-	22c. Post the question on the sources listed in STEP 22b.
+	22b. Search for each incomplete question on sites listed in STEP 17a.
+	22c. Post the question on the sources listed in STEP 17a.
 
 23. Do you have sufficient information to craft a demonstration in R? If not:
 
