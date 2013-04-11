@@ -1,6 +1,6 @@
 Algorithm Research Process
 
-It is important that each algorithm description is as complete and correct as possible to ensure the content is as useful as it can be. Toward this end, it is critical that a systematic process is used to research each algorithm before preparing an algorithm description. This guide captures the systematic research process followed to research each algorithm for the book.
+It is important that each algorithm description is as complete and correct as possible to ensure the content is as useful as it can be. Toward this end, a systematic process is used to research each algorithm before preparing an algorithm description. This guide captures the systematic research process followed to research each algorithm for the book.
 
 Principles:
 
@@ -182,4 +182,7 @@ Salient Information is identified using the following motivating questions:
 	* What is a description of the algorithm using words?
 	* What types of problems is the algorithm suited?
 	* What are the primary sources?
+	* What are some good introductory resources?
 	* What are the recommended ways to operate the algorithm?
+	* What packages in R support the algorithm?
+	* Which package in R is canonical?
