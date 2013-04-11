@@ -117,17 +117,59 @@ Principles:
 	16b. Search for the algorithm name (repeat for any or all aliases as needed)
 	16c. Review (using STEP 08c from 08c,1) each result in the search results on at least the first page (20 results), skipping any resources whose content has already processed for this algorithm. 
 
-17. Search for relevant implementations on CRAN
+17. Summarize each relevant resource and tips on MetaOptimize Q+A
 
-	17a. Visit http://cran.r-project.org/search.html
+	17a. Visit http://metaoptimize.com/qa/
 	17b. Search for the algorithm name (repeat for any or all aliases as needed)
-	17c. Click each search entry on the first two results pages (20 results) and only consider CRAN package web pages, skip others.
-	17d. For each User Manual and Vignette resource on the package webpage review using STEP 08c from 08c,1
+	17c. Review (using STEP 08c from 08c,1) each result in the search results on at least the first page (20 results), skipping any resources whose content has already processed for this algorithm.
 
-# TODO acquire resources not yet processed
-18. Locate a copy of any resources of which the content has not yet been reviewed because it has...
+18. Summarize each relevant resource and tips on Quora
 
-# TODO review sample R programs from everywhere
+	18a. Visit http://www.quora.com/search
+	18b. Search for the algorithm name (repeat for any or all aliases as needed)
+	18c. Review (using STEP 08c from 08c,1) each result in the search results on at least the first page, skipping any resources whose content has already processed for this algorithm.
+
+19. Summarize each relevant resource and tips on Cross Validated
+
+	19a. Visit http://stats.stackexchange.com/search
+	19b. Search for the algorithm name (repeat for any or all aliases as needed)
+	19c. Review (using STEP 08c from 08c,1) each result in the search results on at least the first page, skipping any resources whose content has already processed for this algorithm.
+
+20. Search for relevant implementations on CRAN
+
+	20a. Visit http://cran.r-project.org/search.html
+	20b. Search for the algorithm name (repeat for any or all aliases as needed)
+	20c. Click each search entry on the first two results pages (20 results) and only consider CRAN package web pages, skip others.
+	20d. For each User Manual and Vignette resource on the package webpage review using STEP 08c from 08c,1
+
+21. Are there any resources which give an indication of being useful but for which the content has not been reviewed because the resource has not been accessible? Some strategies to locate an accessible version of the resource include:
+
+	21a. Search for the full name of the resource on:
+	 	http://scholar.google.com
+		http://books.google.com
+		http://google.com	
+		http://link.springer.com
+		http://www.scirus.com/
+		http://ieeexplore.ieee.org/
+		http://www.jstor.org/
+		http://citeseerx.ist.psu.edu/
+		http://dl.acm.org/
+	21b. Search for each authors full name on http://google.com and attempt to locate their home page and email address. Reach out to each author and request a copy of the paper via email.
+	21c. Contact friends in universities and request a copy of the paper providing a direct link to the PDF on the publishers website.
+
+22. Do you have sufficient salient information about the algorithm (questions listed in Appendix A)? 
+
+	22a. If not, search for each incomplete question using the sources listed in STEP 21a.
+	22b. Search for each incomplete question on:
+		http://metaoptimize.com/qa/
+		http://stats.stackexchange.com/search
+		http://www.quora.com/search
+	22c. Post the question on the sources listed in STEP 22b.
+
+23. Do you have sufficient information to craft a demonstration in R? If not:
+
+	23a. Visit http://google.com	
+	23b. Search for the algorithm name appended with "R project" and/or "R example"
 
 
 Appendix A: Salient Information
