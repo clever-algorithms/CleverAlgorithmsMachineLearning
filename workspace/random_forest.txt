@@ -1,0 +1,16 @@
+Random Forest
+
+PRIOR KNOWLEDGE
+- ensemble of decision trees
+- select methods for partitioning the tree and for making predictions
+- large ensembles are used
+- name is a trademark
+- applied to regression and classification problems
+
+NAMES
+- Random Forest
+
+TAXONOMY
+- Related to decision trees like CART, ID3, J48
+- Related to ensemble methods 
+
