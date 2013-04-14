@@ -37,7 +37,7 @@ Principles:
 		06c,1. Write the title of the book as a heading, amended with (AMAZON BOOK).
 		06c,2. Click on the book in the search results.
 		06c,3. Click on the cover to "look inside", if not skip and mark "cannot access content"
-		06c,4. Using the "Search within book" field on the left of screen, search for the algorithm name and review all mentions. Fall back to reviewing the "Table of Contents" and/or "Index" of this search fails.
+		06c,4. Using the "Search within book" field on the left of screen, search for the algorithm name in quotes and review all mentions. Fall back to reviewing the "Table of Contents" and/or "Index" of this search fails.
 		07c,5. Note in point form all salient details of the method described in the text. If there is no content on the algorithm, list N/A under the book title.
 
 07. Summarize each relevant book accessible on Google Book search:

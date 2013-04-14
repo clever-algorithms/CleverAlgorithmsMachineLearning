@@ -108,6 +108,19 @@ Resources
 Book: Data Mining: Practical Machine Learning Tools and Techniques with Java Implementations
 - N/A
 
+Book: Forest Analytics with R: An Introduction (Use R!)
+- N/A
 
-
-
+Book: Statistical Learning from a Regression Perspective
+Chapter 5
+- not making an optimal split at each decision point, intentionally adding noise
+- predictors are sampled without replacement for a given split
+- good treatment of generalization error
+	- as the number of trees increases, the estimated generalization error converges on the population generalization error
+- dependence
+	- test the independence of trees, more independent trees, the better the averaged result
+	- sample data instances over trees and check for correlation of correct/incorrect classifications
+- in practice many thousands of trees will be needed in the ensemble
+	- 500-3000, do dev on 500, scale to a few thousand
+- smaller trees for weekly correlated features, larger trees otherwise
+- sample very few predictors at each split, use sqrt of num predictors, use oob estimate
