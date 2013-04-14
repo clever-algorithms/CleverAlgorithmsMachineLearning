@@ -1,0 +1,113 @@
+Random Forests
+
+PRIOR KNOWLEDGE
+- ensemble of decision trees
+- select methods for partitioning the tree and for making predictions
+- large ensembles are used
+- name is a trademark
+- applied to regression and classification problems
+
+NAMES
+- Random Forest
+- Random Forests
+
+TAXONOMY
+- Related to decision trees like CART, ID3, J48
+- Related to ensemble methods like boosting and bagging
+- Bagging was precursor method
+- random subspaces is a precursor method
+
+Book: Machine Learning for Hackers
+- N/A
+
+Book: Collective Intelligence
+- N/A
+
+Book: Data Analysis with Open Source Tools (pages 419-420)
+- takes a random sample of features from the training set as the basis for building a single decision tree
+- a subset of all features in the dataset are evaluated for each decision point in the tree
+	- is this in addition to the subspace?
+- information gain is used as a criteria for selecting splits at decision nodes
+
+Book: R in a nutshell
+pg 448-449
+- related to boosting and bagging that take samples of data
+- build trees from a random sample of columns in the test data
+- parameters
+	- number of features to include
+	- minimum samples to make a decision split point at a node
+- selects a variable at a decision point using (MSE for regression, Gini for classification)
+- after a split, samples are partitioned based on the decision and this recursive process repeats
+- trees are not pruned as they are in CART
+- trees are grown to a deep level
+- ensemble outcome
+	- regression takes the average prediction of all trees
+	- classification uses voting for each class, WTA
+- randomForest library provides an implementation in R
+	- does not support missing observations
+	- does not support categorical features with more than 32 levels
+		- may want to remove categorical features or limit trees max depth
+pg 483
+- example for classification
+
+Book: Artificial Intelligence A Modern Approach
+- N/A
+
+Book: Data Mining: Concepts and Techniques
+- N/A
+
+Book: The elements of statistical learning
+pg 409
+- N/A
+pg 587-604 (Chapter 15)
+- considered a modification of bagging
+	- average many noisy and approximately unbiased models to reduce their variance 
+	- deep trees have relatively low bias
+	- trees are notoriously noisy, they benefit greatly from averaging
+	- RF idea is to improve the reduction in variance by reducing the correlations between trees
+	- trees are highly nonlinear estimators
+- builds a large collection of de-correlated decision trees
+- performance on many problems is equivalent to boosting, similar to train and tune
+- popular technique (applied? papers published?)
+- random selection of input features
+	- selection is made at split time, m <= p features (really! not what I expected)
+		- m is typically sqrt(p) or even as low as 1
+		- reducing m will reduce the correlation between any two trees, reduce the variance in the average
+- algorithm listing provided
+-	majority vote from classification, mean prediction for classification
+- grow (B) trees
+	- can choose B by n-fold cross validation (2500 tree in example)
+- shallow trees (depth of 5 nodes) used in example
+- perform remarkably well with very little tuning required
+- parameter recommendation from inventors
+	- classification, m=sqrt(m), min node size=1
+	- regression, m=p/3, min node size=5
+- out of bag samples
+	- only average over trees that did not include the sample in their sample (what?)
+		- so we are sampling for each tree as well?
+	- OOB sample almost identical to n-fold cross validation
+	- terminate training when OOB stabilizes
+- variable importance
+	- traditional method (not clear)
+	- prediction accuracy with OOB samples, perturbed and recomputed, decrease in performance is recorded and measures the importance of the variable that was perturbed
+- proximity plot
+	- indication of which instances are close together according to the model (projection like a SOM?)
+- many features, few relevant, small m, poor performance
+	- needs a larger m?
+- cannot overfit the data, it is claimed
+	- increasing B does not overfit
+	- it is possible with full grown trees, the model will be too complex
+	- authors preference for full grown trees rather than max depth, one less parameter
+	- depth controlled by minimum node size (what? total nodes? depth? what?)
+Resources
+- random forests website: http://math.usu.edu/~adele/forests
+- attributed to Breiman 2001
+- Ho 1995 described Random Forest as consensus of trees on subspaces of features
+- perturbation and averaging to avoid overfitting attributed to Kleinberg 1990, 1996
+
+Book: Data Mining: Practical Machine Learning Tools and Techniques with Java Implementations
+- N/A
+
+
+
+
