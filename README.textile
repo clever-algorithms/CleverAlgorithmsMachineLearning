@@ -1,3 +1,5 @@
 h1. Project Defunct
 
 See: http://machinelearningmastery.com/
+
+Not deleted because of the stars and forks.
